@@ -18,5 +18,39 @@
   "asset": [
     "@Storefront",
     "app/storefront/src/assets"
-  ]
+  ],
+  "config": {
+    "fields": {
+      "sw-color-brand-primary": {
+        "value": "#00102D"
+      },
+      "sw-color-brand-secondary": {
+        "value": "#E49D92"
+      },
+      "sw-border-color": {
+        "value": "#00102D"
+      },
+      "sw-text-color": {
+        "value": "#00102D"
+      },
+      "sw-headline-color": {
+        "value": "#00102D"
+      },
+      "sw-color-price": {
+        "value": "#00102D"
+      },
+      "sw-color-buy-button": {
+        "value": "#00102D"
+      },
+      "sw-logo-desktop": {
+        "value": "app/storefront/dist/assets/logo/choju-logo-white.svg"
+      },
+      "sw-logo-tablet": {
+        "value": "app/storefront/dist/assets/logo/choju-logo-white.svg"
+      },
+      "sw-logo-mobile": {
+        "value": "app/storefront/dist/assets/logo/choju-logo-white.svg"
+      }
+    }
+  }
 }
