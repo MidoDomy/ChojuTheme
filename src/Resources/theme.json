@@ -20,6 +20,14 @@
     "app/storefront/src/assets"
   ],
   "config": {
+    "blocks": {
+      "footer": {
+        "label": {
+          "en-GB": "Footer",
+          "de-DE": "Footer"
+        }
+      }
+    },
     "fields": {
       "sw-color-brand-primary": {
         "value": "#00102D"
@@ -50,6 +58,28 @@
       },
       "sw-logo-mobile": {
         "value": "app/storefront/dist/assets/logo/choju-logo-white.svg"
+      },
+      "sw-footer-logo": {
+        "label": {
+          "en-GB": "Footer logo",
+          "de-DE": "Footer logo"
+        },
+        "type": "media",
+        "value": "app/storefront/dist/assets/logo/choju-logo-long.svg",
+        "editable": true,
+        "block": "footer",
+        "order": 100
+      },
+      "sw-footer-bg": {
+        "label": {
+          "en-GB": "Footer background img",
+          "de-DE": "Footer background img"
+        },
+        "type": "media",
+        "value": "app/storefront/dist/assets/media/footer-bg.svg",
+        "editable": true,
+        "block": "footer",
+        "order": 200
       }
     }
   }

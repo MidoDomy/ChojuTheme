@@ -1,0 +1,133 @@
+.footer-main {
+  position: relative;
+  background-color: #e6e8eb;
+  border: 0;
+  overflow: hidden;
+}
+
+.footer-container {
+  padding-top: $spacer*3.125;
+  padding-bottom: $spacer*3.125;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $spacer*4.813;
+    padding-bottom: $spacer*4.063;
+  }
+}
+
+.footer-background-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 84%;
+  transform: translateX(50%);
+
+  @include media-breakpoint-up(md) {
+    bottom: -$spacer*0.625;
+    right: -$spacer*10;
+    height: 87%;
+    transform: none;
+  }
+}
+
+.footer-logo-container {
+  position: relative;
+  margin-bottom: $spacer*2.5;
+}
+
+.footer-logo {
+  max-width: 135px;
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    width: 25%;
+    max-width: 300px;
+  }
+}
+
+.footer-columns {
+  position: relative;
+  --bs-gutter-y: #{$spacer*1.125};
+  padding: 0;
+}
+
+.footer-column {
+  border: 0;
+
+  .list-unstyled {
+    margin-bottom: 0;
+  }
+}
+
+.footer-link-item {
+  padding: $spacer*0.25 0;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+.footer-link {
+  padding: $spacer*0.188 0;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.footer-social-column {
+  .row {
+    --bs-gutter-x: #{$spacer*0.75};
+  }
+}
+
+.footer-social-link {
+  display: block;
+  line-height: 1;
+  color: $sw-color-brand-secondary;
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    color: inherit;
+
+    svg {
+      top: 0;
+    }
+  }
+}
+
+.footer-column-content-inner {
+  padding: 0;
+}
+
+
+// bottom
+.footer-bottom {
+  padding: $spacer*1.75 0 $spacer*1.125;
+  background-color: #f3f4f6;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+
+  @include media-breakpoint-up(md) {
+    padding: $spacer*2.813 0;
+  }
+
+  .row {
+    --bs-gutter-x: #{$spacer*1.5};
+
+    @include media-breakpoint-up(md) {
+      --bs-gutter-x: #{$spacer*2};
+    }
+  }
+}
+
+.footer-bottom-container {
+  position: relative;
+}
+
+.footer-copyright {
+  text-align: left;
+}
+
+.footer-service-menu-link {
+  padding: 0;
+}

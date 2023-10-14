@@ -1,0 +1,152 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_inner_container %}
+    <div class="footer-container container-fluid">
+		{# Background logo #}
+		<img class="footer-background-img"
+			src="{{ theme_config('sw-footer-bg') |sw_encode_url }}"
+			alt=""
+		/>
+
+		{# Logo #}
+		<div class="footer-logo-container">
+			<img class="footer-logo"
+				src="{{ theme_config('sw-footer-logo') |sw_encode_url }}"
+				alt="{{ 'choju.footer.logoTitle'|trans }}"
+			/>
+		</div>
+
+		{# Main #}
+        {% block layout_footer_navigation %}
+            <div class="row footer-columns">
+                {% block layout_footer_navigation_hotline %}
+                    <div class="col-md-4 col-lg-3 footer-column">
+                        {% block layout_footer_navigation_hotline_content %}
+                            <div class="footer-column-content footer-contact">
+                                <div class="footer-column-content-inner">
+									{{ 'footer.serviceHotline'|trans|raw }}
+									</br>
+									</br>
+
+									<a href="tel:{{ 'choju.footer.serviceHotlinePhone'|trans }}">
+										{{ 'choju.footer.serviceHotlinePhone'|trans }}
+									</a>
+									</br>
+									<a href="mailto:{{ 'choju.footer.serviceHotlineMail'|trans }}">
+										{{ 'choju.footer.serviceHotlineMail'|trans }}
+									</a>
+                                </div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_navigation_columns %}
+                    {% for root in page.footer.navigation.tree %}
+                        {% block layout_footer_navigation_column %}
+                            <div class="col-md-4 col-lg-3 footer-column d-none d-md-block">
+                                {% block layout_footer_navigation_information_content %}
+                                    <div class="footer-column-content">
+                                        <div class="footer-column-content-inner">
+                                            {% block layout_footer_navigation_information_links %}
+												{{ parent() }}
+                                            {% endblock %}
+                                        </div>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    {% endfor %}
+                {% endblock %}
+
+                {% block layout_footer_social_column %}
+					<div class="col-md-12 col-lg-3 footer-column footer-social-column">
+						<div class="footer-column-content">
+							<div class="footer-column-content-inner row justify-content-center justify-content-lg-end">
+								{% block layout_footer_navigation_social_link_facebook %}
+									<div class="col-auto">
+										<a class="footer-social-link"
+											href="{{ 'choju.footer.facebookLink'|trans }}"
+											title="{{ 'choju.footer.facebookTitle'|trans }}"
+										>
+											{% sw_icon 'facebook' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+										</a>
+									</div>
+								{% endblock %}
+
+								{% block layout_footer_navigation_social_link_instagram %}
+									<div class="col-auto">
+										<a class="footer-social-link"
+											href="{{ 'choju.footer.instagramLink'|trans }}"
+											title="{{ 'choju.footer.instagramTitle'|trans }}"
+										>
+											{% sw_icon 'instagram' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+										</a>
+									</div>
+								{% endblock %}
+
+								{% block layout_footer_navigation_social_link_linkedin %}
+									<div class="col-auto">
+										<a class="footer-social-link"
+											href="{{ 'choju.footer.linkedinLink'|trans }}"
+											title="{{ 'choju.footer.linkedinTitle'|trans }}"
+										>
+											{% sw_icon 'linkedin' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+										</a>
+									</div>
+								{% endblock %}
+
+								{% block layout_footer_navigation_social_link_youtube %}
+									<div class="col-auto">
+										<a class="footer-social-link"
+											href="{{ 'choju.footer.youtubeLink'|trans }}"
+											title="{{ 'choju.footer.youtubeTitle'|trans }}"
+										>
+											{% sw_icon 'youtube' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+										</a>
+									</div>
+								{% endblock %}
+							</div>
+						</div>
+					</div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+
+	{# Bottom #}
+	{% block layout_footer_bottom %}
+		<div class="footer-bottom">
+			<div class="footer-bottom-container  container-fluid">
+				<div class="row justify-content-center">
+					<div class="col-auto col-md">
+						{% block layout_footer_copyright %}
+							<div class="footer-copyright">
+								{{ "footer.copyrightInfo"|trans({
+									'%year%': 'now'|date('Y')
+								}) }}
+							</div>
+						{% endblock %}
+					</div>
+
+					{% block layout_footer_service_menu %}
+						{% apply spaceless %}
+							{% for serviceMenuItem in page.header.serviceMenu %}
+								<div class="col-auto">
+									{% block layout_footer_service_menu_link %}
+										<a class="footer-service-menu-link"
+											href="{{ category_url(serviceMenuItem) }}"
+											{% if category_linknewtab(serviceMenuItem) %}target="_blank"{% endif %}
+											title="{{ serviceMenuItem.translated.name }}">
+											{{ serviceMenuItem.translated.name }}
+										</a>
+									{% endblock %}
+								</div>
+							{% endfor %}
+						{% endapply %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+{% endblock %}
