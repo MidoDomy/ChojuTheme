@@ -38,8 +38,14 @@
       "sw-border-color": {
         "value": "#00102D"
       },
+      "sw-font-family-base": {
+        "value": "'Jost', sans-serif"
+      },
       "sw-text-color": {
         "value": "#00102D"
+      },
+      "sw-font-family-headline": {
+        "value": "'Jost', sans-serif"
       },
       "sw-headline-color": {
         "value": "#00102D"

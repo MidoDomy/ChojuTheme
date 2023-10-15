@@ -1,0 +1,98 @@
+{% block layout_navigation_collapse_categories %}
+    {% set navigationMaxDepth = 3 %}
+
+    {% if not level %}
+        {% set level = 0 %}
+    {% endif %}
+
+    {% set activeId = page.header.navigation.active.id %}
+    {% set activePath = page.header.navigation.active.path %}
+
+    <ul class="navigation-collapse-categories-list list-unstyled is-level-{{ level }}{% if level > 0 %} collapse{% endif %}"
+        {% if level > 0 %}id="navigationCollapseCategory{{parentId}}"{% endif %}
+    >
+        {% if level > 0 %}
+            <a class="navigation-collapse-category-link{% if parentId == activeId %} active{% endif %}"
+                title="{{ parentName }}"                        
+                href="{{ parentLink }}"
+                itemprop="url"
+                {% if category_linknewtab(parentCategory) %}
+                    target="_blank"
+                    {% if parentCategory.linkType == "external" %}rel="noopener noreferrer"{% endif %}
+                {% endif %}
+            >
+                <span itemprop="name">
+                    {{ "general.showCategory"|trans({"%category%": parentName})|sw_sanitize }}
+                </span>
+            </a>
+        {% endif %}
+
+        {% for treeItem in navigationTree %}
+            {% set id = treeItem.category.id %}
+            {% set name = treeItem.category.translated.name %}
+            {% set link = category_url(treeItem.category) %}
+            {% set hasChildren = treeItem.children|length > 0 and level < navigationMaxDepth  %}
+
+            {% block layout_navigation_collapse_categories_item %}
+                <li class="navigation-collapse-category-item">
+                    {% block layout_navigation_collapse_categories_item_link %}
+                        {% if treeItem.category.type == 'folder' %}
+                            <button class="navigation-collapse-category-link{% if id == activeId or id in activePath %} active{% endif %}{% if hasChildren %} collapsed{% endif %}"
+                                title="{{ name }}"
+                                {% if hasChildren %}
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#navigationCollapseCategory{{id}}" 
+                                    aria-expanded="false" 
+                                    aria-controls="navigationCollapseCategory{{id}}"
+                                {% endif %}
+                            >
+                                <span itemprop="name">{{ name }}</span>
+                                {% if hasChildren %}
+                                    {% sw_icon 'chevron-down' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                {% endif %}
+                            </button>
+                        {% else %}
+                            <a class="navigation-collapse-category-link{% if id == activeId or id in activePath %} active{% endif %}{% if hasChildren %} collapsed{% endif %}"
+                                title="{{ name }}"
+                                {% if hasChildren %}
+                                    data-bs-toggle="collapse" 
+                                    href="#navigationCollapseCategory{{id}}" 
+                                    role="button" 
+                                    aria-expanded="false" 
+                                    aria-controls="navigationCollapseCategory{{id}}"
+                                {% else %}                               
+                                    href="{{ link }}"
+                                    itemprop="url"
+                                    {% if category_linknewtab(treeItem.category) %}
+                                        target="_blank"
+                                        {% if treeItem.category.linkType == "external" %}rel="noopener noreferrer"{% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            >
+                                <span itemprop="name">{{ name }}</span>
+                                {% if hasChildren %}
+                                    {% sw_icon 'chevron-down' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                {% endif %}
+                            </a>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block layout_navigation_collapse_categories_recoursion %}
+                        {% if hasChildren %}
+                            {% sw_include '@Storefront/storefront/layout/navigation/collapse/categories.html.twig' with {
+                                navigationTree: treeItem.children,
+                                parentId: id,
+                                parentCategory: treeItem.category,
+                                parentName: name,
+                                parentLink: link,
+                                level: level + 1,
+                                page: page
+                            } only %}
+                        {% endif %}
+                    {% endblock %}
+                </li>
+            {% endblock %}
+        {% endfor %}
+    </ul>
+{% endblock %}

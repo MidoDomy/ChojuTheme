@@ -1,0 +1,152 @@
+// Collapse button
+.nav-main-toggle-btn {
+  &:not(.collapsed) {
+    .icon-stack {
+      display: none;
+    }
+
+    .icon-x {
+      display: inline-flex;
+    }
+  }
+
+  .icon-x {
+    display: none;
+    padding: 1.5px;
+  }
+}
+
+// COLLAPSE NAVIGATION
+.navigation-collapse {
+  position: absolute;
+  top: 0;
+  left: -$grid-gutter-width/2;
+  right: -$grid-gutter-width/2;
+  background: $sw-color-brand-primary;
+  color: #fff;
+  z-index: -1;
+}
+
+.navigation-collapse-top-space {
+  padding-top: 100px;
+}
+
+.navigation-collapse-content {
+  padding: 24px 24px 50px;
+}
+
+// Categories
+.navigation-collapse-categories {
+  margin-bottom: 50px;
+}
+
+.navigation-collapse-categories-list {
+  margin: 0;
+
+  &:not(.is-level-0) {
+    padding-left: 10px;
+  }
+}
+
+.navigation-collapse-category-item {
+  padding: 4px 0;
+}
+
+.navigation-collapse-category-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  color: inherit;
+  font-size: $nav-link-font-size;
+  line-height: $nav-link-line-height;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $sw-color-brand-secondary;
+  }
+
+  &:not(.collapsed) {
+    .icon {
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+    color: inherit;
+
+    svg {
+      top: 0;
+    }
+  }
+}
+
+// Service links
+.navigation-collapse-service-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 50px;
+}
+
+.navigation-collapse-service-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0;
+  color: inherit;
+  font-size: $font-size-base-lead;
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    color: inherit;
+
+    svg {
+      top: 0;
+    }
+  }
+}
+
+.navigation-collapse-language {
+  .navigation-collapse-service-link-text {
+    text-transform: uppercase;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+.navigation-collapse-list-radio {
+  display: none;
+}
+
+// Social media
+.navigation-collapse-social-links {
+  --bs-gutter-x: 11px;
+}
+
+.navigation-collapse-social-link {
+  display: block;
+  color: inherit;
+  line-height: 1;
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    color: inherit;
+
+    svg {
+      top: 0;
+    }
+  }
+}

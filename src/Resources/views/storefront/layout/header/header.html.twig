@@ -62,19 +62,17 @@
                 <div class="col-auto d-lg-none">
                     <div class="menu-button">
                         {% block layout_header_navigation_toggle_button %}
-                            <button
-                                class="btn nav-main-toggle-btn header-actions-btn"
-                                type="button"
-                                {# @deprecated tag:v6.6.0 - Registering plugin on selector "data-offcanvas-menu" is deprecated. Use "data-off-canvas-menu" instead #}
-                                {% if feature('v6.6.0.0') %}
-                                    data-off-canvas-menu="true"
-                                {% else %}
-                                    data-offcanvas-menu="true"
-                                {% endif %}
+                            <button class="btn nav-main-toggle-btn header-actions-btn collapsed" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#mainMenuCollapse" 
+                                aria-expanded="false" 
+                                aria-controls="mainMenuCollapse"
                                 aria-label="{{ "general.menuLink"|trans|striptags }}"
                             >
                                 {% block layout_header_navigation_toggle_button_icon %}
                                     {% sw_icon 'stack' %}
+                                    {% sw_icon 'x' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
                                 {% endblock %}
                             </button>
                         {% endblock %}
@@ -83,4 +81,10 @@
             {% endblock %}
         </div>
     </div>
+
+    {% block layout_header_main_navigation_collapse %}
+        <div class="col-12 order-4 d-lg-none">
+            {% sw_include '@Storefront/storefront/layout/navigation/collapse.html.twig' %}
+        </div>   
+    {% endblock %}
 {% endblock %}

@@ -1,9 +1,6 @@
 {
     "choju": {
-        "footer": {
-            "logoTitle": "Logo img",
-            "serviceHotlinePhone": "+49 8531 23-2975",
-            "serviceHotlineMail": "info@choju-health.de",
+        "socialMedia": {
             "facebookLink": "#",
             "facebookTitle": "Facebook",
             "instagramLink": "#",
@@ -12,6 +9,19 @@
             "linkedinTitle": "LinkedIn",
             "youtubeLink": "#",
             "youtubeTitle": "Youtube"
+        },
+        "navigationCollapse": {
+            "service": {
+                "phoneLink": "#",
+                "phoneText": "Kundenservice",
+                "emailLink": "#",
+                "emailText": "Newsletter"
+            }
+        },
+        "footer": {
+            "logoTitle": "Logo img",
+            "serviceHotlinePhone": "+49 8531 23-2975",
+            "serviceHotlineMail": "info@choju-health.de"
         }
     },
     "footer": {

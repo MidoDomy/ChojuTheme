@@ -43,6 +43,7 @@ $border-radius: 0.125rem !default; // 2px
 // Typography
 $font-size-root: 16px !default;
 $font-size-base: 1.125rem !default; // 18px
+$font-size-base-lead: 1rem; // 16px
 $font-size-xs:   $font-size-base * 0.667 !default; // 12px
 $font-size-sm:   $font-size-base * 0.778 !default; // 14px
 $font-size-lg:   $font-size-base * 1.167 !default; // 21px

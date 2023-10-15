@@ -1,0 +1,102 @@
+{% block layout_navigation_collapse %}
+    <div class="collapse navigation-collapse" id="mainMenuCollapse">
+        <div class="navigation-collapse-top-space"></div>
+
+        {# Content #}
+        <div class="navigation-collapse-content">
+            {# Categories #}
+            {% block layout_navigation_collapse_categories %}
+                <div class="navigation-collapse-categories">
+                    {% block layout_navigation_collapse_categories_recoursion %}
+                        {% sw_include '@Storefront/storefront/layout/navigation/collapse/categories.html.twig' with {
+                            navigationTree: page.header.navigation.tree,
+                            page: page
+                        } only %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
+            {# Service links #}
+            {% block layout_navigation_collapse_service_links %}
+                <div class="navigation-collapse-service-links">
+                    {% block layout_navigation_collapse_language %}
+                        {% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+                    {% endblock %}
+
+                    {% block layout_navigation_collapse_phone %}
+                        <a class="navigation-collapse-service-link"
+                            href="{{ 'choju.navigationCollapse.service.phoneLink'|trans }}"
+                            title="{{ 'choju.navigationCollapse.service.phoneText'|trans }}"
+                        >
+                            {% sw_icon 'phone' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                            <span class="navigation-collapse-service-link-text">
+                                {{ 'choju.navigationCollapse.service.phoneText'|trans }}
+                            </span>
+                        </a>
+                    {% endblock %}
+
+                    {% block layout_navigation_collapse_mail %}
+                        <a class="navigation-collapse-service-link"
+                            href="{{ 'choju.navigationCollapse.service.emailLink'|trans }}"
+                            title="{{ 'choju.navigationCollapse.service.emailText'|trans }}"
+                        >
+                            {% sw_icon 'email' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                            <span class="navigation-collapse-service-link-text">
+                                {{ 'choju.navigationCollapse.service.emailText'|trans }}
+                            </span>
+                        </a>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+            
+            {# Social media #}
+            {% block layout_navigation_collapse_social_links %}
+                <div class="navigation-collapse-social-links row justify-content-center">
+                    {% block layout_navigation_collapse_social_link_facebook %}
+                        <div class="col-auto">
+                            <a class="navigation-collapse-social-link"
+                                href="{{ 'choju.socialMedia.facebookLink'|trans }}"
+                                title="{{ 'choju.socialMedia.facebookTitle'|trans }}"
+                            >
+                                {% sw_icon 'facebook' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                            </a>
+                        </div>
+                    {% endblock %}
+
+                    {% block layout_navigation_collapse_social_link_instagram %}
+                        <div class="col-auto">
+                            <a class="navigation-collapse-social-link"
+                                href="{{ 'choju.socialMedia.instagramLink'|trans }}"
+                                title="{{ 'choju.socialMedia.instagramTitle'|trans }}"
+                            >
+                                {% sw_icon 'instagram' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                            </a>
+                        </div>
+                    {% endblock %}
+
+                    {% block layout_navigation_collapse_social_link_linkedin %}
+                        <div class="col-auto">
+                            <a class="navigation-collapse-social-link"
+                                href="{{ 'choju.socialMedia.linkedinLink'|trans }}"
+                                title="{{ 'choju.socialMedia.linkedinTitle'|trans }}"
+                            >
+                                {% sw_icon 'linkedin' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                            </a>
+                        </div>
+                    {% endblock %}
+
+                    {% block layout_navigation_collapse_social_link_youtube %}
+                        <div class="col-auto">
+                            <a class="navigation-collapse-social-link"
+                                href="{{ 'choju.socialMedia.youtubeLink'|trans }}"
+                                title="{{ 'choju.socialMedia.youtubeTitle'|trans }}"
+                            >
+                                {% sw_icon 'youtube' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                            </a>
+                        </div>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    </div> 
+{% endblock %}
