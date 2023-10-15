@@ -1,0 +1,28 @@
+.dropdown-menu {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8px;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    width: 10px;
+    height: 10px;
+    background-color: $dropdown-bg;
+  }
+
+  &.dropdown-menu-end {
+    &::before {
+      left: auto;
+      right: 8px;
+    }
+  }
+
+  .dropend > &{
+    &::before {
+      top: 8px;
+      left: 0;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+}

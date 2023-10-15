@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/flyout.html.twig' %}
+
+{% block layout_navigation_flyout %}
+    {% set category = navigationTree.category %}
+
+    {% block layout_navigation_flyout_content %}
+        <div class="navigation-flyout-content">
+            {% block layout_navigation_flyout_categories_recoursion %}
+                {% sw_include '@Storefront/storefront/layout/navigation/categories.html.twig' with {
+                    navigationTree: navigationTree.children,
+                    page: page
+                } only %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}

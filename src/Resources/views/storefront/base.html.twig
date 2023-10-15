@@ -1,0 +1,18 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_header %}
+    {# Made to make it easier to add styles if you need
+       to add options in the admin for overlay and dark #}
+    {% set isDark = controllerName|lower == 'product' %}
+    {% set isOverlay = controllerName|lower != 'product' %}
+
+    <header class="header-main{% if isDark %} header-dark{% endif %}{% if isOverlay %} position-absolute{% endif %}">
+        {% block base_header_inner %}
+            <div class="container-fluid">
+                {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+            </div>
+        {% endblock %}
+    </header>
+{% endblock %}
+
+{% block base_navigation %}{% endblock %}

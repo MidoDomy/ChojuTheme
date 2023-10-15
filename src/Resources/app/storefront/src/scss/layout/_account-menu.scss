@@ -1,0 +1,10 @@
+.account-aside-item,
+.account-menu-register a {
+  background-color: $dropdown-bg;
+  color: $dropdown-link-color;
+
+  &:hover {
+    background-color: $dropdown-link-hover-bg;
+    color: $dropdown-link-hover-color;
+  }
+}

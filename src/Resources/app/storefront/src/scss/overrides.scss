@@ -38,7 +38,7 @@ $container-padding-x: 5rem !default;
 // Borders
 $border-color: $primary !default;
 
-// $border-radius: 0 !default;
+$border-radius: 0.125rem !default; // 2px
 
 // Typography
 $font-size-root: 16px !default;
@@ -47,7 +47,7 @@ $font-size-xs:   $font-size-base * 0.667 !default; // 12px
 $font-size-sm:   $font-size-base * 0.778 !default; // 14px
 $font-size-lg:   $font-size-base * 1.167 !default; // 21px
 
-$font-weight-light:           300 !default;
+$font-weight-light: 300 !default;
 
 $line-height-base: 1.72 !default; // 31px
 $line-height-sm:   1.64 !default; // 23px
@@ -67,43 +67,64 @@ $headings-font-weight:    bold !default;
 $headings-color: $primary !default;
 
 // Input buttons
-$input-btn-padding-y:         0.594rem !default;
-$input-btn-padding-x:         0.844rem !default;
-$input-btn-line-height:       1.5 !default;
+$input-btn-padding-y:    0.594rem !default;
+$input-btn-padding-x:    0.844rem !default;
+$input-btn-line-height:  1.5 !default;
 
-$input-btn-border-width:      0 !default;
+$input-btn-border-width: 0 !default;
 
 // Buttons
-$btn-padding-y:               $input-btn-padding-y !default;
-$btn-padding-x:               $input-btn-padding-x !default;
-$btn-line-height:             $input-btn-line-height !default;
+$btn-padding-y:        $input-btn-padding-y !default;
+$btn-padding-x:        $input-btn-padding-x !default;
+$btn-line-height:      $input-btn-line-height !default;
 
-$btn-border-width:            $input-btn-border-width !default;
+$btn-border-width:     $input-btn-border-width !default;
 
-$btn-font-weight:             $font-weight-light !default;
+$btn-font-weight:      $font-weight-light !default;
 
-$btn-border-radius:           0.125rem !default;
-$btn-border-radius-sm:        0.125rem !default;
-$btn-border-radius-lg:        0.125rem !default;
+$btn-border-radius:    $border-radius !default;
+$btn-border-radius-sm: $border-radius !default;
+$btn-border-radius-lg: $border-radius !default;
 
 // Forms
 
 // Navs
-$nav-link-padding-y:          0.063rem !default;
-$nav-link-padding-x:          0.375rem !default;
-$nav-link-font-size:          $font-size-base !default;
-$nav-link-font-weight:        normal !default;
-$nav-link-color:              #FFFFFF !default;
-$nav-link-hover-color:        #FFFFFF !default;
+$nav-link-font-size:   $font-size-base !default;
+$nav-link-line-height: 1.5;
+$nav-link-font-weight: normal !default;
+$nav-link-color:       #FFFFFF !default;
+$nav-link-hover-color: #FFFFFF !default;
 
 // Navbar
-$navbar-padding-y:            2rem !default;
-$navbar-padding-x:            1.938rem !default;
+$navbar-padding-y: 2rem !default; // 32px
+$navbar-padding-x: 0 !default;
 
-// $navbar-nav-link-padding-x:   0.375rem !default;
+$navbar-nav-link-padding-x: 0.313rem !default; // 6px
+$navbar-nav-link-padding-y: 0.063rem; // 1px
 
-// dark
-// $navbar-dark-color:                 rgba($white, .55) !default;
-// $navbar-dark-hover-color:           rgba($white, .75) !default;
-// $navbar-dark-active-color:          $white !default;
-// $navbar-dark-disabled-color:        rgba($white, .25) !default;
+$navbar-light-color:          #FFFFFF !default;
+$navbar-light-hover-color:    rgba(#FFFFFF, .8) !default;
+$navbar-light-active-color:   #FFFFFF  !default;
+
+// Navbar dark variant
+$navbar-dark-color:           $primary !default;
+$navbar-dark-hover-color:     rgba($primary, .8) !default;
+$navbar-dark-active-color:    $primary !default;
+$navbar-dark-disabled-color:  rgba($primary, .25) !default;
+
+// Dropdowns
+$dropdown-padding-y:           10px !default;
+$dropdown-font-size:           $font-size-sm !default;
+$dropdown-color:               $primary !default;
+$dropdown-bg:                  $secondary !default;
+$dropdown-border-color:        $secondary !default;
+
+$dropdown-link-color:          $primary !default;
+$dropdown-link-hover-color:    #FFFFFF !default;
+$dropdown-link-hover-bg:       $secondary !default;
+
+$dropdown-link-active-color:   #FFFFFF !default;
+$dropdown-link-active-bg:      $secondary !default;
+
+$dropdown-item-padding-y:      4.5px !default;
+$dropdown-item-padding-x:      12px !default;

@@ -1,0 +1,152 @@
+.header-main {
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $navbar-light-color;
+  z-index: $zindex-sticky;
+
+  // header background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, $sw-color-brand-primary, transparent 100%);
+    opacity: 0.2;
+  }
+
+  &.header-dark {
+    color: $navbar-dark-color;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.header-row {
+  position: relative;
+  padding: $navbar-padding-y $navbar-padding-x;
+
+  @include media-breakpoint-up(lg) {
+    --bs-gutter-x: 24px;
+  }
+}
+
+// Logo
+.header-logo-col {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.header-logo-main {
+  text-align: left;
+}
+
+.header-logo-picture {
+  height: 35px;
+  min-width: auto;
+  margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    height: 22px;
+  }
+}
+
+.header-logo-main-img {
+  display: block;
+  max-height: 100%;
+
+  .header-dark &{
+    filter: invert(1);
+  }
+}
+
+// Search
+.header-search {
+  max-width: 600px;
+  margin: 25px auto 0;
+}
+
+.header-search-col .collapse:not(.show) {
+  display: none;
+}
+
+.header-search-btn {
+  line-height: 1;
+
+  .icon {
+    svg {
+      top: 0;
+    }
+  }
+}
+
+// Actions
+.header-actions-col {
+  &> .row {
+    --bs-gutter-x: 25px;
+
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-x: 13px;
+    }
+  }
+}
+
+.header-actions-btn {
+  padding: 0;
+  color: inherit;
+  line-height: 1;
+  overflow: visible;
+
+  @include media-breakpoint-up(lg) {
+    padding: 6px;
+  }
+
+  &:hover {
+    color: $navbar-light-hover-color;
+
+    .icon {
+      color: inherit;
+    }
+  }
+
+  &:active {
+    color: $navbar-light-active-color;
+  }
+
+  .header-dark &{
+    &:hover {
+      color: $navbar-dark-hover-color;
+    }
+  
+    &:active {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .icon {
+    height: 25px;
+    width: 25px;
+    color: inherit;
+
+    @include media-breakpoint-up(lg) {
+      height: 15px;
+      width: 15px;
+    }
+
+    svg {
+      top: 0;
+    }
+  }
+}
+
+.header-cart .header-cart-badge, 
+.header-wishlist .header-wishlist-badge {
+  top: -7px;
+  right: -9px;
+  display: block;
+  margin: 0;
+}
