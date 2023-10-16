@@ -1,3 +1,48 @@
+// Header main collapse styles
+.header-main {
+  @include media-breakpoint-down(lg) {
+    &.collapse-menu-activated {
+      transition: background-color .1s linear;
+      transition-delay: .35s;
+  
+      .header-logo-main {
+        opacity: 1;
+        transition: opacity .35s ease;
+        transition-delay: .35s;
+      }
+  
+      .header-actions-btn {
+        transition: color .35s ease;
+        transition-delay: .35s;
+      }
+    }
+
+    &.collapse-menu-open {
+      background-color: $sw-color-brand-primary;
+      color: $navbar-light-color;
+      transition: none;
+      transition-delay: 0s;
+
+      .header-logo-main {
+        opacity: 0;
+        transition-delay: 0s;
+      }
+
+      .header-actions-btn {
+        transition-delay: 0s;
+
+        &:hover {
+          color: $navbar-light-hover-color;
+        }
+
+        &:active {
+          color: $navbar-light-active-color;
+        }
+      }
+    }
+  }
+}
+
 // Collapse button
 .nav-main-toggle-btn {
   &:not(.collapsed) {
@@ -19,16 +64,12 @@
 // COLLAPSE NAVIGATION
 .navigation-collapse {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: -$grid-gutter-width/2;
   right: -$grid-gutter-width/2;
   background: $sw-color-brand-primary;
   color: #fff;
   z-index: -1;
-}
-
-.navigation-collapse-top-space {
-  padding-top: 100px;
 }
 
 .navigation-collapse-content {
