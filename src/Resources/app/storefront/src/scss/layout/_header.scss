@@ -31,7 +31,7 @@
   padding: $navbar-padding-y $navbar-padding-x;
 
   @include media-breakpoint-up(lg) {
-    --bs-gutter-x: 24px;
+    --bs-gutter-x: #{$spacer*1.5};
   }
 }
 
@@ -46,12 +46,12 @@
 }
 
 .header-logo-picture {
-  height: 35px;
+  height: 2.188rem;
   min-width: auto;
   margin: 0;
 
   @include media-breakpoint-up(lg) {
-    height: 22px;
+    height: 1.375rem;
   }
 }
 
@@ -66,8 +66,8 @@
 
 // Search
 .header-search {
-  max-width: 600px;
-  margin: 25px auto 0;
+  max-width: 37.5rem;
+  margin: $spacer*1.563 auto 0;
 }
 
 .header-search-col .collapse:not(.show) {
@@ -87,10 +87,10 @@
 // Actions
 .header-actions-col {
   &> .row {
-    --bs-gutter-x: 25px;
+    --bs-gutter-x: #{$spacer*1.563};
 
     @include media-breakpoint-up(lg) {
-      --bs-gutter-x: 13px;
+      --bs-gutter-x: #{$spacer*0.813};
     }
   }
 }
@@ -102,7 +102,7 @@
   overflow: visible;
 
   @include media-breakpoint-up(lg) {
-    padding: 6px;
+    padding: $spacer*0.375;
   }
 
   &:hover {
@@ -128,13 +128,13 @@
   }
 
   .icon {
-    height: 25px;
-    width: 25px;
+    height: 1.563rem;
+    width: 1.563rem;
     color: inherit;
 
     @include media-breakpoint-up(lg) {
-      height: 15px;
-      width: 15px;
+      height: 0.938rem;
+      width: 0.938rem;
     }
 
     svg {
@@ -145,8 +145,8 @@
 
 .header-cart .header-cart-badge, 
 .header-wishlist .header-wishlist-badge {
-  top: -7px;
-  right: -9px;
+  top: -$spacer*0.438;
+  right: -$spacer*0.563;
   display: block;
   margin: 0;
 }

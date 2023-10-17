@@ -1,7 +1,7 @@
 .main-navigation-menu {
   font-size: $nav-link-font-size;
   line-height: $nav-link-line-height;
-  gap: 10px;
+  gap: $spacer*0.625;
 }
 
 .main-navigation-item {
@@ -17,7 +17,7 @@
 .main-navigation-link {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: $spacer*0.375;
   padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
   border-radius: $border-radius;
   color: $navbar-light-color;
@@ -46,8 +46,8 @@
   }
 
   .icon {
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     color: inherit;
     transform-origin: center;
 

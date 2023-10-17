@@ -57,7 +57,7 @@
 
   .icon-x {
     display: none;
-    padding: 1.5px;
+    padding: $spacer*0.094;
   }
 }
 
@@ -68,36 +68,36 @@
   left: -$grid-gutter-width/2;
   right: -$grid-gutter-width/2;
   background: $sw-color-brand-primary;
-  color: #fff;
+  color: $text-light-color;
   z-index: -1;
 }
 
 .navigation-collapse-content {
-  padding: 24px 24px 50px;
+  padding: $spacer*1.5 $spacer*1.5 $spacer*3.125;
 }
 
 // Categories
 .navigation-collapse-categories {
-  margin-bottom: 50px;
+  margin-bottom: $spacer*3.125;
 }
 
 .navigation-collapse-categories-list {
   margin: 0;
 
   &:not(.is-level-0) {
-    padding-left: 10px;
+    padding-left: $spacer*0.625;
   }
 }
 
 .navigation-collapse-category-item {
-  padding: 4px 0;
+  padding: $spacer*0.25 0;
 }
 
 .navigation-collapse-category-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 0;
+  gap: $spacer*0.375;
+  padding: $spacer*0.25 0;
   color: inherit;
   font-size: $nav-link-font-size;
   line-height: $nav-link-line-height;
@@ -119,8 +119,8 @@
   }
 
   .icon {
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     color: inherit;
 
     svg {
@@ -134,21 +134,21 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 50px;
+  gap: $spacer*0.5;
+  margin-bottom: $spacer*3.125;
 }
 
 .navigation-collapse-service-link {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: $spacer*0.813;
   padding: 0;
   color: inherit;
   font-size: $font-size-base-lead;
 
   .icon {
-    width: 18px;
-    height: 18px;
+    width: 1.125rem;
+    height: 1.125rem;
     color: inherit;
 
     svg {
@@ -173,7 +173,7 @@
 
 // Social media
 .navigation-collapse-social-links {
-  --bs-gutter-x: 11px;
+  --bs-gutter-x: #{$spacer*0.688};
 }
 
 .navigation-collapse-social-link {
@@ -182,8 +182,8 @@
   line-height: 1;
 
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     color: inherit;
 
     svg {

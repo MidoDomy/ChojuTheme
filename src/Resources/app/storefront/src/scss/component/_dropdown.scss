@@ -3,24 +3,24 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 8px;
+    left: $spacer*0.5;
     transform: translateY(-50%) rotate(45deg);
     transform-origin: center;
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     background-color: $dropdown-bg;
   }
 
   &.dropdown-menu-end {
     &::before {
       left: auto;
-      right: 8px;
+      right: $spacer*0.5;
     }
   }
 
   .dropend > &{
     &::before {
-      top: 8px;
+      top: $spacer*0.5;
       left: 0;
       transform: translateX(-50%) rotate(45deg);
     }

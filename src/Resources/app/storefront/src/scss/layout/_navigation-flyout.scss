@@ -3,7 +3,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  padding: 10px 0 0;
+  padding: $spacer*0.625 0 0;
 }
 
 .navigation-flyout-categories-container:not(.is-level-0) {
@@ -11,7 +11,7 @@
   top: 0;
   left: 100%;
   min-height: 100%;
-  padding-left: 10px;
+  padding-left: $spacer*0.625;
 
   .navigation-flyout-categories {
     left: 100%;
@@ -44,7 +44,7 @@
   .dropdown-item {
     display: flex;
     justify-content: space-between;
-    gap: 6px;
+    gap: $spacer*0.375;
     color: inherit;
 
     &.active {
@@ -55,8 +55,8 @@
   .icon {
     transform: rotate(-90deg);
     transform-origin: center;
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     color: inherit;
   }
 }

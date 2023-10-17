@@ -1,14 +1,14 @@
 .product-box {
   .card-body {
-    --bs-card-spacer-y: 25px;
-    --bs-card-spacer-x: 30px;
-    padding-top: 8px;
+    --bs-card-spacer-y: #{$spacer*1.563};
+    --bs-card-spacer-x: #{$spacer*1.875};
+    padding-top: $spacer*0.5;
   }
 }
 
 .product-image-wrapper {
-  height: 271px;
-  margin-bottom: 12px;
+  height: 16.938rem;
+  margin-bottom: $spacer*0.75;
 }
 
 .product-image {
@@ -18,19 +18,19 @@
 }
 
 .product-name {
-  height: 74px;
+  height: 4.625rem;
   font-size: $font-size-xl;
   line-height: $line-height-xl;
 
   @include media-breakpoint-up(lg) {
-    height: 77px;
+    height: 4.813rem;
     font-size: $h3-font-size;
   }
 }
 
 .product-description {
   height: auto;
-  margin: 0 0 18px;
+  margin: 0 0 $spacer*1.125;
   font-size: $font-size-base;
   line-height: $line-height-base;
 
@@ -41,7 +41,7 @@
 }
 
 .product-price-info {
-  margin: 0 0 8px;
+  margin: 0 0 $spacer*0.5;
 }
 
 .product-price-wrapper {
@@ -58,13 +58,18 @@
   margin: 0;
   font-size: $font-size-base-lead;
 
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
   .btn-link {
     padding: 0;
     font-size: inherit;
 
     .icon {
-      width: 10px;
-      height: 10px;
+      width: 0.625rem;
+      height: 0.625rem;
       color: inherit;
 
       svg {
