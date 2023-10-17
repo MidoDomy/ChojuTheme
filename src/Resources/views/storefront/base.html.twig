@@ -16,3 +16,29 @@
 {% endblock %}
 
 {% block base_navigation %}{% endblock %}
+
+{% block base_offcanvas_navigation %}
+    {# Removed offcanvas navigation - dropdown implemented in header #}
+
+    {# Category teaser #}
+    {% set categoryMedia = page.header.navigation.active.media %}
+    {% set categoryContent = page.header.navigation.active.translated.description %}
+    {% set isFullScreen = page.header.navigation.active.translated.customFields.fullScreen %}
+
+    {% set attributes = {
+        'class': 'category-teaser-image',
+        'alt': 'Category teaser image'
+    } %}
+
+    <div class="category-teaser{% if isFullScreen %} is-full{% endif %}">
+        {% sw_thumbnails 'category-teaser-image' with {
+            media: categoryMedia 
+        } %}
+
+        <div class="category-teaser-content">
+            <div class="container-fluid">
+                {{ categoryContent|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

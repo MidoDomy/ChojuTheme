@@ -1,0 +1,6 @@
+.btn-primary {
+  &:hover {
+    --bs-btn-hover-bg: #{$sw-color-brand-secondary};
+    --bs-btn-hover-border-color: #{$sw-color-brand-secondary};
+  }
+}

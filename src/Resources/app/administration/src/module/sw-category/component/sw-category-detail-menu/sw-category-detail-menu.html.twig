@@ -1,0 +1,10 @@
+{% block sw_category_detail_information_visible %}
+    {% parent %}
+
+    <sw-switch-field
+        v-model="category.customFields.fullScreen"
+        borderd
+        :disabled="!acl.can('category.editor')"
+        :label="$tc('sw-category.fullScreen.label')"
+    />
+{% endblock %}
