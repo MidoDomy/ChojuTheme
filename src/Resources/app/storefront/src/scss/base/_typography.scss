@@ -1,11 +1,23 @@
 h1, .h1 {
   line-height: $h1-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: 30px;
+  }
 }
 
 h2, .h2 {
   line-height: $h2-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: 30px;
+  }
 }
 
 h3, .h3 {
   line-height: $h3-line-height;
+
+  @include media-breakpoint-down(md) {
+    font-size: 26px;
+  }
 }
