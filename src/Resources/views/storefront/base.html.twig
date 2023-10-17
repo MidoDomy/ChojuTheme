@@ -30,11 +30,10 @@
     } %}
 
     {% if categoryMedia %}
-        <div class="category-teaser{% if isFullScreen %} is-full{% endif %}">
-            {% sw_thumbnails 'category-teaser-image' with {
-                media: categoryMedia 
-            } %}
-
+        <div class="category-teaser{% if isFullScreen %} is-full{% endif %}" 
+            style="background-image: url('{{categoryMedia.url}}')"
+            data-parallax="true"
+        >
             <div class="category-teaser-content">
                 <div class="container-fluid">
                     {{ categoryContent|raw }}
