@@ -1,0 +1,15 @@
+.cms-element-product-listing {
+  .cms-listing-row {
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-x: 16px;
+      margin-right: calc(-0.5 * var(--bs-gutter-x));
+      margin-left: calc(-0.5 * var(--bs-gutter-x));
+    }
+  }
+
+  .cms-listing-col {
+    margin-bottom: 50px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+}

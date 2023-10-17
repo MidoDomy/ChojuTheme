@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
+
+{% block component_product_box_action_detail %}
+    <div>
+        <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+            class="btn btn-link"
+            title="{{ "listing.boxProductDetails"|trans|striptags }}"
+        >
+            {{ "listing.boxProductDetails"|trans|sw_sanitize }}
+            {% sw_icon 'chevron-right' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+        </a>
+    </div>
+{% endblock %}

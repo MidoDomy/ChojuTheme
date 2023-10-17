@@ -44,15 +44,17 @@ $border-radius: 0.125rem !default; // 2px
 $font-size-root: 16px !default;
 $font-size-base: 1.125rem !default; // 18px
 $font-size-base-lead: 1rem; // 16px
-$font-size-xs:   $font-size-base * 0.667 !default; // 12px
+$font-size-xs:   $font-size-base * 0.667; // 12px
 $font-size-sm:   $font-size-base * 0.778 !default; // 14px
 $font-size-lg:   $font-size-base * 1.167 !default; // 21px
+$font-size-xl:   $font-size-base * 1.667; // 30px
 
 $font-weight-light: 300 !default;
 
 $line-height-base: 1.72 !default; // 31px
 $line-height-sm:   1.64 !default; // 23px
 $line-height-lg:   1.48 !default; // 31px
+$line-height-xl:   1.24; // 20px
 
 $h1-font-size: $font-size-base * 2.833 !default; // 51px
 $h2-font-size: $font-size-base * 2.278 !default; // 41px
