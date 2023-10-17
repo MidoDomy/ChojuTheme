@@ -3,10 +3,9 @@
 {% block base_header %}
     {# Made to make it easier to add styles if you need
        to add options in the admin for overlay and dark #}
-    {% set isDark = controllerName|lower == 'product' %}
-    {% set isOverlay = controllerName|lower != 'product' %}
+    {% set hasCategoryMedia = page.header.navigation.active.media %}
 
-    <header class="header-main{% if isDark %} header-dark{% endif %}{% if isOverlay %} position-absolute{% endif %}">
+    <header class="header-main{% if not(hasCategoryMedia) %} header-dark{% endif %}{% if hasCategoryMedia %} position-absolute{% endif %}">
         {% block base_header_inner %}
             <div class="container-fluid">
                 {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
@@ -30,15 +29,17 @@
         'alt': 'Category teaser image'
     } %}
 
-    <div class="category-teaser{% if isFullScreen %} is-full{% endif %}">
-        {% sw_thumbnails 'category-teaser-image' with {
-            media: categoryMedia 
-        } %}
+    {% if categoryMedia %}
+        <div class="category-teaser{% if isFullScreen %} is-full{% endif %}">
+            {% sw_thumbnails 'category-teaser-image' with {
+                media: categoryMedia 
+            } %}
 
-        <div class="category-teaser-content">
-            <div class="container-fluid">
-                {{ categoryContent|raw }}
+            <div class="category-teaser-content">
+                <div class="container-fluid">
+                    {{ categoryContent|raw }}
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}
