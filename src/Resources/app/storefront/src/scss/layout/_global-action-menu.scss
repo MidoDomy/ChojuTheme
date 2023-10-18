@@ -1,0 +1,24 @@
+.global-action-menu {
+  position: fixed;
+  right: $spacer*1.25;
+  bottom: $spacer;
+  z-index: $zindex-fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.global-action-btn {
+  --bs-btn-padding-x: #{$spacer*0.563};
+  --bs-btn-padding-y: #{$spacer*0.469};
+  line-height: 1;
+
+  .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+
+    svg {
+      top: $spacer*0.063;
+    }
+  }
+}

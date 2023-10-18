@@ -1,0 +1,23 @@
+{% block custom_category_teaser %}
+    {% set categoryMedia = category.media %}
+    {% set categoryContent = category.translated.description %}
+    {% set isFullScreen = category.translated.customFields.fullScreen %}
+
+    {% set attributes = {
+        'class': 'category-teaser-image',
+        'alt': 'Category teaser image'
+    } %}
+
+    {% if categoryMedia %}
+        <div class="category-teaser{% if isFullScreen %} is-full{% endif %}" 
+            style="background-image: url('{{ categoryMedia.url }}')"
+            data-parallax="true"
+        >
+            <div class="category-teaser-content">
+                <div class="container-fluid">
+                    {{ categoryContent|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

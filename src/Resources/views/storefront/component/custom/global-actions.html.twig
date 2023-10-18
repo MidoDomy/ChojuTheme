@@ -1,0 +1,33 @@
+{% block custom_global_actions %}
+	<div class="global-action-menu">
+		<a class="btn btn-primary global-action-btn"
+			href="{{ "choju.globalActions.phoneLink"|trans|sw_sanitize }}"
+		>
+			{% sw_icon 'phone' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+		</a>
+
+		<a class="btn btn-primary global-action-btn"
+			href="{{ "choju.globalActions.emailLink"|trans|sw_sanitize }}"
+		>
+			{% sw_icon 'email' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+		</a>
+
+		<a class="btn btn-primary global-action-btn"
+			href="{{ "choju.globalActions.globeLink"|trans|sw_sanitize }}"
+		>
+			{% sw_icon 'globe' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+		</a>
+
+		<a class="btn btn-primary global-action-btn"
+			href="{{ "choju.globalActions.wirelessLink"|trans|sw_sanitize }}"
+		>
+			{% sw_icon 'wireless' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+		</a>
+
+		<a class="btn btn-primary global-action-btn"
+			href="{{ "choju.globalActions.plusLink"|trans|sw_sanitize }}"
+		>
+			{% sw_icon 'plus' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+		</a>
+	</div>
+{% endblock %}

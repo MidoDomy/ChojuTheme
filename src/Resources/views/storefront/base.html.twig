@@ -20,25 +20,10 @@
     {# Removed offcanvas navigation - dropdown implemented in header #}
 
     {# Category teaser #}
-    {% set categoryMedia = page.header.navigation.active.media %}
-    {% set categoryContent = page.header.navigation.active.translated.description %}
-    {% set isFullScreen = page.header.navigation.active.translated.customFields.fullScreen %}
-
-    {% set attributes = {
-        'class': 'category-teaser-image',
-        'alt': 'Category teaser image'
+    {% sw_include '@Storefront/storefront/component/custom/category-teaser.html.twig' with {
+        category: page.header.navigation.active
     } %}
 
-    {% if categoryMedia %}
-        <div class="category-teaser{% if isFullScreen %} is-full{% endif %}" 
-            style="background-image: url('{{categoryMedia.url}}')"
-            data-parallax="true"
-        >
-            <div class="category-teaser-content">
-                <div class="container-fluid">
-                    {{ categoryContent|raw }}
-                </div>
-            </div>
-        </div>
-    {% endif %}
+    {# Fixed global action buttons #}
+    {% sw_include '@Storefront/storefront/component/custom/global-actions.html.twig' %}
 {% endblock %}
