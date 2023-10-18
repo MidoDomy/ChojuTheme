@@ -4,8 +4,9 @@
   align-items: flex-end;
   height: 28.125rem;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: cover;    
+  background-position-x: center;
+  background-position-y: 0px;
 
   &.is-full {
     height: 100vh;
