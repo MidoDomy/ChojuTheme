@@ -1,0 +1,117 @@
+.product-slider {
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-areas: 
+        "text main" 
+        "navigation main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 20.625rem 1fr;
+    column-gap: $spacer*1.5;
+  }
+
+  &.has-nav {
+    padding: 0;
+  }
+
+  .tns-outer {
+    overflow: hidden;
+    
+    @include media-breakpoint-up(lg) {
+      grid-area: main;
+    }
+  }
+
+  .tns-ovh {
+    @include media-breakpoint-up(lg) {
+      padding-left: 0.063rem;
+    }
+  }
+
+  .base-slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $spacer*0.813;
+
+    @include media-breakpoint-up(lg) {
+      gap: $spacer*0.625;
+      padding: 0;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      flex: 1;
+      margin-right: $spacer*0.875;
+      border-top: $border-width $border-style $sw-color-brand-primary;
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  .base-slider-controls-prev, 
+  .base-slider-controls-next {
+    position: static;
+    height: auto;
+    width: auto;
+    transform: none;
+    line-height: 1;
+    opacity: 1;
+
+    .icon {
+      width: 1rem;
+      height: 1rem;
+      color: inherit;
+
+      svg {
+        top: $spacer*0.063;
+      }
+    }
+  }
+}
+
+.product-slider-controls-container {
+  @include media-breakpoint-up(lg) {
+    grid-area: navigation;
+  }
+}
+
+.cms-element-product-slider-content {
+  margin-bottom: $spacer*3.125;
+
+  @include media-breakpoint-up(lg) {
+    grid-area: text;
+    padding-top: $spacer*1.25;
+  }
+
+  .cms-element-title {
+    margin-bottom: $spacer*1.25;
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $h2-font-size;
+      line-height: $h2-line-height;
+    }
+  }
+
+  .cms-element-text {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+    }
+
+    p {
+      margin-bottom: $spacer*1.25;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: $spacer*2.5;
+      }
+    }
+  }
+}

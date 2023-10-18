@@ -1,0 +1,75 @@
+{% block sw_cms_element_product_slider_title %}
+    {# Text content #}
+    <div class="sw-cms-el-product-slider__text-content">
+        {% parent %}
+    
+        <div
+            v-if="element.config.content.value"
+            class="sw-cms-el-product-slider__text"
+            v-html="element.config.content.value"
+        ></div>
+    </div>
+{% endblock %}
+
+{% block sw_cms_element_product_slider_content %}
+    {# Navigation #}
+    <div class="sw-cms-el-product-slider__navigation-container">
+        {% block sw_cms_element_product_slider_arrow_left %}
+            <div
+                v-if="hasNavigation"
+                class="sw-cms-el-product-slider__navigation"
+            >
+                <sw-icon
+                    class="sw-cms-el-product-slider__navigation-button"
+                    name="regular-chevron-left"
+                    size="16"
+                />
+            </div>
+        {% endblock %}
+
+        {% block sw_cms_element_product_slider_arrow_right %}
+            <div
+                v-if="hasNavigation"
+                class="sw-cms-el-product-slider__navigation"
+            >
+                <sw-icon
+                    class="sw-cms-el-product-slider__navigation-button"
+                    name="regular-chevron-right"
+                    size="16"
+                />
+            </div>
+        {% endblock %}
+    </div>
+
+    <div class="sw-cms-el-product-slider__content">
+        {# Product boxes #}
+        {% block sw_cms_element_product_slider_product_holder %}
+            <div
+                ref="productHolder"
+                class="sw-cms-el-product-slider__product-holder"
+                :style="sliderBoxMinWidth"
+            >
+                <template v-if="!element.data || !element.data.products">
+                    {% block sw_cms_element_product_slider_demo_data %}
+                        <sw-cms-el-product-box
+                            v-for="index in sliderBoxLimit"
+                            :key="index"
+                            :element="demoProductElement"
+                        />
+                    {% endblock %}
+                </template>
+
+                <template v-else>
+                    {% block sw_cms_element_product_slider_products %}
+                        <sw-cms-el-product-box
+                            v-for="(product, index) in element.data.products"
+                            v-if="index < sliderBoxLimit"
+                            :key="product.id"
+                            :element="getProductEl(product)"
+                        />
+                    {% endblock %}
+                </template>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

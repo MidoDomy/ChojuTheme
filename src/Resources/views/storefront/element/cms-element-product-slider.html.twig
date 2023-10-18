@@ -1,0 +1,50 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-product-slider.html.twig' %}
+
+{% block element_product_slider_title %}
+    <div class="cms-element-product-slider-content">
+        {% if sliderConfig.title.value %}
+            <div class="cms-element-title">
+                {{ sliderConfig.title.value }}
+            </div>
+        {% endif %}
+
+        {% if sliderConfig.content.value %}
+            <div class="cms-element-text">
+                {{ sliderConfig.content.value|raw }}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block element_product_slider_alignment %}
+    {% if config.verticalAlign.value %}
+        <div class="cms-element-alignment{% if sliderConfig.verticalAlign.value == "center" %} align-self-center{% elseif sliderConfig.verticalAlign.value == "flex-end" %} align-self-end{% else %} align-self-start{% endif %}">
+    {% endif %}
+
+    {% set productSliderOptions = {
+        productboxMinWidth: sliderConfig.elMinWidth.value ? sliderConfig.elMinWidth.value : '',
+        slider: {
+            gutter: 16,
+            autoplayButtonOutput: false,
+            nav: false,
+            mouseDrag: sliderConfig.navigation.value ? false : true,
+            controls: sliderConfig.navigation.value ? true : false,
+            autoplay: sliderConfig.rotate.value ? true : false
+        }
+    } %}
+
+    {% block element_product_slider_slider %}
+        {{ parent() }}
+    {% endblock %}
+    {% if config.verticalAlign.value %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block element_product_slider_controls_items_prev_icon %}
+    {% sw_icon 'arrow-left' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+{% endblock %}
+
+{% block element_product_slider_controls_items_next_icon %}
+    {% sw_icon 'arrow-right' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+{% endblock %}

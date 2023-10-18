@@ -3,5 +3,16 @@
         "fullScreen": {
             "label": "Is full screen"
         }
+    },
+    "sw-cms": {
+        "elements": {
+            "productSlider": {
+                "config": {
+                    "label": {
+                        "content": "Content"
+                    }
+                }
+            }
+        }
     }
 }

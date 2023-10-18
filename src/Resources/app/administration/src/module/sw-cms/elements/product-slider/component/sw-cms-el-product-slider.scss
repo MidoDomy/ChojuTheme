@@ -1,0 +1,98 @@
+@import "~scss/variables";
+
+// Double class so it can override shopware classes
+.sw-cms-el-product-slider.sw-cms-el-product-slider {
+    display: grid;
+    gap: 0 14px;
+    grid-template-areas: 
+        "text main" 
+        "navigation main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 330px 1fr;
+
+    // responsive styles inside mobile class
+    .is--mobile &{
+        grid-template-areas: 
+            "text"
+            "main" 
+            "navigation";
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+
+        .sw-cms-el-product-slider__title {
+            font-size: 30px;
+        }
+
+        .sw-cms-el-product-slider__text {
+            font-size: 18px;
+        }
+
+        .sw-cms-el-product-slider__navigation-container {
+            justify-content: space-between;
+            margin-top: 13px;
+        }
+    }
+
+    &.has--navigation {
+        .sw-cms-el-product-slider__title {
+            margin: 0 0 20px;
+        }
+
+
+        .sw-cms-el-product-slider__content {
+            display: block;
+        }
+    }
+
+    .sw-cms-el-product-slider__text-content {
+        grid-area: text;
+    }
+
+    .sw-cms-el-product-slider__title {
+        font-weight: $font-weight-semi-bold;
+        font-size: 41px;
+        line-height: 47px;
+    }
+
+    .sw-cms-el-product-slider__text {
+        font-size: 14px;
+    }
+
+    .sw-cms-el-product-slider__navigation-container {
+        grid-area: navigation;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .sw-cms-el-product-slider__content {
+        grid-area: main;
+    }
+
+    .sw-cms-el-product-slider__text {
+        margin-bottom: 50px;
+    
+        p {
+            margin-bottom: 20px;
+            font-size: $font-size-xs;
+            line-height: $line-height-md;
+        }
+    
+        .btn {
+            background: $color-shopware-brand-500;
+            color: $color-white;
+            display: inline-block;
+            border-radius: $border-radius-default;
+            padding: 2px 24px;
+            font-size: $font-size-xs;
+            outline: none;
+            font-weight: $font-weight-semi-bold;
+            vertical-align: middle;
+            text-decoration: none;
+            user-select: none;
+            margin: 0;
+            position: relative;
+            line-height: 36px;
+            border: 0 none;
+        }
+    }
+}
