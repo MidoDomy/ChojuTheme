@@ -1,0 +1,68 @@
+{% block sw_cms_section_config_background_image_position_field %}
+  <sw-select-field
+    {% if VUE3 %}
+    v-model:value="section.backgroundMediaMode"
+    {% else %}
+    v-model="section.backgroundMediaMode"
+    {% endif %}
+    :label="$tc('sw-cms.detail.label.backgroundMediaMode')"
+    :disabled="!section.backgroundMediaId"
+  >
+    <option value="auto">
+        {{ $tc('sw-cms.detail.label.backgroundMediaModeAuto') }}
+    </option>
+    <option value="contain">
+        {{ $tc('sw-cms.detail.label.backgroundMediaModeContain') }}
+    </option>
+    <option value="cover">
+        {{ $tc('sw-cms.detail.label.backgroundMediaModeCover') }}
+    </option>
+    <option value="custom">
+        {{ $tc('sw-cms.detail.label.backgroundMediaModeCustom') }}
+    </option>
+  </sw-select-field>
+  
+  <sw-text-field
+    v-if="section.backgroundMediaMode == 'custom'"
+    {% if VUE3 %}
+    v-model:value="section.customFields.backgroundSize"
+    {% else %}
+    v-model="section.customFields.backgroundSize"
+    {% endif %}
+    :label="$tc('sw-cms.detail.label.backgroundSizeField')"
+    :disabled="!section.backgroundMediaId || section.backgroundMediaMode != 'custom'"
+  />
+  
+  <sw-text-field
+    {% if VUE3 %}
+    v-model:value="section.customFields.backgroundPosition"
+    {% else %}
+    v-model="section.customFields.backgroundPosition"
+    {% endif %}
+    :label="$tc('sw-cms.detail.label.backgroundPositionField')"
+    :disabled="!section.backgroundMediaId"
+  />
+
+  <sw-select-field
+    {% if VUE3 %}
+    v-model:value="section.customFields.backgroundRepeat"
+    {% else %}
+    v-model="section.customFields.backgroundRepeat"
+    {% endif %}
+    :label="$tc('sw-cms.detail.label.backgroundRepeatField')"
+    :disabled="!section.backgroundMediaId"
+  >
+    <option value="no-repeat">
+        {{ $tc('sw-cms.detail.label.backgroundRepeatNoRepeat') }}
+    </option>
+    <option value="repeat">
+        {{ $tc('sw-cms.detail.label.backgroundRepeatRepeat') }}
+    </option>
+    <option value="repeat-x">
+        {{ $tc('sw-cms.detail.label.backgroundRepeatRepeatX') }}
+    </option>
+    <option value="repeat-y">
+        {{ $tc('sw-cms.detail.label.backgroundRepeatRepeatY') }}
+    </option>
+  </sw-select-field>
+{% endblock %}

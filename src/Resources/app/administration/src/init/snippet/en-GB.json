@@ -5,6 +5,18 @@
         }
     },
     "sw-cms": {
+        "detail": {
+            "label": {
+                "backgroundMediaModeCustom": "Custom",
+                "backgroundSizeField": "Background size",
+                "backgroundPositionField": "Background position",
+                "backgroundRepeatField": "Background repeat",
+                "backgroundRepeatNoRepeat": "No repeat",
+                "backgroundRepeatRepeat": "Repeat",
+                "backgroundRepeatRepeatX": "Repeat X",
+                "backgroundRepeatRepeatY": "Repeat Y" 
+            }
+        },
         "elements": {
             "productSlider": {
                 "config": {
