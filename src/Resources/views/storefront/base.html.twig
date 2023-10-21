@@ -1,11 +1,22 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block base_header %}
-    {# Made to make it easier to add styles if you need
-       to add options in the admin for overlay and dark #}
-    {% set hasCategoryMedia = page.header.navigation.active.media %}
+    {# Check if category has teaser image - start #}
+        {% set isHomepage = true %}
+        {% for navItem in page.header.navigation.tree %}
+            {% if page.header.navigation.active.id == navItem.id %}
+                {% set isHomepage = false %}
+            {% endif %}
+        {% endfor %}
 
-    <header class="header-main{% if not(hasCategoryMedia) %} header-dark{% endif %}{% if hasCategoryMedia %} position-absolute{% endif %}">
+        {% set hasTeaser = page.header.navigation.active.media ? true : false %}
+
+        {% if isHomepage and not(controllerAction|lower == 'home') %}
+            {% set hasTeaser = false %}
+        {% endif %}
+    {# Check if category has teaser image - end #}
+
+    <header class="header-main{% if not(hasTeaser) %} header-dark{% endif %}{% if hasTeaser %} position-absolute{% endif %}">
         {% block base_header_inner %}
             <div class="container-fluid">
                 {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
@@ -20,9 +31,26 @@
     {# Removed offcanvas navigation - dropdown implemented in header #}
 
     {# Category teaser #}
-    {% sw_include '@Storefront/storefront/component/custom/category-teaser.html.twig' with {
-        category: page.header.navigation.active
-    } %}
+    {# Check if category has teaser image - start #}
+        {% set isHomepage = true %}
+        {% for navItem in page.header.navigation.tree %}
+            {% if page.header.navigation.active.id == navItem.id %}
+                {% set isHomepage = false %}
+            {% endif %}
+        {% endfor %}
+
+        {% set hasTeaser = page.header.navigation.active.media ? true : false %}
+
+        {% if isHomepage and not(controllerAction|lower == 'home') %}
+            {% set hasTeaser = false %}
+        {% endif %}
+    {# Check if it has teaser image - end #}
+    
+    {% if hasTeaser %}
+        {% sw_include '@Storefront/storefront/component/custom/category-teaser.html.twig' with {
+            category: page.header.navigation.active
+        } %}
+    {% endif %}
 
     {# Fixed global action buttons #}
     {% sw_include '@Storefront/storefront/component/custom/global-actions.html.twig' %}
