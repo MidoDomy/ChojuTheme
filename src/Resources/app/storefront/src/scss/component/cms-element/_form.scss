@@ -1,0 +1,49 @@
+.cms-element-form {
+  .card-title {
+    margin-bottom: $spacer*1.313;
+    padding: 0;
+    border: 0;
+    font-weight: $font-weight-bold;
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    text-align: center;
+
+    @include media-breakpoint-down(md) {
+      font-size: $font-size-form-mobile;
+      line-height: $line-height-form-mobile;
+    }
+  }
+  
+  .card-text {
+    max-width: 50rem;
+    margin: 0 auto $spacer*1.5;
+    text-align: center;
+  }
+
+  .form-content {
+    max-width: 46.25rem;
+    margin: 0 auto;
+  }
+
+  .form-fields-row {
+    --bs-gutter-x: #{$spacer*0.25};
+    --bs-gutter-y: #{$spacer*0.563};
+    margin-bottom: $spacer*0.625;
+
+    @include media-breakpoint-up(md) {
+      --bs-gutter-x: #{$spacer*0.938};
+      --bs-gutter-y: #{$spacer*0.938};
+      margin-bottom: $spacer*1.25;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }  
+
+  .btn {
+    @include media-breakpoint-down(md) {
+      margin-top: $spacer*0.625;
+    }
+  }
+}

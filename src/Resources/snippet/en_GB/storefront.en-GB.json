@@ -31,6 +31,9 @@
             "plusLink": "#"
         }
     },
+    "general": {
+        "privacyNoticeText": "Ich bin mit den <a data-ajax-modal=\"true\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"AGBs\">AGBs</a> und <a data-ajax-modal=\"true\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzerklärungen einverstanden\">Datenschutzerklärungen einverstanden</a>*"
+    },
     "footer": {
         "serviceHotline": "Chōju </br> Sonnenbergstrasse 74 </br> 6052 Hergiswil",
         "copyrightInfo": "©%year% Chōju"

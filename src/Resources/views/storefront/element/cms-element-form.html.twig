@@ -1,0 +1,49 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form.html.twig' %}
+
+{% block element_form %}
+    {% set config = element.fieldConfig.elements %}
+
+    <div class="cms-element-{{ element.type }}">
+        {% set formViolations = app.request.get('errors') %}
+
+        <div class="card">
+            <div class="card-body">
+                {% block element_form_wrapper %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block element_form_contact_form_title %}
+  <div class="card-title">
+      {% if element.config.title.value %}
+          {{ element.config.title.value }}
+      {% else %}
+          {{ "contact.headline"|trans }}
+      {% endif %}
+  </div>
+
+  {% if element.config.text.value %}
+      <div class="card-text">
+          {{ element.config.text.value }}
+      </div>
+  {% endif %}
+{% endblock %}
+
+{% block element_form_newsletter_form_title %}
+  <div class="card-title">
+      {% if element.config.title.value %}
+          {{ element.config.title.value }}
+      {% else %}
+          {{ "newsletter.headline"|trans }}
+      {% endif %}
+  </div>
+
+  {% if element.config.text.value %}
+      <div class="card-text">
+          {{ element.config.text.value }}
+      </div>
+  {% endif %}
+{% endblock %}

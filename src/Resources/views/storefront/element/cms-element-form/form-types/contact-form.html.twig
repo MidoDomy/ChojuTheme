@@ -1,0 +1,64 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-types/contact-form.html.twig' %}
+
+{% block cms_form_contact %}
+    <form action="{{ path(action) }}"
+        method="post"
+        data-form-validation="true"
+    >
+        <div class="form-content">
+            <div class="row form-fields-row">
+                {% block cms_form_contact_select_salutation %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_input_first_name %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_input_last_name %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_input_email %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_input_phome %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_input_subject %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_comment_textarea %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            {% block cms_form_contact_captcha %}
+                {{ parent() }}
+            {% endblock %}
+
+            <div class="row align-items-end justify-content-end">
+                {# Checkbox #}
+                {% block cms_form_contact_privacy %}
+                    <div class="col-12 col-md">
+                        {{ parent() }}
+                    </div>
+                {% endblock %}
+
+                {# Submit button #}
+                {% block cms_form_contact_submit %}
+                    <div class="col-auto">
+                        {{ parent() }}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+
+        {% block cms_form_contact_hidden_fields %}
+            {{ parent() }}
+        {% endblock %}
+    </form>
+{% endblock %}

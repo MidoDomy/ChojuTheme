@@ -12,6 +12,13 @@
                         "content": "Content"
                     }
                 }
+            },
+            "form": {
+                "config": {
+                    "label": {
+                        "text": "Text"
+                    }
+                }
             }
         }
     }

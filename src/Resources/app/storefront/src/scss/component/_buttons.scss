@@ -4,3 +4,9 @@
     --bs-btn-hover-border-color: #{$sw-color-brand-secondary};
   }
 }
+
+.btn-lg, 
+.btn-buy, 
+.btn-group-lg > .btn {
+  font-size: $input-btn-font-size-lg;
+}

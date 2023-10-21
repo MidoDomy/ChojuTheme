@@ -16,24 +16,16 @@ $body-color: #00102D !default;
 
 // Links
 $link-decoration:    none !default;
-$link-hover-color: #E49D92 !default;
+$link-hover-color: $secondary !default;
 
 // Spacers
 $spacer: 1rem !default; // 16px
 
-// Container
-// $container-max-widths: (
-//   sm: 540px,
-//   md: 720px,
-//   lg: 960px,
-//   xl: 1140px,
-//   xxl: 1320px
-// ) !default;
-
 // Grid
-// $grid-gutter-width: 2.5rem !default;
-
 $container-padding-x: 5rem !default;
+
+// State
+$component-active-bg: $secondary !default;
 
 // Borders
 $border-color: $primary !default;
@@ -43,26 +35,18 @@ $border-radius: 0.125rem !default; // 2px
 // Typography
 $font-size-root: 16px !default;
 $font-size-base: 1.125rem !default; // 18px
-$font-size-base-lead: 1rem; // 16px
-$font-size-xs:   $font-size-base * 0.667; // 12px
 $font-size-sm:   $font-size-base * 0.778 !default; // 14px
 $font-size-lg:   $font-size-base * 1.167 !default; // 21px
-$font-size-xl:   $font-size-base * 1.667; // 30px
 
 $font-weight-light: 300 !default;
 
 $line-height-base: 1.72 !default; // 31px
 $line-height-sm:   1.64 !default; // 23px
 $line-height-lg:   1.48 !default; // 31px
-$line-height-xl:   1.24; // 20px
 
 $h1-font-size: $font-size-base * 2.833 !default; // 51px
 $h2-font-size: $font-size-base * 2.278 !default; // 41px
 $h3-font-size: $font-size-base * 1.778 !default; // 32px
-
-$h1-line-height: 1.08; // 55px
-$h2-line-height: 1.15; // 47px
-$h3-line-height: 1.25; // 40px
 
 $headings-margin-bottom:  $spacer * 1.25 !default; // 20px
 $headings-font-weight:    bold !default;
@@ -76,6 +60,12 @@ $input-btn-line-height:  1.5 !default;
 
 $input-btn-border-width: 0 !default;
 
+$input-btn-padding-y-sm: $input-btn-padding-y !default;
+$input-btn-padding-x-sm: $input-btn-padding-x !default;
+
+$input-btn-padding-y-lg: $input-btn-padding-y !default;
+$input-btn-padding-x-lg: $input-btn-padding-x !default;
+
 // Buttons
 $btn-padding-y:        $input-btn-padding-y !default;
 $btn-padding-x:        $input-btn-padding-x !default;
@@ -88,6 +78,12 @@ $btn-font-weight:      $font-weight-light !default;
 $btn-border-radius:    $border-radius !default;
 $btn-border-radius-sm: $border-radius !default;
 $btn-border-radius-lg: $border-radius !default;
+
+$btn-padding-y-sm: $input-btn-padding-y-sm !default;
+$btn-padding-x-sm: $input-btn-padding-x-sm !default;
+
+$btn-padding-y-lg: $input-btn-padding-y-lg !default;
+$btn-padding-x-lg: $input-btn-padding-x-lg !default;
 
 // Forms
 
@@ -131,3 +127,33 @@ $dropdown-link-active-bg:      $secondary !default;
 
 $dropdown-item-padding-y:      4.5px !default;
 $dropdown-item-padding-x:      12px !default;
+
+// Forms
+$form-text-color: $primary !default;
+
+// Inputs
+$input-padding-y:        13.5px !default;
+$input-padding-x:        10px !default;
+
+$input-bg: rgba($secondary, 0.2) !default;
+
+$input-border-color: rgba($secondary, 0.2) !default;
+$input-border-width: 1px !default;
+
+$input-border-radius:     0 !default;
+$input-border-radius-sm:  0 !default;
+$input-border-radius-lg:  0 !default;
+
+$input-focus-border-color: $input-border-color !default;
+$input-focus-box-shadow: none !default;
+
+$input-placeholder-color: #CCCFD5 !default;
+
+// Select
+$form-select-focus-box-shadow: none !default;
+$form-select-border-color: rgba($secondary, 0.2) !default;
+
+// Checkbox
+$form-check-input-bg: transparent !default;
+$form-check-input-border: 2px solid $secondary !default;
+$form-check-input-focus-box-shadow: none !default;
