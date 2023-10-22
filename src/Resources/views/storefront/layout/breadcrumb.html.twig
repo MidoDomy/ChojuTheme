@@ -1,0 +1,42 @@
+{% sw_extends '@Storefront/storefront/layout/breadcrumb.html.twig' %}
+
+{% block layout_breadcrumb_list %}
+    <ol class="breadcrumb"
+        itemscope
+        itemtype="https://schema.org/BreadcrumbList"
+    >
+        {% for breadcrumbCategory in breadcrumbCategories %}
+            {% set key = breadcrumbCategory.id %}
+            {% set name = breadcrumbCategory.translated.name %}
+
+            {% block layout_breadcrumb_list_item %}
+                {{ parent() }}
+            {% endblock %}
+
+            {% block layout_breadcrumb_placeholder %}
+                {% if key != breadcrumbKeys|last %}
+                    <div class="breadcrumb-placeholder">
+                        >
+                    </div>
+                {% endif %}
+            {% endblock %}
+        {% endfor %}
+
+        {% if productName %}
+            <div class="breadcrumb-placeholder">
+                >
+            </div>
+
+            <li class="breadcrumb-item"
+                aria-current="page"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+            >
+                <div itemprop="item">
+                    <div itemprop="name">{{ productName }}</div>
+                </div>
+            </li>
+        {% endif %}
+    </ol>
+{% endblock %}

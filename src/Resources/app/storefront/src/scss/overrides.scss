@@ -135,9 +135,9 @@ $form-text-color: $primary !default;
 $input-padding-y:        13.5px !default;
 $input-padding-x:        10px !default;
 
-$input-bg: rgba($secondary, 0.2) !default;
+$input-bg: #f9ecea !default;
 
-$input-border-color: rgba($secondary, 0.2) !default;
+$input-border-color: #f9ecea !default;
 $input-border-width: 1px !default;
 
 $input-border-radius:     0 !default;
@@ -151,7 +151,7 @@ $input-placeholder-color: #CCCFD5 !default;
 
 // Select
 $form-select-focus-box-shadow: none !default;
-$form-select-border-color: rgba($secondary, 0.2) !default;
+$form-select-border-color: #f9ecea !default;
 
 // Checkbox
 $form-check-input-bg: transparent !default;

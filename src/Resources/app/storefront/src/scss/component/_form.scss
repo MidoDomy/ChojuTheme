@@ -23,12 +23,6 @@
   // }
 }
 
-form {
-  .btn {
-    min-width: 9.063rem;
-  }
-}
-
 .form-control {
   @include media-breakpoint-down(md) {
     padding: $spacer*0.375 $spacer*0.25;

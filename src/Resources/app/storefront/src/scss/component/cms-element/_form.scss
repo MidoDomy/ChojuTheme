@@ -42,6 +42,8 @@
   }  
 
   .btn {
+    min-width: 9.063rem;
+    
     @include media-breakpoint-down(md) {
       margin-top: $spacer*0.625;
     }

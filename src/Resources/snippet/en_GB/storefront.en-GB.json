@@ -29,6 +29,9 @@
             "globeLink": "#",
             "wirelessLink": "#",
             "plusLink": "#"
+        },
+        "detail": {
+            "quantityLabel": "Quantity:"
         }
     },
     "general": {

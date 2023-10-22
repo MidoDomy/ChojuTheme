@@ -1,0 +1,42 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
+
+{% block buy_widget_buy_quantity_container %}
+    {% if showQuantitySelect %}
+        <div class="col-12">
+            {% block buy_widget_buy_quantity %}
+                <label for="lineItems[{{ product.id }}][quantity]"
+                    class="product-detail-quantity-label"
+                >
+                    {{ "choju.detail.quantityLabel"|trans|sw_sanitize }}
+                </label>
+
+                <select name="lineItems[{{ product.id }}][quantity]"
+                    class="product-detail-quantity-select"
+                >
+                    {% for quantity in range(product.minPurchase, product.calculatedMaxPurchase, product.purchaseSteps) %}
+                        <option value="{{ quantity }}">
+                            {{ quantity }}
+                            {% if quantity == 1 %}
+                                {% if product.translated.packUnit %} {{ product.translated.packUnit }}{% endif %}
+                            {% else %}
+                                {% if product.translated.packUnitPlural %}
+                                    {{ product.translated.packUnitPlural }}
+                                {% elseif product.translated.packUnit %}
+                                    {{ product.translated.packUnit }}
+                                {% endif %}
+                            {% endif %}
+                        </option>
+                    {% endfor %}
+                </select>
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block buy_widget_buy_button_container %}
+    <div class="col-12">
+        {% block buy_widget_buy_button %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

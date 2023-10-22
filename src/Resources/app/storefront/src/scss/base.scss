@@ -1,18 +1,23 @@
 @import 'vendor/fontface';
 
+// Base
 @import 'base/custom-variables';
 @import 'base/typography';
 
+// Components
 @import 'component/icon';
 @import 'component/buttons';
 @import 'component/dropdown';
 @import 'component/form';
 @import 'component/product-box';
+@import 'component/breadcrumb';
 
+// CMS
 @import 'component/cms-element/product-listing';
 @import 'component/cms-element/product-slider';
 @import 'component/cms-element/form';
 
+// Layouts
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/main-navigation';
@@ -22,3 +27,6 @@
 @import 'layout/category-teaser';
 @import 'layout/global-action-menu';
 @import 'layout/scroll-up';
+
+// Pages
+@import 'page/product-detail/product-detail';

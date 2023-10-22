@@ -55,3 +55,17 @@
     {# Fixed global action buttons #}
     {% sw_include '@Storefront/storefront/component/custom/global-actions.html.twig' %}
 {% endblock %}
+
+{% block base_main_inner %}
+    {% block base_main_container %}
+        <div class="container-main">
+            {% block base_breadcrumb %}
+                {{ parent() }}
+            {% endblock %}
+
+            <div class="container">
+                {% block base_content %}{% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

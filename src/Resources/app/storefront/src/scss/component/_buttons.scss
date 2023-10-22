@@ -6,7 +6,10 @@
 }
 
 .btn-lg, 
-.btn-buy, 
 .btn-group-lg > .btn {
-  font-size: $input-btn-font-size-lg;
+  font-size: $btn-font-size-lg;
+}
+
+.btn-buy {
+  font-size: $btn-font-size;
 }

@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget.html.twig' %}
+
+{% block page_product_detail_buy_container %}
+  <h1 class="product-detail-name"
+      itemprop="name">
+      {{ page.product.translated.name }}
+  </h1>
+
+  <p class="product-detail-small-description">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, enim!
+  </p>
+  
+  {{ parent() }}
+{% endblock %}
+
+{% block page_product_detail_price %}
+  <div class="product-detail-price-tax-container">
+      {# Price #}
+      {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+
+      {# Tax #}
+      {% if context.taxState == "gross" %}
+          {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+      {% else %}
+          {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+      {% endif %}
+
+      <p class="product-detail-tax">
+          {% block page_product_detail_tax_link %}
+              <a class="product-detail-tax-link"
+                href="{{ path('frontend.cms.page', { id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                title="{{ taxText }}"
+                data-ajax-modal="true"
+                data-url="{{ path('frontend.cms.page', { id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                  {{ taxText }}
+              </a>
+          {% endblock %}
+      </p>
+  </div>
+{% endblock %}
+
+{% block page_product_detail_tax %}
+{# Moved to price block #}
+{% endblock %}
+
+{% block page_product_detail_ordernumber_container %}{% endblock %}

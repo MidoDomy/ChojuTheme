@@ -1,0 +1,22 @@
+.breadcrumb {
+  margin-bottom: 20px;
+  padding: 0 $container-padding-x/2;
+  font-size: 14px;
+  line-height: 23px;
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  .breadcrumb-item {
+    color: #CCCFD5;
+  }
+
+  a {
+    font-size: inherit;
+
+    &.is-active {
+      font-weight: $font-weight-normal;
+    }
+  }
+}
