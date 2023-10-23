@@ -1,0 +1,10 @@
+.cms-element-image-gallery {
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+}

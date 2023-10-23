@@ -9,3 +9,34 @@
 {% endblock %}
 
 {% block page_product_detail_headline %}{% endblock %}
+
+{% block page_product_detail_media %}
+    <div class="col-lg-6 product-detail-media">
+        {% if page.product.media %}
+            {% sw_include '@Storefront/storefront/element/cms-element-image-gallery.html.twig' with {
+                'mediaItems': mediaItems,
+                'zoom': true,
+                'zoomModal': true,
+                'displayMode': 'contain',
+                'gutter': 5,
+                'minHeight': '430px',
+                'navigationArrows': 'inside',
+                'navigationDots': 'inside',
+                'galleryPosition': 'left',
+                'isProduct': true,
+                'fallbackImageTitle': page.product.translated.name,
+                'startIndexThumbnails': 1,
+                'startIndexSlider': 1,
+                'keepAspectRatioOnZoom': false
+            } %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block page_product_detail_buy %}
+    <div class="col-lg-6 product-detail-buy">
+        <div class="cms-element-buy-box">
+            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+.cms-block-gallery-buybox {
+  overflow: visible;
+
+  .cms-block-container {
+    @include media-breakpoint-down(lg) {
+      padding: 0 $container-padding-x/2;
+    }
+  }
+
+  .cms-block-container-row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+}

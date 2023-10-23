@@ -1,23 +1,30 @@
 @import 'vendor/fontface';
 
-// Base
+// BASE
 @import 'base/custom-variables';
 @import 'base/typography';
 
-// Components
+// COMPONENTS
 @import 'component/icon';
 @import 'component/buttons';
 @import 'component/dropdown';
 @import 'component/form';
 @import 'component/product-box';
 @import 'component/breadcrumb';
+@import 'component/gallery-slider';
 
 // CMS
+  // sections
+@import 'component/cms-section/section';
+  // blocks
+@import 'component/cms-block/gallery-buybox';
+  // elements
 @import 'component/cms-element/product-listing';
 @import 'component/cms-element/product-slider';
 @import 'component/cms-element/form';
+@import 'component/cms-element/image-gallery';
 
-// Layouts
+// LAYOUTS
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/main-navigation';
@@ -28,5 +35,9 @@
 @import 'layout/global-action-menu';
 @import 'layout/scroll-up';
 
-// Pages
+// PAGES
+  // PDP
 @import 'page/product-detail/product-detail';
+@import 'page/product-detail/buybox';
+@import 'page/product-detail/tabs';
+@import 'page/product-detail/cross-selling';
