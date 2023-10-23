@@ -1,0 +1,136 @@
+{% block sw_cms_element_devider_config %}
+    <div class="sw-cms-el-config-devider">
+        {% block sw_cms_element_devider_config_button_type %}
+            <sw-text-field
+                {% if VUE3 %}
+                v-model:value="element.config.linkConfig.value.text"
+                {% else %}
+                v-model="element.config.linkConfig.value.text"
+                {% endif %}
+                :label="$tc('sw-cms.elements.form.config.label.text')"
+            />
+        {% endblock %}
+
+        {% block sw_cms_element_devider_config_button_type %}
+            <sw-select-field
+                :label="$tc('sw-text-editor-toolbar.link.labelType')"
+                {% if VUE3 %}
+                v-model:value="element.config.linkConfig.value.type"
+                {% else %}
+                v-model="element.config.linkConfig.value.type"
+                {% endif %}
+            >
+                {% block sw_cms_element_devider_config_button_type_options %}
+                    <option value="link">
+                        {{ $tc('sw-text-editor-toolbar.link.labelUrl') }}
+                    </option>
+                    <option value="detail">
+                        {{ $tc('sw-text-editor-toolbar.link.labelProduct') }}
+                    </option>
+                    <option value="navigation">
+                        {{ $tc('sw-text-editor-toolbar.link.labelCategory') }}
+                    </option>
+                    <option value="email">
+                        {{ $tc('sw-text-editor-toolbar.link.labelEmail') }}
+                    </option>
+                    <option value="phone">
+                        {{ $tc('sw-text-editor-toolbar.link.labelPhoneNumber') }}
+                    </option>
+                {% endblock %}
+            </sw-select-field>
+        {% endblock %}
+
+        {% block sw_cms_element_devider_config_button_inputs %}
+            {# URL #}
+            {% block sw_cms_element_devider_config_button_inputs_link %}
+                <sw-text-field
+                    v-if="element.config.linkConfig.value.type === 'link'"
+                    {% if VUE3 %}
+                    v-model:value="element.config.linkConfig.value.target"
+                    {% else %}
+                    v-model="element.config.linkConfig.value.target"
+                    {% endif %}
+                    :label="$tc('sw-text-editor-toolbar.link.linkTo')"
+                    :placeholder="$tc('sw-text-editor-toolbar.link.placeholder')"
+                />
+            {% endblock %}
+
+            {# Phone #}
+            {% block sw_cms_element_devider_config_button_inputs_phone %}
+                <sw-text-field
+                    v-else-if="element.config.linkConfig.value.type === 'phone'"
+                    {% if VUE3 %}
+                    v-model:value="element.config.linkConfig.value.target"
+                    {% else %}
+                    v-model="element.config.linkConfig.value.target"
+                    {% endif %}
+                    :label="$tc('sw-text-editor-toolbar.link.linkTo')"
+                    :placeholder="$tc('sw-text-editor-toolbar.link.placeholderPhoneNumber')"
+                />
+            {% endblock %}
+
+            {# Email #}
+            {% block sw_cms_element_devider_config_button_inputs_email %}
+                <sw-email-field
+                    v-else-if="element.config.linkConfig.value.type === 'email'"
+                    {% if VUE3 %}
+                    v-model:value="element.config.linkConfig.value.target"
+                    {% else %}
+                    v-model="element.config.linkConfig.value.target"
+                    {% endif %}
+                    :label="$tc('sw-text-editor-toolbar.link.linkTo')"
+                    :placeholder="$tc('sw-text-editor-toolbar.link.placeholderEmail')"
+                />
+            {% endblock %}
+
+            {# Product #}
+            {% block sw_cms_element_devider_config_button_inputs_detail %}
+                <sw-entity-single-select
+                    v-else-if="element.config.linkConfig.value.type === 'detail'"
+                    {% if VUE3 %}
+                    v-model:value="element.config.linkConfig.value.target"
+                    {% else %}
+                    v-model="element.config.linkConfig.value.target"
+                    {% endif %}
+                    class="sw-text-editor-link-menu__entity-single-select"
+                    entity="product"
+                    should-show-active-state
+                    :criteria="entityFilter"
+                    :label="$tc('sw-text-editor-toolbar.link.linkTo')"
+                    :placeholder="$tc('sw-text-editor-toolbar.link.placeholderProduct')"
+                    show-clearable-button
+                    display-variants
+                />
+            {% endblock %}
+
+            {# Category #}
+            {% block sw_cms_element_devider_config_button_inputs_category %}
+                <sw-category-tree-field
+                    v-else-if="element.config.linkConfig.value.type === 'navigation'"
+                    :label="$tc('sw-text-editor-toolbar.link.linkTo')"
+                    :criteria="entityFilter"
+                    :placeholder="$tc('sw-text-editor-toolbar.link.placeholderCategory')"
+                    :categories-collection="categoryCollection"
+                    single-select
+                    @selection-add="replaceCategorySelection"
+                    @selection-remove="removeCategorySelection"
+                />
+            {% endblock %}
+        {% endblock %}
+
+        {# New tab #}
+        {% block sw_cms_element_devider_config_button_opens_new_tab %}
+            <sw-switch-field
+                v-if="!['phone', 'email'].includes(element.config.linkConfig.value.type)"
+                {% if VUE3 %}
+                v-model:value="element.config.linkConfig.value.newTab"
+                {% else %}
+                v-model="element.config.linkConfig.value.newTab"
+                {% endif %}
+                class="sw-text-editor-toolbar-button__link-menu-switch sw-text-editor-toolbar-button__link-menu-new-tab"
+                :label="$tc('sw-text-editor-toolbar.link.openInNewTab')"
+                no-margin-top
+            />
+        {% endblock %}
+    </div>
+{% endblock %}

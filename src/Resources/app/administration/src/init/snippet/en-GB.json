@@ -14,7 +14,15 @@
                 "backgroundRepeatNoRepeat": "No repeat",
                 "backgroundRepeatRepeat": "Repeat",
                 "backgroundRepeatRepeatX": "Repeat X",
-                "backgroundRepeatRepeatY": "Repeat Y" 
+                "backgroundRepeatRepeatY": "Repeat Y",
+                "choju": "Choju blocks"
+            }
+        },
+        "blocks": {
+            "choju": {
+                "devider": {
+                    "label": "Devider"
+                }
             }
         },
         "elements": {
@@ -31,6 +39,9 @@
                         "text": "Text"
                     }
                 }
+            },
+            "devider": {
+                "label": "Devider"
             }
         }
     }

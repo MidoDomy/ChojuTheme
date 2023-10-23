@@ -1,0 +1,13 @@
+.cms-element-devider {
+  display: flex;
+  align-items: center;
+
+  .devider-line {
+    flex: 1;
+    border-top: $border-width $border-style rgba($sw-border-color, 0.2);
+  }
+
+  .btn {
+    margin: 0 10px;
+  }
+}

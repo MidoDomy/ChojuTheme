@@ -1,0 +1,31 @@
+{% block cms_element_devider %}
+    {% set linkConfig = element.translated.config.linkConfig.value %}
+
+    <div class="cms-element-{{ element.type }}">
+        <div class="devider-line"></div>
+
+        {% if linkConfig.text != '' %}
+            {% set link = linkConfig.target %}
+
+            {% if linkConfig.type == 'detail' %}
+                {% set link = seoUrl('frontend.detail.page', { 'productId': linkConfig.target }) %}
+            {% elseif linkConfig.type == 'navigation' %}
+                {% set link = '124c71d524604ccbad6042edce3ac799/navigation/' ~ linkConfig.target %}
+            {% elseif linkConfig.type == 'email' %}
+                {% set link = 'mailto:' ~ linkConfig.target %}
+            {% elseif linkConfig.type == 'phone' %}
+                {% set link = 'tel:' ~ linkConfig.target %}
+            {% endif %}
+
+            <a class="btn btn-primary" 
+              href="{{ link }}" 
+              {% if linkConfig.newTab %}target="_blank"{% endif %}
+              title="{{ linkConfig.text }}"
+            >
+              {{ linkConfig.text }}
+            </a>
+        {% endif %}
+
+        <div class="devider-line"></div>
+    </div>
+{% endblock %}

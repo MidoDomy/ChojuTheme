@@ -1,0 +1,20 @@
+.sw-cms-el-preview-devider {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .line {
+        flex: 1;
+        border-top: 1px solid #00102D;
+    }
+
+    .button {
+        margin: 0 5px;
+        padding: 4px 11px;
+        background: #00102D;
+        border-radius: 2px;
+        color: white;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
