@@ -1,0 +1,63 @@
+{% block sw_cms_element_collapses_config %}
+    <div class="sw-cms-el-config-collapses">
+        {% block sw_cms_element_collapses_config_tabs %}
+            <sw-tabs
+                class="sw-cms-el-config-collapses__tabs"
+                default-item="content"
+                positionIdentifier="test"
+            >
+                <template slot-scope="{ active }">
+                    {% block sw_cms_element_collapses_config_tab_content %}
+                        <sw-tabs-item
+                            :title="$tc('sw-cms.elements.general.config.tab.content')"
+                            name="content"
+                            :active-tab="active"
+                        >
+                            {{ $tc('sw-cms.elements.general.config.tab.content') }}
+                        </sw-tabs-item>
+                    {% endblock %}
+
+                    {% block sw_cms_element_collapses_config_tab_options %}
+                        <sw-tabs-item
+                            :title="$tc('sw-cms.elements.general.config.tab.settings')"
+                            name="settings"
+                            :active-tab="active"
+                        >
+                            {{ $tc('sw-cms.elements.general.config.tab.settings') }}
+                        </sw-tabs-item>
+                    {% endblock %}
+                </template>
+
+                <template
+                    slot="content"
+                    slot-scope="{ active }"
+                >
+                    {% block sw_cms_element_collapses_config_content %}
+                        <sw-container
+                            v-if="active === 'content'"
+                            class="sw-cms-el-config-collapses__tab-content"
+                        >
+                            {# Items #}
+                            <repeater 
+                                v-model="element.config.fields.value" 
+                                formName="collapse-form"
+                                :defaultValue="defaultValue" 
+                                :blockName="$tc('sw-cms.elements.collapses.config.blockName')"
+                                :addButtonText="$tc('sw-cms.elements.collapses.config.addButton')">
+                            </repeater>
+                        </sw-container>
+                    {% endblock %}
+
+                    {% block sw_cms_element_collapses_config_settings %}
+                        <sw-container
+                            v-if="active === 'settings'"
+                            class="sw-cms-el-config-collapses__tab-settings"
+                        >
+                            Additional settings
+                        </sw-container>
+                    {% endblock %}
+                </template>
+            </sw-tabs>
+        {% endblock %}
+    </div>
+{% endblock %}

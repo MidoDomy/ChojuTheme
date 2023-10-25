@@ -1,0 +1,30 @@
+{% block sw_cms_element_collapses %}
+    <div class="sw-cms-el-collapses">
+        <div v-if="fields.length == 0">
+            <sw-alert variant="info">
+                {{ $tc('sw-cms.elements.collapses.component.emptyText') }}
+            </sw-alert>
+        </div>
+        
+        <div v-for="item in fields"
+            @click="toggleActiveItem"
+            class="sw-cms-el-collapses-item"
+        >
+            <div class="sw-cms-el-collapses-title">
+                {{ item.value.title }}
+
+                <sw-icon
+                    class="sw-cms-el-collapses-title-arrow"
+                    name="regular-chevron-down-xs"
+                />
+            </div>
+
+            <div class="sw-cms-el-collapses-content-container">
+                <div class="sw-cms-el-collapses-content"
+                    v-html="$sanitize(item.value.content)"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

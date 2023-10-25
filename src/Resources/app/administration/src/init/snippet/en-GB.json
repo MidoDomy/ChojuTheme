@@ -18,10 +18,14 @@
                 "choju": "Choju blocks"
             }
         },
-        "blocks": {
-            "choju": {
-                "devider": {
-                    "label": "Devider"
+        "component": {
+            "repeater": {
+                "contentElements": "Content elements",
+                "forms": {
+                    "collapse": {
+                        "title": "Collapse title",
+                        "content": "Collapse content"
+                    }
                 }
             }
         },
@@ -42,6 +46,26 @@
             },
             "devider": {
                 "label": "Devider"
+            },
+            "collapses": {
+                "label": "Collapses",
+                "component": {
+                    "emptyText": "Add collapse items from element settings"
+                },
+                "config": {
+                    "blockName": "Collapse",
+                    "addButton": "Add new collapse"
+                }
+            }
+        },
+        "blocks": {
+            "choju": {
+                "devider": {
+                    "label": "Devider"
+                },
+                "collapses": {
+                    "label": "Collapses"
+                }
             }
         }
     },

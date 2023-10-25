@@ -1,0 +1,23 @@
+{% block collapse_form %}
+    <div class="collapse-form">
+        {% block sw_cms_element_collapse_form_config %}
+            {# Title #}
+            <sw-field
+                v-model="collapseInfo.title"
+                type="text"
+                :label="$tc('sw-cms.component.repeater.forms.collapse.title')"
+                required="required"
+            />
+
+            {# Content #}
+            <sw-text-editor
+                v-model="collapseInfo.content"
+                :label="$tc('sw-cms.component.repeater.forms.collapse.content')"
+                :allow-inline-data-mapping="true"
+                sanitize-input
+                @input="onInput"
+                @blur="onBlur"
+            />
+        {% endblock %}
+    </div>
+{% endblock %}
