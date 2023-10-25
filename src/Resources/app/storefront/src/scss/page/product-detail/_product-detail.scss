@@ -27,8 +27,7 @@
     --bs-gutter-y: 0;
   }
   
-  .product-detail-content,
-  .cms-block-gallery-buybox {
+  .product-detail-content {
     margin-bottom: 57px;
   
     @include media-breakpoint-up(lg) {

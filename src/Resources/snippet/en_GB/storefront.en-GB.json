@@ -31,7 +31,8 @@
             "plusLink": "#"
         },
         "detail": {
-            "quantityLabel": "Quantity:"
+            "quantityLabel": "Quantity:",
+            "tabsGeneralInfo": "General info"
         }
     },
     "general": {

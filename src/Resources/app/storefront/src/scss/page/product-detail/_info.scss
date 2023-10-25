@@ -1,0 +1,18 @@
+.product-detail-info {
+  max-width: 800px;
+  margin: 0 auto 43px;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 99px;
+  }
+}
+
+.product-detail-info-note {
+  margin-bottom: 26px;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 50px;
+    font-size: 21px;
+    line-height: 31px;
+  }
+}

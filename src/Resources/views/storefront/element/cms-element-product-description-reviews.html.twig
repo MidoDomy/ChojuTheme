@@ -1,0 +1,114 @@
+{% block element_product_description_reviews %}
+    {% set config = element.fieldConfig.elements %}
+    {% set product = element.data.product %}
+
+    {% if element.data.product %}
+        <div class="product-detail-tabs cms-element-{{ element.type }}{% if config.alignment.value %} has-vertical-alignment{% endif %}">
+            {% if config.alignment.value %}
+                <div class="cms-element-alignment{% if config.alignment.value == "center" %} align-self-center{% elseif config.alignment.value == "flex-end" %} align-self-end{% else %} align-self-start{% endif %}">
+            {% endif %}
+                <div class="product-detail-info">
+                    {% block element_product_info_note %}
+                        {% if product.translated.customFields.note %}
+                            <div class="product-detail-info-note">
+                                {{ product.translated.customFields.note }}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+
+                    <div class="accordion" id="pdpInfoAccordion{{ product.id }}">
+                        {% block element_product_info_description %}
+                            {% if product.translated.description %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingDescription">
+                                        <button class="accordion-button" 
+                                            type="button" 
+                                            data-bs-toggle="collapse" 
+                                            data-bs-target="#collapseDescription" 
+                                            aria-expanded="true" 
+                                            aria-controls="collapseDescription"
+                                        >
+                                            {{ "detail.tabsDescription"|trans|sw_sanitize }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapseDescription" 
+                                        class="accordion-collapse collapse show" 
+                                        aria-labelledby="headingDescription" 
+                                        data-bs-parent="#pdpInfoAccordion{{ product.id }}"
+                                    >
+                                        <div class="accordion-body">
+                                            {% sw_include '@Storefront/storefront/component/product/description.html.twig' with {
+                                                product: element.data.product
+                                            } %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endblock %}
+
+                        {% block element_product_info_general_info %}
+                            {% if product.translated.customFields.generalInfo %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingGeneralInfo">
+                                        <button class="accordion-button collapsed" 
+                                            type="button" 
+                                            data-bs-toggle="collapse" 
+                                            data-bs-target="#collapseGeneralInfo" 
+                                            aria-expanded="false" 
+                                            aria-controls="collapseGeneralInfo"
+                                        >
+                                            {{ "choju.detail.tabsGeneralInfo"|trans|sw_sanitize }}
+                                        </button>
+                                    </h2>
+
+                                    <div id="collapseGeneralInfo" 
+                                        class="accordion-collapse collapse" 
+                                        aria-labelledby="headingGeneralInfo" 
+                                        data-bs-parent="#pdpInfoAccordion{{ product.id }}"
+                                    >
+                                        <div class="accordion-body">
+                                            {{ product.translated.customFields.generalInfo }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endblock %}
+
+                        {% block element_product_info_review %}
+                            {% if config('core.listing.showReview') %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingReview">
+                                        <button class="accordion-button collapsed" 
+                                            type="button" 
+                                            data-bs-toggle="collapse" 
+                                            data-bs-target="#collapseReview" 
+                                            aria-expanded="false" 
+                                            aria-controls="collapseReview"
+                                        >
+                                            {{ "detail.tabsReview"|trans|sw_sanitize }}
+                                        </button>
+                                    </h2>
+
+                                    <div id="collapseReview" 
+                                        class="accordion-collapse collapse" 
+                                        aria-labelledby="headingReview" 
+                                        data-bs-parent="#pdpInfoAccordion{{ product.id }}"
+                                    >
+                                        <div class="accordion-body">
+                                            {% sw_include '@Storefront/storefront/component/review/review.html.twig' with {
+                                                reviews: element.data.reviews,
+                                                product: element.data.product
+                                            } %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% if config.verticalAlign.value %}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

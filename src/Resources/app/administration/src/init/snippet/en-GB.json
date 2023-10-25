@@ -44,5 +44,12 @@
                 "label": "Devider"
             }
         }
+    },
+    "sw-product": {
+        "basicForm": {
+            "labelSmallDescription": "Small description",
+            "labelNote": "Note info",
+            "labelGeneralInfo": "General informations"
+        }
     }
 }

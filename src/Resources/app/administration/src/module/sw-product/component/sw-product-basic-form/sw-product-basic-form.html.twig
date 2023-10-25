@@ -1,0 +1,42 @@
+{% block sw_product_basic_form_description_field %}
+    {% block sw_product_basic_form_small_description_field %}
+        <sw-text-field
+            {% if VUE3 %}
+            v-model:value="product.customFields.smallDescription"
+            {% else %}
+            v-model="product.customFields.smallDescription"
+            {% endif %}
+            :disabled="!allowEdit"
+            :label="$tc('sw-product.basicForm.labelSmallDescription')"
+        />
+    {% endblock %}
+
+    {% block sw_product_basic_form_note_field %}
+        <sw-textarea-field
+            {% if VUE3 %}
+            v-model:value="product.customFields.note"
+            {% else %}
+            v-model="product.customFields.note"
+            {% endif %}
+            :disabled="!allowEdit"
+            :label="$tc('sw-product.basicForm.labelNote')"
+        />
+    {% endblock %}
+
+    {% parent %}
+    
+    {% block sw_product_basic_form_general_info_field %}
+        <sw-text-editor
+            {% if VUE3 %}
+            v-model:value="product.customFields.generalInfo"
+            {% else %}
+            v-model="product.customFields.generalInfo"
+            {% endif %}
+            type="textarea"
+            sanitize-input
+            sanitize-field-name="product.customFields.generalInfo"
+            :disabled="!allowEdit"
+            :label="$tc('sw-product.basicForm.labelGeneralInfo')"
+        />
+    {% endblock %}
+{% endblock %}

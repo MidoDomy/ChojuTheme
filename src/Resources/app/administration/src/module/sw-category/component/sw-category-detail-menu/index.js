@@ -5,12 +5,6 @@ const { Component } = Shopware;
 Component.override('sw-category-detail-menu', {
     template,
 
-    watch: {
-        category() {
-            this.initCustomField();
-        }
-    },
-
     created() {
         this.initCustomField();
     },

@@ -12,6 +12,7 @@
 @import 'component/product-box';
 @import 'component/breadcrumb';
 @import 'component/gallery-slider';
+@import 'component/accordion';
 
 // CMS
   // sections
@@ -23,6 +24,7 @@
 @import 'component/cms-element/product-slider';
 @import 'component/cms-element/form';
 @import 'component/cms-element/image-gallery';
+@import 'component/cms-element/product-description-reviews';
 @import 'component/cms-element/devider';
 
 // LAYOUTS
@@ -40,5 +42,5 @@
   // PDP
 @import 'page/product-detail/product-detail';
 @import 'page/product-detail/buybox';
-@import 'page/product-detail/tabs';
+@import 'page/product-detail/info';
 @import 'page/product-detail/cross-selling';

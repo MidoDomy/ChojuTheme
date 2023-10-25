@@ -157,3 +157,20 @@ $form-select-border-color: #f9ecea !default;
 $form-check-input-bg: transparent !default;
 $form-check-input-border: 2px solid $secondary !default;
 $form-check-input-focus-box-shadow: none !default;
+
+// Accordion
+$accordion-border-radius: 0 !default;
+$accordion-border-color:  rgba($border-color, 0.5) !default;
+
+$accordion-body-padding-y: 0 !default;
+$accordion-body-padding-x: 0 !default;
+
+$accordion-button-padding-y: 20px !default;
+$accordion-button-padding-x: 0 !default;
+
+$accordion-button-active-bg: transparent !default;
+
+$accordion-button-focus-border-color: $border-color !default;
+$accordion-button-focus-box-shadow: none !default;
+
+$accordion-icon-width: 11px !default;

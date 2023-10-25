@@ -1,0 +1,23 @@
+.accordion-item {
+  border-left: 0;
+  border-right: 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.accordion-button {
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+    line-height: 31px;
+  }
+
+  &:not(.collapsed) {
+    box-shadow: none;
+  }
+
+  &::after {
+    margin-right: 24px;
+  }
+}

@@ -1,14 +1,15 @@
 {% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
 
 {% block buy_widget_buy_container %}
-  <h1 class="product-detail-name"
-      itemprop="name">
+  <h1 class="product-detail-name" itemprop="name">
       {{ product.translated.name }}
   </h1>
 
-  <p class="product-detail-small-description">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, enim!
-  </p>
+  {% if product.translated.customFields.smallDescription %}
+    <p class="product-detail-small-description">
+        {{ product.translated.customFields.smallDescription }}
+    </p>
+  {% endif %}
 
   {{ parent() }}
 {% endblock %}
@@ -20,9 +21,9 @@
 
       {# Tax info #}
       {% if context.taxState == "gross" %}
-          {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+          {% set taxText = "general.grossTaxInformation"|trans|raw %}
       {% else %}
-          {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+          {% set taxText = "general.netTaxInformation"|trans|raw %}
       {% endif %}
 
       <p class="product-detail-tax">
