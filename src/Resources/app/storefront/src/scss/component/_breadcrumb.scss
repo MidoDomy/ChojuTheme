@@ -1,8 +1,8 @@
 .breadcrumb {
-  margin-bottom: 20px;
-  padding: 0 $container-padding-x/2;
-  font-size: 14px;
-  line-height: 23px;
+  margin-bottom: $spacer*1.25;
+  padding: 0 calc($container-padding-x / 2);
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
 
   @include media-breakpoint-down(lg) {
     display: none;

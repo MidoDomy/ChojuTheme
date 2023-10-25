@@ -9,8 +9,8 @@
 
 .accordion-button {
   @include media-breakpoint-up(lg) {
-    font-size: 21px;
-    line-height: 31px;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
   }
 
   &:not(.collapsed) {
@@ -18,6 +18,6 @@
   }
 
   &::after {
-    margin-right: 24px;
+    margin-right: $spacer*1.5;
   }
 }

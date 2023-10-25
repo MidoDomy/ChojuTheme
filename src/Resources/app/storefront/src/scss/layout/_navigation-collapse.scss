@@ -65,8 +65,8 @@
 .navigation-collapse {
   position: absolute;
   top: 100%;
-  left: -$grid-gutter-width/2;
-  right: -$grid-gutter-width/2;
+  left: calc(-1 * ($grid-gutter-width / 2));
+  right: calc(-1 * ($grid-gutter-width / 2));
   background: $sw-color-brand-primary;
   color: $text-light-color;
   z-index: -1;

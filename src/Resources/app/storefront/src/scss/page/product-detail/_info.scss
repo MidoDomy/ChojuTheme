@@ -1,18 +1,18 @@
 .product-detail-info {
-  max-width: 800px;
-  margin: 0 auto 43px;
+  max-width: 50rem;
+  margin: 0 auto $spacer*2.75;
 
   @include media-breakpoint-up(lg) {
-    margin-bottom: 99px;
+    margin-bottom: $spacer*6.25;
   }
 }
 
 .product-detail-info-note {
-  margin-bottom: 26px;
+  margin-bottom: $spacer*1.625;
 
   @include media-breakpoint-up(lg) {
-    margin-bottom: 50px;
-    font-size: 21px;
-    line-height: 31px;
+    margin-bottom: $spacer*3.125;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
   }
 }

@@ -2,7 +2,7 @@
   &.is-cover,
   &.is-contain {
     @include media-breakpoint-down(lg) {
-      min-height: 350px !important;
+      min-height: 21.875rem !important;
     }
   }
 }

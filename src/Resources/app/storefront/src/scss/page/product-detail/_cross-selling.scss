@@ -11,7 +11,7 @@
 }
 
 .cross-selling-item {
-  margin-bottom: 40px;
+  margin-bottom: $spacer*2.5;
 
   &:last-child {
     margin: 0;
@@ -19,7 +19,7 @@
 }
 
 .cross-selling-title {
-  margin-bottom: 40px;
+  margin-bottom: $spacer*2.5;
 
   @include media-breakpoint-down(md) {
     display: none;
@@ -27,6 +27,6 @@
 }
 
 .cross-selling-item-row {
-  --bs-gutter-x: 16px;
-  --bs-gutter-y: 50px;
+  --bs-gutter-x: #{$spacer};
+  --bs-gutter-y: #{$spacer*3.125};
 }
