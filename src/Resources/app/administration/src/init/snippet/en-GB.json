@@ -54,7 +54,8 @@
                 },
                 "config": {
                     "blockName": "Collapse",
-                    "addButton": "Add new collapse"
+                    "addButton": "Add new collapse",
+                    "columnsNumber": "Number of columns on desktop"
                 }
             }
         },

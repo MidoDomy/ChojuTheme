@@ -1,9 +1,20 @@
+.accordion {
+  &.row {
+    --bs-gutter-x: 20px;
+  }
+}
+
 .accordion-item {
   border-left: 0;
   border-right: 0;
+  border-bottom: 0;
 
   &:last-child {
     border-bottom: 0;
+  }
+
+  &:not(:first-of-type) {
+    border-top: $border-width $border-style $accordion-border-color;
   }
 }
 

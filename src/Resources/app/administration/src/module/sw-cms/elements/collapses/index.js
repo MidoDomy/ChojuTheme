@@ -12,6 +12,10 @@ Shopware.Service('cmsService').registerCmsElement({
         fields: {
             source: 'static',
             value: []
+        },
+        columnsNumber: {
+            source: 'static',
+            value: 1
         }
     }
 });

@@ -53,7 +53,27 @@
                             v-if="active === 'settings'"
                             class="sw-cms-el-config-collapses__tab-settings"
                         >
-                            Additional settings
+                            <sw-select-field
+                                :label="$tc('sw-cms.elements.collapses.config.columnsNumber')"
+                                {% if VUE3 %}
+                                v-model:value="element.config.columnsNumber.value"
+                                {% else %}
+                                v-model="element.config.columnsNumber.value"
+                                {% endif %}
+                            >
+                                <option value="1">
+                                    1
+                                </option>
+                                <option value="2">
+                                    2
+                                </option>
+                                <option value="3">
+                                    3
+                                </option>
+                                <option value="4">
+                                    4
+                                </option>
+                            </sw-select-field>
                         </sw-container>
                     {% endblock %}
                 </template>

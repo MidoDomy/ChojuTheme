@@ -2,32 +2,34 @@
     {% set config = element.translated.config %}
 
     <div class="cms-element-{{ element.type }}">
-        <div class="accordion" id="cmsElementCollapses{{ element.id }}">
+        <div class="accordion row" id="cmsElementCollapses{{ element.id }}">
             {% set collapses = config.fields.value %}
             {% for item in collapses %}
                 {% set id = item.id %}
                 {% set itemValues = item.value %}
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="collapseItemTitle{{ element.id }}{{ loop.index }}">
-                        <button class="accordion-button" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#collapseItemContent{{ element.id }}{{ loop.index }}" 
-                            aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}" 
-                            aria-controls="collapseItemContent{{ element.id }}{{ loop.index }}"
-                        >
-                            {{ itemValues.title }}
-                        </button>
-                    </h2>
+                <div class="col-12 col-md-{{ 12 / config.columnsNumber.value }}">
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header" id="collapseItemTitle{{ element.id }}{{ loop.index }}">
+                            <button class="accordion-button" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapseItemContent{{ element.id }}{{ loop.index }}" 
+                                aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}" 
+                                aria-controls="collapseItemContent{{ element.id }}{{ loop.index }}"
+                            >
+                                {{ itemValues.title }}
+                            </button>
+                        </h2>
 
-                    <div id="collapseItemContent{{ element.id }}{{ loop.index }}" 
-                        class="accordion-collapse collapse{% if loop.index == 1 %} show{% endif %}" 
-                        aria-labelledby="collapseItemTitle{{ element.id }}{{ loop.index }}" 
-                        data-bs-parent="#cmsElementCollapses{{ element.id }}"
-                    >
-                        <div class="accordion-body">
-                            {{ itemValues.content|raw }}
+                        <div id="collapseItemContent{{ element.id }}{{ loop.index }}" 
+                            class="accordion-collapse collapse{% if loop.index == 1 %} show{% endif %}" 
+                            aria-labelledby="collapseItemTitle{{ element.id }}{{ loop.index }}" 
+                            data-bs-parent="#cmsElementCollapses{{ element.id }}"
+                        >
+                            <div class="accordion-body">
+                                {{ itemValues.content|raw }}
+                            </div>
                         </div>
                     </div>
                 </div>
