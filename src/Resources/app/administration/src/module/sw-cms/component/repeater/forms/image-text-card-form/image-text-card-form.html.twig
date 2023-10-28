@@ -1,0 +1,60 @@
+{% block image_text_card_form %}
+    <div class="image-text-card-form" v-if="element">
+        {# IMAGE #}
+        <div>
+            <sw-cms-mapping-field 
+                :label="$tc('sw-cms.component.repeater.forms.image-text-card.imageLabel')" 
+                valueTypes="entity" 
+                entity="media" 
+                v-model="element.config.cardMediaItems"
+            >
+                <sw-media-upload-v2 
+                    :entityMediaItems="mediaItems"
+                    :entity="entity"
+                    :uploadTag="uploadTag"
+                    :defaultFolder="defaultFolder"
+                    :source="previewSource"
+                    :allowMultiSelect="false"
+                    @media-upload-sidebar-open="onOpenMediaModal('thumbnail')"
+                    @media-upload-remove-image="onItemRemove"
+                />
+            </sw-cms-mapping-field>
+
+            <sw-upload-listener
+                :uploadTag="uploadTag"
+                autoUpload
+                @media-upload-finish="successfulUpload"
+            />
+
+            <sw-media-modal-v2
+                variant="regular"
+                v-if="mediaModalIsOpen"
+                :caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+                :entityContext="cmsPageState.entityName"
+                :initialFolderId="cmsPageState.defaultMediaFolderId"
+                :allowMultiSelect="false"
+                @media-upload-remove-image="onItemRemove"
+                @media-modal-selection-change="onMediaSelectionChange"
+                @modal-close="onCloseMediaModal"
+            />
+        </div>
+
+
+        {# Title #}
+        <sw-text-field
+            class="sw-field"
+            v-model="cardInfo.title"
+            :label="$tc('sw-cms.component.repeater.forms.image-text-card.titleLabel')"
+        />
+
+        {# Description #}
+        <sw-text-editor
+            v-model="cardInfo.description"
+            :label="$tc('sw-cms.component.repeater.forms.image-text-card.descriptionLabel')"
+            :allow-inline-data-mapping="true"
+            sanitize-input
+            @input="onInput"
+            @blur="onBlur"
+        />
+    </div>
+{% endblock %}

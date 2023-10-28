@@ -1,0 +1,12 @@
+{% block sw_cms_element_image_text_cards_config %}
+    <div class="sw-cms-el-config-image-text-cards">
+        {# Items #}
+        <repeater 
+            v-model="element.config.fields.value" 
+            formName="image-text-card-form"
+            :defaultValue="defaultValue" 
+            :blockName="$tc('sw-cms.elements.image-text-cards.config.blockName')"
+            :addButtonText="$tc('sw-cms.elements.image-text-cards.config.addButton')">
+        </repeater>
+    </div>
+{% endblock %}

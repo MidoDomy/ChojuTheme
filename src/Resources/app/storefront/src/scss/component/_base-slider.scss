@@ -1,0 +1,38 @@
+.base-slider {
+  --dot-size: 0.625rem;
+
+  .tns-slider {
+    &.tns-horizontal {
+      display: flex;
+    }
+  }
+
+  .tns-nav, 
+  .base-slider-dots {
+    position: static;
+    display: flex;
+    justify-content: center;
+    transform: none;
+    width: 100%;
+    margin: $spacer*1.5 0 0;
+
+    .base-slider-dot,
+    button {
+      width: var(--dot-size);
+      height: var(--dot-size);
+      margin: 0 $spacer*0.313;
+      padding: 0;
+      background-color: transparent;
+      border: 0.063rem solid $gray-bg;
+
+      &:hover {
+        background-color: $gray-bg;
+      }
+
+      &.tns-nav-active {
+        background-color: $sw-color-brand-secondary;
+        border-color: $sw-color-brand-secondary;
+      }
+    }
+  }
+}

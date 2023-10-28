@@ -13,12 +13,14 @@
 @import 'component/breadcrumb';
 @import 'component/gallery-slider';
 @import 'component/accordion';
+@import 'component/base-slider';
 
 // CMS
   // sections
 @import 'component/cms-section/section';
   // blocks
 @import 'component/cms-block/gallery-buybox';
+@import 'component/cms-block/image-text-cards';
   // elements
 @import 'component/cms-element/product-listing';
 @import 'component/cms-element/product-slider';
@@ -26,6 +28,7 @@
 @import 'component/cms-element/image-gallery';
 @import 'component/cms-element/product-description-reviews';
 @import 'component/cms-element/devider';
+@import 'component/cms-element/image-text-cards';
 
 // LAYOUTS
 @import 'layout/footer';

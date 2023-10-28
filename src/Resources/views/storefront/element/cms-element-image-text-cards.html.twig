@@ -1,0 +1,82 @@
+{% block element_image_text_cards %}
+    {% set cards = element.translated.config.fields.value %}
+
+    <div class="cms-element-{{ element.type }}">
+        {% set sliderOptions = {
+            slider: {
+                navPosition: 'bottom',
+                items: 3,
+                gutter: 16,
+                mouseDrag: true,
+                slideBy: 1,
+                loop: false,              
+                speed: 500,
+                nav: true,
+                controls: false,
+                autoHeight: false,
+                sliderItems: element.translated.config.fields.value,
+                responsive: {
+                    xs: {
+                        items: 1,
+                    },
+                    sm: {
+                        items: 2,
+                    },
+                    md: {
+                        items: 2,
+                    }
+                }
+            }
+        } %}
+
+        {% block element_image_text_cards_alignment %}
+            <div class="base-slider has-nav image-text-cards-slider"
+                data-base-slider="true"
+                data-base-slider-options='{{ sliderOptions|json_encode }}'
+            >
+                {% block element_image_text_cards_inner %}
+                    <div class="image-text-cards-container"
+                        data-base-slider-container="true"
+                    >
+                        {% for card in cards %}
+                            <div>
+                                <div class="image-text-card">
+                                    {# Image #}
+                                    {% if card.value.imageId|length %}
+                                        {# fetch media as batch - optimized for performance #}
+                                        {% set mediaCollection = searchMedia([card.value.imageId], context.context) %}
+                                        {# extract single media object #}
+                                        {% set image = mediaCollection.get(card.value.imageId) %}
+
+                                        {% sw_thumbnails 'cms-image-text-cards-thumbnails' with {
+                                            media: image,
+                                            attributes: {
+                                                'class': 'image-text-card-img',
+                                            }
+                                        } %}
+                                    {% endif %}
+                    
+                                    <div class="image-text-card-content">
+                                        {# Headline #}
+                                        {% if card.value.title %}
+                                            <h1 v-if="card.value.title"
+                                                class="image-text-card-headline"
+                                            >
+                                                {{ card.value.title }}
+                                            </h1>
+                                        {% endif %}
+
+                                        {# Description #}
+                                        <div class="image-text-card-description">
+                                            {{ card.value.description|raw }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

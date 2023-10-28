@@ -1,0 +1,42 @@
+{% block sw_cms_element_image_text_cards %}
+    <div class="sw-cms-el-image-text-cards">
+        <div v-if="fields.length == 0">
+            <sw-alert variant="info">
+                {{ $tc('sw-cms.elements.image-text-cards.component.emptyText') }}
+            </sw-alert>
+        </div>
+
+        <div class="image-text-cards-container">
+            <div class="image-text-card" v-for="(card, index) in fields" :key="index">
+                <img v-if="mediaUrl(card.value.imageId)" 
+                    :src="mediaUrl(card.value.imageId)"
+                    class="image-text-card-img"
+                >
+
+                <div class="image-text-card-content">
+                    <h1 v-if="card.value.title"
+                        class="image-text-card-headline"
+                    >
+                        {{ card.value.title }}
+                    </h1>
+
+                    <div v-html="card.value.description" 
+                        class="image-text-card-description"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="sw-cms-el-image-text-card__navigation-dots"
+        >
+            <div class="sw-cms-el-image-text-card__navigation-buttons">
+                <template>
+                    <div class="sw-cms-el-image-text-card__navigation-button is--active"></div>
+                    <div class="sw-cms-el-image-text-card__navigation-button"></div>
+                    <div class="sw-cms-el-image-text-card__navigation-button"></div>
+                </template>
+            </div>
+        </div>
+    </div>
+{% endblock %}
