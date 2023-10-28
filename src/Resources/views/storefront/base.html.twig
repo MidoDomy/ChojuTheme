@@ -2,18 +2,19 @@
 
 {% block base_header %}
     {# Check if category has teaser image - start #}
-        {% set isHomepage = true %}
-        {% for navItem in page.header.navigation.tree %}
-            {% if page.header.navigation.active.id == navItem.id %}
-                {% set isHomepage = false %}
-            {% endif %}
-        {% endfor %}
-
-        {% set hasTeaser = page.header.navigation.active.media ? true : false %}
-
-        {% if isHomepage and not(controllerAction|lower == 'home') %}
-            {% set hasTeaser = false %}
+    {% set currentCategory = page.header.navigation.active %}
+    {% set isHomepage = true %}
+    {% for navItem in page.header.navigation.tree %}
+        {% if currentCategory.id == navItem.id %}
+            {% set isHomepage = false %}
         {% endif %}
+    {% endfor %}
+
+    {% set hasTeaser = currentCategory.media ? true : false %}
+
+    {% if isHomepage and not(controllerAction|lower == 'home') %}
+        {% set hasTeaser = false %}
+    {% endif %}
     {# Check if category has teaser image - end #}
 
     <header class="header-main{% if not(hasTeaser) %} header-dark{% endif %}{% if hasTeaser %} position-absolute{% endif %}">
@@ -32,23 +33,24 @@
 
     {# Category teaser #}
     {# Check if category has teaser image - start #}
-        {% set isHomepage = true %}
-        {% for navItem in page.header.navigation.tree %}
-            {% if page.header.navigation.active.id == navItem.id %}
-                {% set isHomepage = false %}
-            {% endif %}
-        {% endfor %}
-
-        {% set hasTeaser = page.header.navigation.active.media ? true : false %}
-
-        {% if isHomepage and not(controllerAction|lower == 'home') %}
-            {% set hasTeaser = false %}
+    {% set currentCategory = page.header.navigation.active %}
+    {% set isHomepage = true %}
+    {% for navItem in page.header.navigation.tree %}
+        {% if currentCategory.id == navItem.id %}
+            {% set isHomepage = false %}
         {% endif %}
+    {% endfor %}
+
+    {% set hasTeaser = currentCategory.media ? true : false %}
+
+    {% if isHomepage and not(controllerAction|lower == 'home') %}
+        {% set hasTeaser = false %}
+    {% endif %}
     {# Check if it has teaser image - end #}
     
     {% if hasTeaser %}
         {% sw_include '@Storefront/storefront/component/custom/category-teaser.html.twig' with {
-            category: page.header.navigation.active
+            category: currentCategory
         } %}
     {% endif %}
 

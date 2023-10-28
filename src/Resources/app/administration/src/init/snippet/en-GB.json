@@ -1,7 +1,17 @@
 {
     "sw-category": {
-        "fullScreen": {
-            "label": "Is full screen"
+        "base": {
+            "teaser": {
+                "title": "Teaser info",
+                "fullScreenLabel": "Is full screen",
+                "imageLabel": "Teaser image",
+                "contentLabel": "Teaser content"
+            },
+            "listing": {
+                "title": "Listing info",
+                "titleLabel": "Listing title",
+                "contentLabel": "Listing content"
+            }
         }
     },
     "sw-cms": {
