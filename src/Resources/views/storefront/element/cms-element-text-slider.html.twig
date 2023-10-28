@@ -1,0 +1,68 @@
+{% block element_text_slider %}
+    {% set items = element.translated.config.fields.value %}
+
+    <div class="cms-element-{{ element.type }}">
+        {% set sliderOptions = {
+            slider: {
+                navPosition: 'bottom',
+                items: 1.5,
+                gutter: 35,
+                mouseDrag: true,
+                slideBy: 1,     
+                loop: false,      
+                speed: 500,
+                nav: true,
+                controls: true,
+                autoHeight: false,
+                sliderItems: element.translated.config.fields.value,
+                responsive: {
+                    xs: {
+                        items: 1,
+                    },
+                    sm: {
+                        items: 1,
+                    },
+                }
+            }
+        } %}
+
+        {% block element_text_slider_alignment %}
+            <div class="base-slider has-nav text-slider-slider"
+                data-base-slider="true"
+                data-base-slider-options='{{ sliderOptions|json_encode }}'
+            >
+                {% block element_text_slider_inner %}
+                    <div class="text-slider-container"
+                        data-base-slider-container="true"
+                    >
+                        {% for item in items %}
+                            <div>
+                                {{ item.value.content|raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+
+                {% block element_text_slider_controls %}
+                    <div class="base-slider-controls"
+                        data-base-slider-controls="true"
+                    >
+                        {% block element_text_slider_controls_items %}
+                            <button class="base-slider-controls-prev text-slider-controls-prev">
+                                {% block element_text_slider_controls_items_prev_icon %}
+                                    {% sw_icon 'arrow-left' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                {% endblock %}
+                            </button>
+
+                            <button class="base-slider-controls-next text-slider-controls-next">
+                                {% block element_text_slider_controls_items_next_icon %}
+                                    {% sw_icon 'arrow-right' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                {% endblock %}
+                            </button>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

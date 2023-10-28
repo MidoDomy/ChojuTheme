@@ -30,6 +30,9 @@
                         "imageLabel": "Image",
                         "titleLabel": "Headline",
                         "descriptionLabel": "Description"
+                    },
+                    "text": {
+                        "content": "Text content"
                     }
                 }
             }
@@ -72,6 +75,16 @@
                     "blockName": "Card",
                     "addButton": "Add new card"
                 }
+            },
+            "text-slider": {
+                "label": "Text slider",
+                "component": {
+                    "emptyText": "Add text items from element settings"
+                },
+                "config": {
+                    "blockName": "Text item",
+                    "addButton": "Add new text item"
+                }
             }
         },
         "blocks": {
@@ -84,6 +97,9 @@
                 },
                 "image-text-cards": {
                     "label": "Image-text cards"
+                },
+                "text-slider": {
+                    "label": "Text slider"
                 }
             }
         }

@@ -1,0 +1,34 @@
+.cms-element-text-slider {
+  .base-slider {
+    @include media-breakpoint-up(md) {
+      overflow: visible;
+    }
+  }
+
+  .tns-item {
+    *:last-child {
+      margin-bottom: 0;
+    }
+
+    &:not(.tns-slide-active) {
+      opacity: .4;
+    }
+  }
+
+  .tns-nav {
+    justify-content: flex-start;
+    margin-top: $spacer*1.25;
+
+    @include media-breakpoint-up(md) {
+      margin-top: $spacer*1.875;
+    }
+  }
+
+  .base-slider-controls {
+    margin-top: $spacer*1.25;
+
+    @include media-breakpoint-up(md) {
+      margin-top: $spacer*3.75;
+    }
+  }
+}

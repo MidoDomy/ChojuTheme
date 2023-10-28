@@ -1,0 +1,15 @@
+{% block text_form %}
+    <div class="text-form">
+        {% block sw_cms_element_text_form_config %}
+            {# Content #}
+            <sw-text-editor
+                v-model="textInfo.content"
+                :label="$tc('sw-cms.component.repeater.forms.text.content')"
+                :allow-inline-data-mapping="true"
+                sanitize-input
+                @input="onInput"
+                @blur="onBlur"
+            />
+        {% endblock %}
+    </div>
+{% endblock %}

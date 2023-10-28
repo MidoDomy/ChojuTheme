@@ -29,6 +29,10 @@
   }
 }
 
+.form-check {
+  cursor: pointer;
+}
+
 .form-check-input {
   @include media-breakpoint-down(md) {
     width: 0.625rem;

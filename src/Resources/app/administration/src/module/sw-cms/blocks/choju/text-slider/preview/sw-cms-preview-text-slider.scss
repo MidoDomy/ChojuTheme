@@ -1,0 +1,36 @@
+.sw-cms-block-preview-text-slider {
+    padding: 20px;
+
+    .text-slider-item-title {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .text-slider-item-text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .navigation-dots {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .navigation-dot {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(#CCCFD5, .5);
+        border-radius: 50%;
+
+        &.is--active {
+            background-color: #CCCFD5;
+        }
+    }
+
+    .navigation-arrows {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+    }
+}

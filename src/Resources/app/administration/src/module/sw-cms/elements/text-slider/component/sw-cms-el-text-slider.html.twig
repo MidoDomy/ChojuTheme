@@ -1,0 +1,39 @@
+{% block sw_cms_element_text_slider %}
+    <div class="sw-cms-el-text-slider">
+        <div v-if="fields.length == 0">
+            <sw-alert variant="info">
+                {{ $tc('sw-cms.elements.text-slider.component.emptyText') }}
+            </sw-alert>
+        </div>
+
+        <div v-else>
+            <div v-for="item in fields"
+                class="sw-cms-el-text-slider-item"
+            >
+                <div class="sw-cms-el-text-slider-content"
+                    v-html="$sanitize(item.value.content)"
+                ></div>
+            </div>
+
+            <div class="navigation-dots">
+                <div class="navigation-dot is--active"></div>
+                <div class="navigation-dot"></div>
+                <div class="navigation-dot"></div>
+            </div>
+            
+            <div class="navigation-arrows">
+                <sw-icon
+                    class="text-slider-arrow"
+                    name="regular-chevron-left-xs"
+                    size="10"
+                />
+
+                <sw-icon
+                    class="text-slider-arrow"
+                    name="regular-chevron-right-xs"
+                    size="10"
+                />
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% block sw_cms_element_text_slider_config %}
+    <div class="sw-cms-el-config-text-slider">
+        {# Items #}
+        <repeater 
+            v-model="element.config.fields.value" 
+            formName="text-form"
+            :defaultValue="defaultValue" 
+            :blockName="$tc('sw-cms.elements.text-slider.config.blockName')"
+            :addButtonText="$tc('sw-cms.elements.text-slider.config.addButton')">
+        </repeater>
+    </div>
+{% endblock %}

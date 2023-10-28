@@ -36,3 +36,35 @@
     }
   }
 }
+
+.base-slider-controls {
+  display: flex;
+  gap: $spacer*0.625;
+}
+
+.base-slider-controls-prev, 
+.base-slider-controls-next {
+  position: static;
+  height: auto;
+  width: auto;
+  transform: none;
+  border: 0;
+  color: $sw-color-brand-primary;
+  line-height: 1;
+  opacity: 1;
+
+  &[disabled] {
+    color: $sw-color-brand-secondary;
+    opacity: .5;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    color: inherit;
+
+    svg {
+      top: $spacer*0.063;
+    }
+  }
+}

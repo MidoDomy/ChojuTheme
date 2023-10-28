@@ -1,0 +1,35 @@
+.sw-cms-el-preview-text-slider {
+    height: 100%;
+
+    .text-slider-item-title {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .text-slider-item-text {
+        font-size: 10px;
+    }
+
+    .navigation-dots {
+        display: flex;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .navigation-dot {
+        width: 7px;
+        height: 7px;
+        background-color: rgba(#CCCFD5, .5);
+        border-radius: 50%;
+
+        &.is--active {
+            background-color: #CCCFD5;
+        }
+    }
+
+    .navigation-arrows {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+}
