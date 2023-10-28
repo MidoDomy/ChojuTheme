@@ -33,6 +33,10 @@
                     },
                     "text": {
                         "content": "Text content"
+                    },
+                    "timeline": {
+                        "title": "Headline",
+                        "description": "Description"
                     }
                 }
             }
@@ -85,6 +89,16 @@
                     "blockName": "Text item",
                     "addButton": "Add new text item"
                 }
+            },
+            "timeline-slider": {
+                "label": "Timeline slider",
+                "component": {
+                    "emptyText": "Add timeline items from element settings"
+                },
+                "config": {
+                    "blockName": "Timeline item",
+                    "addButton": "Add new timeline item"
+                }
             }
         },
         "blocks": {
@@ -100,6 +114,9 @@
                 },
                 "text-slider": {
                     "label": "Text slider"
+                },
+                "timeline-slider": {
+                    "label": "Timeline slider"
                 }
             }
         }

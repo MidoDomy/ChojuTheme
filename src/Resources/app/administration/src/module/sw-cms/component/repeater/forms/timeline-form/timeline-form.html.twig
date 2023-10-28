@@ -1,0 +1,19 @@
+{% block timeline_form %}
+    <div class="timeline-form">
+        {% block sw_cms_element_timeline_form_config %}
+            {# Title #}
+            <sw-field
+                v-model="timelineInfo.title"
+                type="text"
+                :label="$tc('sw-cms.component.repeater.forms.timeline.title')"
+                required="required"
+            />
+
+            {# Description #}
+            <sw-textarea-field
+                v-model="timelineInfo.description"
+                :label="$tc('sw-cms.component.repeater.forms.timeline.description')"
+            />
+        {% endblock %}
+    </div>
+{% endblock %}

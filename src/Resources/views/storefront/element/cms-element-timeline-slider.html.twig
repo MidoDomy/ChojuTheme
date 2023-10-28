@@ -1,0 +1,79 @@
+{% block element_timeline_slider %}
+    {% set items = element.translated.config.fields.value %}
+
+    <div class="cms-element-{{ element.type }}">
+        {% set sliderOptions = {
+            slider: {
+                navPosition: 'bottom',
+                items: 4,
+                gutter: 0,
+                mouseDrag: true,
+                slideBy: 1,     
+                loop: false,      
+                speed: 500,
+                nav: false,
+                controls: true,
+                autoHeight: false,
+                sliderItems: element.translated.config.fields.value,
+                responsive: {
+                    xs: {
+                        items: 1.5,
+                    },
+                    sm: {
+                        items: 2,
+                    },
+                    md: {
+                        items: 3,
+                    },
+                }
+            }
+        } %}
+
+        {% block element_timeline_slider_alignment %}
+            <div class="base-slider has-nav timeline-slider-slider"
+                data-base-slider="true"
+                data-base-slider-options='{{ sliderOptions|json_encode }}'
+            >
+                {% block element_timeline_slider_inner %}
+                    <div class="timeline-slider-container"
+                        data-base-slider-container="true"
+                    >
+                        {% for item in items %}
+                            <div class="timeline-slider-item">
+                                <h3 class="timeline-slider-item-title">
+                                    {{ item.value.title }}
+                                </h3>
+
+                                <div class="timeline-slider-item-line"></div>
+
+                                <p class="timeline-slider-item-description">
+                                    {{ item.value.description }}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+
+                {% block element_timeline_slider_controls %}
+                    <div class="base-slider-controls"
+                        data-base-slider-controls="true"
+                    >
+                        {% block element_timeline_slider_controls_items %}
+                            <button class="base-slider-controls-prev timeline-slider-controls-prev">
+                                {% block element_timeline_slider_controls_items_prev_icon %}
+                                    {% sw_icon 'arrow-left' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                {% endblock %}
+                            </button>
+
+                            <button class="base-slider-controls-next timeline-slider-controls-next">
+                                {% block element_timeline_slider_controls_items_next_icon %}
+                                    {% sw_icon 'arrow-right' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                {% endblock %}
+                            </button>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

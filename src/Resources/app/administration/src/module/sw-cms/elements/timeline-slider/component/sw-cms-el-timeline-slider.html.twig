@@ -1,0 +1,41 @@
+{% block sw_cms_element_timeline_slider %}
+    <div class="sw-cms-el-timeline-slider">
+        <div v-if="fields.length == 0">
+            <sw-alert variant="info">
+                {{ $tc('sw-cms.elements.timeline-slider.component.emptyText') }}
+            </sw-alert>
+        </div>
+
+        <div v-else>
+            <div class="timeline-slider-container">
+                <div v-for="item in fields"
+                    class="timeline-slider-item"
+                >
+                    <div class="timeline-slider-item-title">
+                        {{ item.value.title }}
+                    </div>
+
+                    <div class="timeline-slider-item-line"></div>
+                    
+                    <div class="timeline-slider-item-description">
+                        {{ item.value.description }}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation-arrows">
+                <sw-icon
+                    class="timeline-slider-arrow"
+                    name="regular-chevron-left-xs"
+                    size="10"
+                />
+
+                <sw-icon
+                    class="timeline-slider-arrow"
+                    name="regular-chevron-right-xs"
+                    size="10"
+                />
+            </div>
+        </div>
+    </div>
+{% endblock %}

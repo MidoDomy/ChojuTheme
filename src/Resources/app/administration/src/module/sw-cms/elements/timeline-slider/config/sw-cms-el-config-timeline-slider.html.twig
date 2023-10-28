@@ -1,0 +1,12 @@
+{% block sw_cms_element_timeline_slider_config %}
+    <div class="sw-cms-el-config-timeline-slider">
+        {# Items #}
+        <repeater 
+            v-model="element.config.fields.value" 
+            formName="timeline-form"
+            :defaultValue="defaultValue" 
+            :blockName="$tc('sw-cms.elements.timeline-slider.config.blockName')"
+            :addButtonText="$tc('sw-cms.elements.timeline-slider.config.addButton')">
+        </repeater>
+    </div>
+{% endblock %}

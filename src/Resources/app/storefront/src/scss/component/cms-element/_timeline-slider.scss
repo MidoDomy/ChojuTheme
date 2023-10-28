@@ -1,0 +1,61 @@
+.cms-element-timeline-slider{
+  .base-slider {
+    overflow: visible;
+  }
+
+  .timeline-slider-item {
+    text-align: center;
+  }
+
+  .timeline-slider-item-title {
+    font-weight: bold;
+    font-size: $h3-font-size;
+  }
+
+  .timeline-slider-item-line {
+    position: relative;
+    margin: $spacer*1.563 0 $spacer*1.875;
+    border-top: $border-width $border-style $gray-bg;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1.563rem;
+      border-right: $border-width $border-style $sw-color-brand-secondary;
+    }
+
+    &::before {
+      bottom: $spacer*0.2;
+    }
+
+    &::after {
+      top: $spacer*0.2;
+    }
+  }
+
+  .timeline-slider-item-description {
+    position: relative;
+    width: 11.563rem;
+    margin: auto;
+    padding: 0 $spacer*1.25;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: $sw-color-brand-secondary;
+        border-radius: 50%;
+    }
+  }
+
+  .base-slider-controls {
+    margin-top: $spacer*1.875;
+  }
+}
