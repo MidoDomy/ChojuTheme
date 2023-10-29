@@ -1,4 +1,5 @@
 .cms-element-audio {
+  position: relative;
   display: flex;
   align-items: center;
   gap: $spacer*1.875;
@@ -6,6 +7,14 @@
   padding: $spacer*1.25 $spacer*2.5 $spacer*1.25 $spacer*1.5;
   border: 0.188rem $border-style $sw-color-brand-secondary;
   border-radius: 0.75rem;
+
+  .audio-bg {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    opacity: 0.13;
+    z-index: -1;
+  }
 
   .audio-thumbnail {
     width: 9.063rem;
