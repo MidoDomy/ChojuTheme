@@ -34,11 +34,11 @@
         {% block sw_cms_element_config_audio_image_upload %}
             <sw-cms-mapping-field 
                 v-model="element.config.thumbnail"
-                :label="$tc('sw-cms.elements.audio.config.thumbnailImageLabel')" 
                 valueTypes="entity" 
                 entity="media"
             >
-                <sw-media-upload-v2                     
+                <sw-media-upload-v2    
+                    :label="$tc('sw-cms.elements.audio.config.thumbnailImageLabel')"                  
                     variant="regular"
                     :upload-tag="uploadTag('thumbnail')"
                     :source="mediaSource('thumbnail')"
@@ -94,7 +94,7 @@
             <sw-field
                 v-model="element.config.subtitle.value"
                 type="text"
-                :label="$tc('sw-cms.elements.audio.config.titleLabel')"
+                :label="$tc('sw-cms.elements.audio.config.subtitleLabel')"
             />
         {% endblock %}
     </div>
