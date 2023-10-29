@@ -18,3 +18,35 @@
     }
   }
 }
+
+.cms-listing-category-products-row {
+  --bs-gutter-x: #{$spacer*2.5};
+  --bs-gutter-y: #{$spacer*3.125};
+  margin-bottom: $spacer*3.125;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $spacer*6.25;
+  }
+}
+
+.cms-listing-category-info {
+  padding-top: $spacer*1.25;
+}
+
+.cms-listing-category-info-title {
+  margin-bottom: $spacer*1.25;
+}
+
+.cms-listing-category-info-content {
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-sm;
+  }
+
+  .btn {
+    margin-top: $spacer*1.25;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: $spacer*2.5;
+    }
+  }
+}

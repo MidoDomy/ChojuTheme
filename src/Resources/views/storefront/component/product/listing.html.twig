@@ -1,0 +1,73 @@
+{% sw_extends '@Storefront/storefront/component/product/listing.html.twig' %}
+
+{% block element_product_listing_pagination_nav_actions %}
+    <div class="cms-element-product-listing-actions">
+        {% block element_product_listing_sorting %}
+            {% sw_include '@Storefront/storefront/component/sorting.html.twig' with {
+                current: searchResult.sorting,
+                sortings: searchResult.availableSortings
+            } %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block element_product_listing_row %}
+    <div class="js-listing-wrapper">
+        {% if searchResult.total > 0 %}
+            {% block element_product_listing_col %}
+                {% set categoriesId = [] %}
+                
+                {# Loop through product search result #}
+                {% for product in searchResult %}
+                    {# Loop through product catgory ids #}
+                    {% for categoryId in product.categoryIds  %}
+                        {# Check if category already in #}
+                        {% if not(categoryId in categoriesId) %}
+                            {% set categoriesId = categoriesId|merge(product.categoryIds) %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+
+                {# Loop through categories #}
+                {% for categoryId in categoriesId %}
+                    <div class="row cms-listing-category-products-row">
+                        {# Category infos #}
+                        <div class="col-12 col-lg-3">
+                            <div class="cms-listing-category-info">
+                                <h2 class="cms-listing-category-info-title">Category title</h2>
+    
+                                <div class="cms-listing-category-info-content">
+                                    Category content
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Products #}
+                        <div class="col">
+                            <div class="row cms-listing-row">
+                                {% for product in searchResult.elements %}
+                                    {# Check if category is in product category ids #}
+                                    {% if categoryId in product.categoryIds %}
+                                        <div class="cms-listing-col col-12 col-md-6 col-xl-4">
+                                            {% block element_product_listing_box %}
+                                                {{ parent() }}
+                                            {% endblock %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endblock %}
+        {% else %}
+            {% block element_product_listing_col_empty %}
+                <div class="cms-listing-col">
+                    {% block element_product_listing_col_empty_alert %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        {% endif %}
+    </div>
+{% endblock %}

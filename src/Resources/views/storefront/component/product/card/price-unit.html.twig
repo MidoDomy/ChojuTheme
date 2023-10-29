@@ -37,4 +37,15 @@
             </span>
         {% endif %}
     </div>
+
+    <p class="product-price-unit">
+        {# Item price is based on a reference unit #}
+        {% block component_product_box_price_reference_unit %}
+            {% if referencePrice is not null %}
+                <span class="price-unit-reference">
+                    {{ referencePrice.price|currency }} / {{ referencePrice.referenceUnit }} {{ referencePrice.unitName }}
+                </span>
+            {% endif %}
+        {% endblock %}
+    </p>
 {% endblock %}

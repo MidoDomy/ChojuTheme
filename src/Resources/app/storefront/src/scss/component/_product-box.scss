@@ -54,6 +54,12 @@
   line-height: $line-height-lg;
 }
 
+.product-price-unit {
+  height: auto;
+  margin: $spacer*0.25 0 0;
+  opacity: .5;
+}
+
 .product-action {
   margin: 0;
   font-size: $font-size-base-lead;
