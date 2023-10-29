@@ -9,9 +9,11 @@ import './elements/collapses';
 import './elements/image-text-cards';
 import './elements/text-slider';
 import './elements/timeline-slider';
+import './elements/audio';
 
 import './blocks/choju/devider';
 import './blocks/choju/collapses';
 import './blocks/choju/image-text-cards';
 import './blocks/choju/text-slider';
 import './blocks/choju/timeline-slider';
+import './blocks/choju/audio';

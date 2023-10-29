@@ -1,0 +1,21 @@
+{% block sw_cms_element_audio %}
+    <div class="sw-cms-el-audio">
+        <img class="audio-thumbnail" :src="thumbnailUrl" alt="Thumnail image">
+
+        <div class="audio-details">
+            <p v-if="author" class="audio-author">{{ author }}</p>
+            <h3 v-if="title" class="audio-title">{{ title }}</h3>
+            <p v-if="subtitle" class="audio-subtitle">{{ subtitle }}</p>
+
+            <div class="audio-bar"></div>
+        </div>
+            
+        <div class="audio-play-btn">
+            <sw-icon class="audio-play-icon"
+                name="solid-play"
+                color="#fff"
+                size="20"
+            />
+        </div>
+    </div>
+{% endblock %}

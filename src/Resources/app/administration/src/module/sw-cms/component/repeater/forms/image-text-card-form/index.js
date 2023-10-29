@@ -79,7 +79,7 @@ Component.register('image-text-card-form', {
                 }
             } 
 
-            return '';
+            return '/administration/static/img/cms/preview_mountain_small.jpg';
         }
     },
 

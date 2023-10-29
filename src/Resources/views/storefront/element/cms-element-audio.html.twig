@@ -1,0 +1,62 @@
+{% block element_audio %}
+    {% set config = element.translated.config %}
+
+    {% set audioCollection = searchMedia([config.audio.value], context.context) %}
+    {% set audio = audioCollection.get(config.audio.value) %}
+
+    {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
+    {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
+    
+    <div class="cms-element-{{ element.type }}" data-audio="true">
+        {% block element_audio_thumbnail %}
+            {% if thumbnail.id %}
+                {% sw_thumbnails 'cms-audio-thumbnail' with {
+                    media: thumbnail,
+                    attributes: {
+                        'class': 'audio-thumbnail',
+                    }
+                } %}
+            {% endif %}
+        {% endblock %}
+
+        {% block element_audio_details %}
+            <div class="audio-details">
+                {% block element_audio_author %}
+                    {% if config.author.value %}
+                        <p class="audio-author">{{ config.author.value }}</p>
+                    {% endif %}
+                {% endblock %}
+
+                {% block element_audio_title %}
+                    {% if config.title.value %}
+                        <h3 class="audio-title">{{ config.title.value }}</h3>
+                    {% endif %}
+                {% endblock %}
+
+                {% block element_audio_subtitle %}
+                    {% if config.subtitle.value %}
+                        <p class="audio-subtitle">{{ config.subtitle.value }}</p>
+                    {% endif %}
+                {% endblock %}
+
+                {% block element_audio_timeline %}
+                    <div class="timeline">
+                        <div class="progress"></div>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        <div class="toggle-play play">
+            {% sw_icon 'play' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+        </div>
+                
+        {% block element_audio_container %}
+            <div class="d-none">
+                <audio controls>
+                    <source src="{{ audio.url }}">
+                </audio> 
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

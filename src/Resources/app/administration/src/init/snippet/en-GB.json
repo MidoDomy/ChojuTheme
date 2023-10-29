@@ -109,6 +109,16 @@
                     "blockName": "Timeline item",
                     "addButton": "Add new timeline item"
                 }
+            },
+            "audio": {
+                "label": "Audio",
+                "config": {
+                    "audioLabel": "Audio file upload",
+                    "thumbnailImageLabel": "Preview/Thumbnail image",
+                    "authorLabel": "Author",
+                    "titleLabel": "Title",
+                    "subtitleLabel": "Subtitle"
+                }
             }
         },
         "blocks": {
@@ -127,6 +137,9 @@
                 },
                 "timeline-slider": {
                     "label": "Timeline slider"
+                },
+                "audio": {
+                    "label": "Audio"
                 }
             }
         }

@@ -1,0 +1,70 @@
+.cms-element-audio {
+  display: flex;
+  align-items: center;
+  gap: $spacer*1.875;
+  width: 100%;
+  padding: $spacer*1.25 $spacer*2.5 $spacer*1.25 $spacer*1.5;
+  border: 0.188rem $border-style $sw-color-brand-secondary;
+  border-radius: 0.75rem;
+
+  .audio-thumbnail {
+    width: 9.063rem;
+    max-width: 25%;
+    aspect-ratio: 1 / 1.35;
+    border-radius: 0.75rem;
+    object-fit: cover;
+  }
+
+  .audio-details {
+    flex: 1;
+  }
+
+  .audio-author {
+    margin-bottom: $spacer*1.25;
+    font-size: $font-size-base-lead;
+    line-height: $line-height-lg;
+  }
+
+  .audio-title {
+    margin-bottom: $spacer*1.25;
+    font-size: $h4-font-size;
+  }
+
+  .audio-subtitle {
+    margin-bottom: $spacer*1.875;
+    font-size: $font-size-base-lead;
+    line-height: $line-height-lg;
+  }
+
+  .timeline,
+  .progress {
+    position: relative;
+    height: 0.375rem;
+    background-color: $gray-bg;
+    border-radius: $border-radius-lg;
+    cursor: pointer;
+  }
+
+  .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background-color: $sw-color-brand-secondary;
+  }
+
+  .play {
+    color: $sw-color-brand-primary;
+    cursor: pointer;
+
+    &:hover {
+      color: $sw-color-brand-secondary;
+    }
+
+    .icon {
+      height: 3.5rem;
+      width: 3.5rem;
+      color: inherit;
+    }
+  }
+}

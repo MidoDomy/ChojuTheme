@@ -16,13 +16,6 @@
 @import 'component/base-slider';
 
 // CMS
-  // sections
-@import 'component/cms-section/section';
-  // blocks
-@import 'component/cms-block/gallery-buybox';
-@import 'component/cms-block/image-text-cards';
-@import 'component/cms-block/text-slider';
-@import 'component/cms-block/timeline-slider';
   // elements
 @import 'component/cms-element/product-listing';
 @import 'component/cms-element/product-slider';
@@ -33,6 +26,14 @@
 @import 'component/cms-element/image-text-cards';
 @import 'component/cms-element/text-slider';
 @import 'component/cms-element/timeline-slider';
+@import 'component/cms-element/audio';
+// blocks
+@import 'component/cms-block/gallery-buybox';
+@import 'component/cms-block/image-text-cards';
+@import 'component/cms-block/text-slider';
+@import 'component/cms-block/timeline-slider';
+// sections
+@import 'component/cms-section/section';
 
 // LAYOUTS
 @import 'layout/footer';

@@ -1,0 +1,101 @@
+{% block sw_cms_element_config_audio %}
+    <div class="sw-cms-el-config-audio">
+        {# Audio #}
+        {% block sw_cms_element_config_audio_audio_upload %}
+            <sw-cms-mapping-field 
+                v-model="element.config.media"
+                valueTypes="entity" 
+                entity="media"
+            >
+                <sw-media-upload-v2 
+                    :label="$tc('sw-cms.elements.audio.config.audioLabel')" 
+                    variant="regular"
+                    :uploadTag="uploadTag('audio')"
+                    :source="mediaSource('audio')"
+                    :allowMultiSelect="false"
+                    fileAccept="audio/*"
+                    :defaultFolder="cmsPageState.pageEntityName"
+                    :caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+                    @media-upload-sidebar-open="onOpenMediaModal('audio')"
+                    @media-upload-remove-image="onMediaRemove('audio')" 
+                />
+            </sw-cms-mapping-field>
+
+            <sw-upload-listener
+                :uploadTag="uploadTag('audio')"
+                autoUpload
+                @media-upload-finish="({ targetId }) => {
+                    onMediaUpload(targetId, 'audio')
+                }"
+            />
+        {% endblock %}
+
+        {# Thumbnail image #}
+        {% block sw_cms_element_config_audio_image_upload %}
+            <sw-cms-mapping-field 
+                v-model="element.config.thumbnail"
+                :label="$tc('sw-cms.elements.audio.config.thumbnailImageLabel')" 
+                valueTypes="entity" 
+                entity="media"
+            >
+                <sw-media-upload-v2                     
+                    variant="regular"
+                    :upload-tag="uploadTag('thumbnail')"
+                    :source="mediaSource('thumbnail')"
+                    :allow-multi-select="false"
+                    :default-folder="cmsPageState.pageEntityName"
+                    :caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+                    @media-upload-sidebar-open="onOpenMediaModal('thumbnail')"
+                    @media-upload-remove-image="onMediaRemove('thumbnail')"
+                />
+            </sw-cms-mapping-field>
+
+            <sw-upload-listener
+                :uploadTag="uploadTag('thumbnail')"
+                autoUpload
+                @media-upload-finish="({ targetId }) => {
+                    onMediaUpload(targetId, 'thumbnail')
+                }"
+            />
+        {% endblock %}
+
+        <sw-media-modal-v2
+            variant="regular"
+            v-if="mediaModalIsOpen"
+            :caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+            :entityContext="cmsPageState.entityName"
+            :allowMultiSelect="false"
+            :initialFolderId="cmsPageState.defaultMediaFolderId"
+            @media-upload-remove-image="onMediaModalRemove"
+            @media-modal-selection-change="onSelectionChanges"
+            @modal-close="onCloseModal"
+        />
+
+        {# Author #}
+        {% block sw_cms_element_icon_config_author %}
+            <sw-field
+                v-model="element.config.author.value"
+                type="text"
+                :label="$tc('sw-cms.elements.audio.config.authorLabel')"
+            />
+        {% endblock %}
+
+        {# Title #}
+        {% block sw_cms_element_icon_config_title %}
+            <sw-field
+                v-model="element.config.title.value"
+                type="text"
+                :label="$tc('sw-cms.elements.audio.config.titleLabel')"
+            />
+        {% endblock %}
+
+        {# Subitle #}
+        {% block sw_cms_element_icon_config_subtitle %}
+            <sw-field
+                v-model="element.config.subtitle.value"
+                type="text"
+                :label="$tc('sw-cms.elements.audio.config.titleLabel')"
+            />
+        {% endblock %}
+    </div>
+{% endblock %}
