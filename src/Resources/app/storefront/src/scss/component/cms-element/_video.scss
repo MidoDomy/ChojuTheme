@@ -1,0 +1,38 @@
+.cms-element-video {
+  position: relative;
+  cursor: pointer;
+
+  &.is-playing {
+    .preview-content {
+      display: none;
+    }
+  }
+
+  .preview-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .toggle-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .icon {
+      height: 52px;
+      width: 52px;
+      color: $sw-color-brand-secondary;
+    }
+  }
+}

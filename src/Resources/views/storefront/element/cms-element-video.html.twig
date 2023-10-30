@@ -1,0 +1,40 @@
+{% block element_video %}
+    {% set config = element.translated.config %}
+
+    {% set videoCollection = searchMedia([config.video.value], context.context) %}
+    {% set video = videoCollection.get(config.video.value) %}
+
+    {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
+    {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
+    
+    <div class="cms-element-{{ element.type }}" data-custom-video="true">
+        {% block element_video_video %}
+            <video width="100%" 
+                data-src="{{ video.url }}" 
+                muted 
+                controls 
+            ></video>
+        {% endblock %}
+
+        {% block element_video_preview %}
+            {% if thumbnail.id %}
+                <div class="preview-content">
+                    {% block element_video_preview_play %}
+                        <div class="toggle-play play">
+                            {% sw_icon 'play-2' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                        </div>
+                    {% endblock %}
+
+                    {% block element_video_thumbnail %}
+                        {% sw_thumbnails 'cms-video-thumbnail' with {
+                            media: thumbnail,
+                            attributes: {
+                                'class': 'video-thumbnail',
+                            }
+                        } %}
+                    {% endblock %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}

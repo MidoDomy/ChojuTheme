@@ -125,6 +125,13 @@
                     "titleLabel": "Title",
                     "subtitleLabel": "Subtitle"
                 }
+            },
+            "video": {
+                "label": "Custom video",
+                "config": {
+                    "videoLabel": "Video file upload",
+                    "thumbnailImageLabel": "Preview/Thumbnail image"
+                }
             }
         },
         "blocks": {
@@ -146,6 +153,9 @@
                 },
                 "audio": {
                     "label": "Audio"
+                },
+                "video": {
+                    "label": "Custom video"
                 }
             }
         }

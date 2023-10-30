@@ -1,8 +1,8 @@
-import template from './sw-cms-el-config-audio.html.twig';
+import template from './sw-cms-el-config-video.html.twig';
 
 const { Component, Mixin } = Shopware;
 
-Component.register('sw-cms-el-config-audio', {
+Component.register('sw-cms-el-config-video', {
     template,
 
     mixins: [
@@ -32,12 +32,12 @@ Component.register('sw-cms-el-config-audio', {
 
     methods: {
         createdComponent() {
-            this.initElementConfig('audio');
-            this.initElementData('audio');
+            this.initElementConfig('video');
+            this.initElementData('video');
         },
 
         uploadTag(target) {
-            return `cms-element-audio-config-${target}-${this.element.id}`;
+            return `cms-element-video-config-${target}-${this.element.id}`;
         },
 
         mediaSource(target) {
@@ -87,9 +87,9 @@ Component.register('sw-cms-el-config-audio', {
             this.$set(this.element.data, `${this.currentTarget}Id`, mediaId);
             this.$set(this.element.data, this.currentTarget, media);
 
-            if(this.currentTarget == 'audio' && this.element.data[this.currentTarget]) {
-                if(this.element.data.audio.fileExtension !== "mp3") {
-                    this.onMediaRemove('audio');
+            if(this.currentTarget == 'video' && this.element.data[this.currentTarget]) {
+                if(this.element.data.video.fileExtension !== "mp4") {
+                    this.onMediaRemove('video');
                 }
             }
         },
