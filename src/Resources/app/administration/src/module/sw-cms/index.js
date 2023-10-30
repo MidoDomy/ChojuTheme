@@ -2,6 +2,7 @@ import './component/sw-cms-section';
 import './component/sw-cms-sidebar';
 import './component/repeater';
 
+import './elements/text';
 import './elements/product-slider';
 import './elements/form';
 import './elements/devider';

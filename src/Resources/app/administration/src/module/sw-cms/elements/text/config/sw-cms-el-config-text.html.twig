@@ -1,0 +1,12 @@
+{% block sw_cms_el_text_config_settings_vertical_align %}
+    {% parent %}
+
+    {# Max width #}
+    {% block sw_cms_el_text_config_settings_max_width %}
+        <sw-field
+            v-model="element.config.maxWidth.value"
+            type="text"
+            :label="$tc('sw-cms.elements.text.config.maxWidthLabel')"
+        />
+    {% endblock %}
+{% endblock %}
