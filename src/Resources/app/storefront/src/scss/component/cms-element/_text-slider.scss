@@ -1,4 +1,6 @@
 .cms-element-text-slider {
+  margin: 0 auto;
+  
   .base-slider {
     @include media-breakpoint-up(md) {
       overflow: visible;

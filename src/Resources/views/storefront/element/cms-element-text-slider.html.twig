@@ -1,7 +1,10 @@
 {% block element_text_slider %}
+    {% set config = element.translated.config %}
     {% set items = element.translated.config.fields.value %}
 
-    <div class="cms-element-{{ element.type }}">
+    <div class="cms-element-{{ element.type }}" 
+        style="max-width: {{ config.maxWidth.value }}"
+    >
         {% set sliderOptions = {
             slider: {
                 navPosition: 'bottom',

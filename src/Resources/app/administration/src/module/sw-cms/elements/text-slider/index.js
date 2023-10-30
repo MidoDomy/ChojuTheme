@@ -13,5 +13,9 @@ Shopware.Service('cmsService').registerCmsElement({
             source: 'static',
             value: []
         },
+        maxWidth: {
+            source: 'static',
+            value: '100%',
+        },
     }
 });

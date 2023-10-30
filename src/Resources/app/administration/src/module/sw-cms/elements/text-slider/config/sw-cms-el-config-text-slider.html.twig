@@ -1,12 +1,70 @@
 {% block sw_cms_element_text_slider_config %}
     <div class="sw-cms-el-config-text-slider">
-        {# Items #}
-        <repeater 
-            v-model="element.config.fields.value" 
-            formName="text-form"
-            :defaultValue="defaultValue" 
-            :blockName="$tc('sw-cms.elements.text-slider.config.blockName')"
-            :addButtonText="$tc('sw-cms.elements.text-slider.config.addButton')">
-        </repeater>
+        {% block sw_cms_element_text_slider_config_tabs %}
+            <sw-tabs
+                class="sw-cms-el-config-text-slider__tabs"
+                default-item="content"
+                positionIdentifier="test"
+            >
+                <template slot-scope="{ active }">
+                    {% block sw_cms_element_text_slider_config_tab_content %}
+                        <sw-tabs-item
+                            :title="$tc('sw-cms.elements.general.config.tab.content')"
+                            name="content"
+                            :active-tab="active"
+                        >
+                            {{ $tc('sw-cms.elements.general.config.tab.content') }}
+                        </sw-tabs-item>
+                    {% endblock %}
+
+                    {% block sw_cms_element_text_slider_config_tab_options %}
+                        <sw-tabs-item
+                            :title="$tc('sw-cms.elements.general.config.tab.settings')"
+                            name="settings"
+                            :active-tab="active"
+                        >
+                            {{ $tc('sw-cms.elements.general.config.tab.settings') }}
+                        </sw-tabs-item>
+                    {% endblock %}
+                </template>
+
+                <template
+                    slot="content"
+                    slot-scope="{ active }"
+                >
+                    {% block sw_cms_element_text_slider_config_content %}
+                        <sw-container
+                            v-if="active === 'content'"
+                            class="sw-cms-el-config-text-slider__tab-content"
+                        >
+                            {# Items #}
+                            <repeater 
+                                v-model="element.config.fields.value" 
+                                formName="text-form"
+                                :defaultValue="defaultValue" 
+                                :blockName="$tc('sw-cms.elements.text-slider.config.blockName')"
+                                :addButtonText="$tc('sw-cms.elements.text-slider.config.addButton')">
+                            </repeater>
+                        </sw-container>
+                    {% endblock %}
+
+                    {% block sw_cms_element_text_slider_config_settings %}
+                        <sw-container
+                            v-if="active === 'settings'"
+                            class="sw-cms-el-config-text-slider__tab-settings"
+                        >
+                            {# Max width #}
+                            {% block sw_cms_el_text_slider_config_settings_max_width %}
+                                <sw-field
+                                    v-model="element.config.maxWidth.value"
+                                    type="text"
+                                    :label="$tc('sw-cms.elements.text-slider.config.maxWidthLabel')"
+                                />
+                            {% endblock %}
+                        </sw-container>
+                    {% endblock %}
+                </template>
+            </sw-tabs>
+        {% endblock %}
     </div>
 {% endblock %}

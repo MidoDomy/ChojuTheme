@@ -90,6 +90,11 @@
                     "addButton": "Add new card"
                 }
             },
+            "text": {
+                "config": {
+                    "maxWidthLabel": "Max width"
+                }
+            },
             "text-slider": {
                 "label": "Text slider",
                 "component": {
@@ -97,7 +102,8 @@
                 },
                 "config": {
                     "blockName": "Text item",
-                    "addButton": "Add new text item"
+                    "addButton": "Add new text item",
+                    "maxWidthLabel": "Max width"
                 }
             },
             "timeline-slider": {
