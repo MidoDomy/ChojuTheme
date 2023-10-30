@@ -44,7 +44,7 @@
         {% if hasChildren %}
             {% sw_include '@Storefront/storefront/layout/navigation/flyout.html.twig' with {
                 navigationTree: treeItem, 
-                level: level+1, 
+                level: level + 1, 
                 page: page
             } only %}
         {% endif %}

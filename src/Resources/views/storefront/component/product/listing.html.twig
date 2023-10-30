@@ -15,38 +15,48 @@
     <div class="js-listing-wrapper">
         {% if searchResult.total > 0 %}
             {% block element_product_listing_col %}
-                {% set categoriesId = [] %}
+                {# Return category listing content by category id #}
+                {% macro getCategoryContent(categories, id) %}
+                    {% for category in categories %}
+                        {% if category.id == id %}
+                            <div class="cms-listing-category-info">
+                                <h2 class="cms-listing-category-info-title">
+                                    {{ category.category.translated.customFields.listingTitle }}
+                                </h2>
+
+                                <div class="cms-listing-category-info-content">
+                                    {{ category.category.translated.customFields.listingContent|raw }}
+                                </div>
+                            </div>
+                        {% else %}
+                            {{ _self.getCategoryContent(category.children, id) }}
+                        {% endif %}
+                    {% endfor %}
+                {% endmacro %}
+
+                {% set categoryIds = [] %}
                 
-                {# Loop through product search result #}
+                {# Get all different category ids from products #}
                 {% for product in searchResult %}
-                    {# Loop through product catgory ids #}
                     {% for categoryId in product.categoryIds  %}
-                        {# Check if category already in #}
-                        {% if not(categoryId in categoriesId) %}
-                            {% set categoriesId = categoriesId|merge(product.categoryIds) %}
+                        {% if not(categoryId in categoryIds) %}
+                            {% set categoryIds = categoryIds|merge([categoryId]) %}
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
 
                 {# Loop through categories #}
-                {% for categoryId in categoriesId %}
+                {% for categoryId in categoryIds %}
                     <div class="row cms-listing-category-products-row">
-                        {# Category infos #}
+                        {# Category listing content #}
                         <div class="col-12 col-lg-3">
-                            <div class="cms-listing-category-info">
-                                <h2 class="cms-listing-category-info-title">Category title</h2>
-    
-                                <div class="cms-listing-category-info-content">
-                                    Category content
-                                </div>
-                            </div>
+                            {{ _self.getCategoryContent(page.header.navigation.tree, categoryId) }}
                         </div>
 
-                        {# Products #}
+                        {# Products with same category id #}
                         <div class="col">
                             <div class="row cms-listing-row">
                                 {% for product in searchResult.elements %}
-                                    {# Check if category is in product category ids #}
                                     {% if categoryId in product.categoryIds %}
                                         <div class="cms-listing-col col-12 col-md-6 col-xl-4">
                                             {% block element_product_listing_box %}
