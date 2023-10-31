@@ -1,5 +1,45 @@
 {
     "choju": {
-        
+        "socialMedia": {
+            "facebookLink": "#",
+            "facebookTitle": "Facebook",
+            "instagramLink": "#",
+            "instagramTitle": "Instagram",
+            "linkedinLink": "#",
+            "linkedinTitle": "LinkedIn",
+            "youtubeLink": "#",
+            "youtubeTitle": "Youtube"
+        },
+        "navigationCollapse": {
+            "service": {
+                "phoneLink": "#",
+                "phoneText": "Kundenservice",
+                "emailLink": "#",
+                "emailText": "Newsletter"
+            }
+        },
+        "footer": {
+            "logoTitle": "Logo img",
+            "serviceHotlinePhone": "+49 8531 23-2975",
+            "serviceHotlineMail": "info@choju-health.de"
+        },
+        "globalActions": {
+            "phoneLink": "#",
+            "emailLink": "#",
+            "globeLink": "#",
+            "wirelessLink": "#",
+            "plusLink": "#"
+        },
+        "detail": {
+            "quantityLabel": "Quantity:",
+            "tabsGeneralInfo": "General info"
+        }
+    },
+    "general": {
+        "privacyNoticeText": "Ich bin mit den <a data-ajax-modal=\"true\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"AGBs\">AGBs</a> und <a data-ajax-modal=\"true\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzerklärungen einverstanden\">Datenschutzerklärungen einverstanden</a>*"
+    },
+    "footer": {
+        "serviceHotline": "Chōju </br> Sonnenbergstrasse 74 </br> 6052 Hergiswil",
+        "copyrightInfo": "©%year% Chōju"
     }
 }
