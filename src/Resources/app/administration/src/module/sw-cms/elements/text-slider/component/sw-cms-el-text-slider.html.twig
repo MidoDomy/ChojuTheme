@@ -1,5 +1,8 @@
 {% block sw_cms_element_text_slider %}
-    <div class="sw-cms-el-text-slider" :style="`max-width: ${element.config.maxWidth.value};`">
+    <div class="sw-cms-el-text-slider"
+        :class="`has--horizontal-align-${element.config.horizontalAlign.value}`" 
+        :style="`max-width: ${element.config.maxWidth.value};`"
+    >
         <div v-if="fields.length == 0">
             <sw-alert variant="info">
                 {{ $tc('sw-cms.elements.text-slider.component.emptyText') }}

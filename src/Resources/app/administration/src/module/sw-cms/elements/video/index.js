@@ -9,6 +9,10 @@ Shopware.Service('cmsService').registerCmsElement({
     configComponent: 'sw-cms-el-config-video',
     previewComponent: 'sw-cms-el-preview-video',
     defaultConfig: {
+        height: {
+            source: 'static',
+            value: '',
+        },
         video: {
             source: 'static',
             value: null,
@@ -19,7 +23,6 @@ Shopware.Service('cmsService').registerCmsElement({
         },
         thumbnail: {
             source: 'static',
-            required: true,
             value: null,
             entity: {
                 name: 'media'

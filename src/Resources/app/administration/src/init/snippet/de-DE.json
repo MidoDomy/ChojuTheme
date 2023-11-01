@@ -1,7 +1,173 @@
 {
     "sw-category": {
-        "fullScreen": {
-            "label": "Is full screen"
+        "base": {
+            "teaser": {
+                "title": "Teaser info",
+                "fullScreenLabel": "Is full screen",
+                "imageLabel": "Teaser image",
+                "contentLabel": "Teaser content"
+            },
+            "listing": {
+                "title": "Listing info",
+                "titleLabel": "Listing title",
+                "contentLabel": "Listing content"
+            }
+        }
+    },
+    "sw-cms": {
+        "detail": {
+            "label": {
+                "backgroundMediaModeCustom": "Custom",
+                "backgroundSizeField": "Background size",
+                "backgroundPositionField": "Background position",
+                "backgroundRepeatField": "Background repeat",
+                "backgroundRepeatNoRepeat": "No repeat",
+                "backgroundRepeatRepeat": "Repeat",
+                "backgroundRepeatRepeatX": "Repeat X",
+                "backgroundRepeatRepeatY": "Repeat Y",
+                "choju": "Choju blocks"
+            }
+        },
+        "component": {
+            "repeater": {
+                "contentElements": "Content elements",
+                "forms": {
+                    "collapse": {
+                        "title": "Collapse title",
+                        "content": "Collapse content"
+                    },
+                    "image-text-card": {
+                        "imageLabel": "Image",
+                        "titleLabel": "Headline",
+                        "descriptionLabel": "Description"
+                    },
+                    "text": {
+                        "content": "Text content"
+                    },
+                    "timeline": {
+                        "title": "Headline",
+                        "description": "Description"
+                    }
+                }
+            }
+        },
+        "elements": {
+            "productSlider": {
+                "config": {
+                    "label": {
+                        "content": "Content"
+                    }
+                }
+            },
+            "form": {
+                "config": {
+                    "label": {
+                        "text": "Text"
+                    }
+                }
+            },
+            "devider": {
+                "label": "Devider"
+            },
+            "collapses": {
+                "label": "Collapses",
+                "component": {
+                    "emptyText": "Add collapse items from element settings"
+                },
+                "config": {
+                    "blockName": "Collapse",
+                    "addButton": "Add new collapse",
+                    "columnsNumber": "Number of columns on desktop"
+                }
+            },
+            "image-text-cards": {
+                "label": "Image-text cards",
+                "component": {
+                    "emptyText": "Add cards from element settings"
+                },
+                "config": {
+                    "blockName": "Card",
+                    "addButton": "Add new card"
+                }
+            },
+            "text": {
+                "config": {
+                    "maxWidthLabel": "Max width"
+                }
+            },
+            "text-slider": {
+                "label": "Text slider",
+                "component": {
+                    "emptyText": "Add text items from element settings"
+                },
+                "config": {
+                    "blockName": "Text item",
+                    "addButton": "Add new text item",
+                    "maxWidthLabel": "Max width"
+                }
+            },
+            "timeline-slider": {
+                "label": "Timeline slider",
+                "component": {
+                    "emptyText": "Add timeline items from element settings"
+                },
+                "config": {
+                    "blockName": "Timeline item",
+                    "addButton": "Add new timeline item"
+                }
+            },
+            "audio": {
+                "label": "Audio",
+                "config": {
+                    "audioLabel": "Audio file upload",
+                    "thumbnailImageLabel": "Preview/Thumbnail image",
+                    "authorLabel": "Author",
+                    "titleLabel": "Title",
+                    "subtitleLabel": "Subtitle"
+                }
+            },
+            "video": {
+                "label": "Custom video",
+                "config": {
+                    "videoLabel": "Video file upload",
+                    "thumbnailImageLabel": "Preview/Thumbnail image"
+                }
+            }
+        },
+        "blocks": {
+            "choju": {
+                "devider": {
+                    "label": "Devider"
+                },
+                "collapses": {
+                    "label": "Collapses"
+                },
+                "image-text-cards": {
+                    "label": "Image-text cards"
+                },
+                "text-slider": {
+                    "label": "Text slider"
+                },
+                "timeline-slider": {
+                    "label": "Timeline slider"
+                },
+                "audio": {
+                    "label": "Audio"
+                },
+                "audio-two-col": {
+                    "label": "Audio two column"
+                },
+                "video": {
+                    "label": "Custom video"
+                }
+            }
+        }
+    },
+    "sw-product": {
+        "basicForm": {
+            "labelSmallDescription": "Small description",
+            "labelNote": "Note info",
+            "labelGeneralInfo": "General informations"
         }
     }
 }

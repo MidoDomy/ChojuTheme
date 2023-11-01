@@ -3,7 +3,7 @@
 {% block element_text %}
     {% set config = element.fieldConfig.elements %}
 
-    <div class="cms-element-{{ element.type }}{% if config.verticalAlign.value %} has-vertical-alignment{% endif %}" 
+    <div class="cms-element-{{ element.type }} has-horizontal-alignment-{{ config.horizontalAlign.value }} {% if config.verticalAlign.value %} has-vertical-alignment{% endif %}" 
         style="max-width: {{ config.maxWidth.value }}"
     >
         {% block element_text_alignment %}

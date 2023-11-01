@@ -1,6 +1,5 @@
 .breadcrumb {
   margin-bottom: $spacer*1.25;
-  padding: 0 calc($container-padding-x / 2);
   font-size: $font-size-sm;
   line-height: $line-height-sm;
 
@@ -9,7 +8,7 @@
   }
 
   .breadcrumb-item {
-    color: #CCCFD5;
+    color: $gray-bg;
   }
 
   a {

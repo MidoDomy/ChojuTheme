@@ -1,5 +1,13 @@
 .sw-cms-el-text-slider {
     margin: 0 auto;
+
+    &.has--horizontal-align-left {
+        margin-left: 0;
+    }
+
+    &.has--horizontal-align-right {
+        margin-right: 0;
+    }
     
     .sw-alert {
         margin: 10px;

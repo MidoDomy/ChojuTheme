@@ -101,6 +101,13 @@
   }
 }
 
+.quantity-selector-group {
+  input {
+    background-color: transparent;
+    border-color: #000;
+  }
+}
+
 .product-detail-quantity-label {
   display: block;
   margin-bottom: $spacer*0.25;

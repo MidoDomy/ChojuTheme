@@ -70,5 +70,14 @@
             @media-modal-selection-change="onSelectionChanges"
             @modal-close="onCloseModal"
         />
+        
+        {# Height #}
+        {% block sw_cms_el_video_config_settings_height %}
+            <sw-field
+                v-model="element.config.height.value"
+                type="text"
+                :label="$tc('sw-cms.elements.video.config.heightLabel')"
+            />
+        {% endblock %}
     </div>
 {% endblock %}

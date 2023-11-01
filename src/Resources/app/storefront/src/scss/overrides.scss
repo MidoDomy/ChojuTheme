@@ -134,6 +134,9 @@ $dropdown-link-active-bg:      $secondary !default;
 $dropdown-item-padding-y:      4.5px !default;
 $dropdown-item-padding-x:      12px !default;
 
+// Breadcrumbs
+$breadcrumb-padding-x: $container-padding-x/2 !default;
+
 // Forms
 $form-text-color: $primary !default;
 
@@ -167,6 +170,7 @@ $form-check-input-focus-box-shadow: none !default;
 // Accordion
 $accordion-border-radius: 0 !default;
 $accordion-border-color:  rgba($border-color, 0.5) !default;
+$accordion-bg:            transparent !default;
 
 $accordion-body-padding-y: 0 !default;
 $accordion-body-padding-x: 0 !default;

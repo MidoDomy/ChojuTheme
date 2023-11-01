@@ -1,3 +1,11 @@
 .cms-element-text {
   margin: 0 auto;
+
+  &.has-horizontal-alignment-left {
+    margin-left: 0;
+  }
+
+  &.has-horizontal-alignment-right {
+    margin-right: 0;
+  }
 }

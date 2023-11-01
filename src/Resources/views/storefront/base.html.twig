@@ -1,18 +1,23 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block base_header %}
+    {# Go through all categories #}
+    {% macro getCategoryContent(categories, id) %}
+        {% for category in categories %}
+            {% if category.id == id %}
+                {{ true }}
+            {% else %}
+                {{ _self.getCategoryContent(category.children, id) }}
+            {% endif %}
+        {% endfor %}
+    {% endmacro %}
+
     {# Check if category has teaser image - start #}
     {% set currentCategory = page.header.navigation.active %}
-    {% set isHomepage = true %}
-    {% for navItem in page.header.navigation.tree %}
-        {% if currentCategory.id == navItem.id %}
-            {% set isHomepage = false %}
-        {% endif %}
-    {% endfor %}
-
+    {% set isHomepage = _self.getCategoryContent(page.header.navigation.tree, currentCategory.id) %}
     {% set hasTeaser = currentCategory.media ? true : false %}
 
-    {% if isHomepage and not(controllerAction|lower == 'home') %}
+    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') %}
         {% set hasTeaser = false %}
     {% endif %}
     {# Check if category has teaser image - end #}
@@ -32,18 +37,23 @@
     {# Removed offcanvas navigation - dropdown implemented in header #}
 
     {# Category teaser #}
+        {# Go through all categories #}
+    {% macro getCategoryContent(categories, id) %}
+        {% for category in categories %}
+            {% if category.id == id %}
+                {{ true }}
+            {% else %}
+                {{ _self.getCategoryContent(category.children, id) }}
+            {% endif %}
+        {% endfor %}
+    {% endmacro %}
+
     {# Check if category has teaser image - start #}
     {% set currentCategory = page.header.navigation.active %}
-    {% set isHomepage = true %}
-    {% for navItem in page.header.navigation.tree %}
-        {% if currentCategory.id == navItem.id %}
-            {% set isHomepage = false %}
-        {% endif %}
-    {% endfor %}
-
+    {% set isHomepage = _self.getCategoryContent(page.header.navigation.tree, currentCategory.id) %}
     {% set hasTeaser = currentCategory.media ? true : false %}
 
-    {% if isHomepage and not(controllerAction|lower == 'home') %}
+    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') %}
         {% set hasTeaser = false %}
     {% endif %}
     {# Check if it has teaser image - end #}

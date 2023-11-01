@@ -1,6 +1,28 @@
 {% block sw_cms_el_text_config_settings_vertical_align %}
     {% parent %}
 
+    {% block sw_cms_el_text_config_settings_horizontal_align %}
+        <sw-select-field
+            {% if VUE3 %}
+            v-model:value="element.config.horizontalAlign.value"
+            {% else %}
+            v-model="element.config.horizontalAlign.value"
+            {% endif %}
+            :label="$tc('sw-cms.elements.general.config.label.horizontalAlign')"
+            :placeholder="$tc('sw-cms.elements.general.config.label.horizontalAlign')"
+        >
+            <option value="left">
+                {{ $tc('sw-cms.elements.general.config.label.horizontalAlignLeft') }}
+            </option>
+            <option value="center">
+                {{ $tc('sw-cms.elements.general.config.label.horizontalAlignCenter') }}
+            </option>
+            <option value="right">
+                {{ $tc('sw-cms.elements.general.config.label.horizontalAlignRight') }}
+            </option>
+        </sw-select-field>
+    {% endblock %}
+
     {# Max width #}
     {% block sw_cms_el_text_config_settings_max_width %}
         <sw-field

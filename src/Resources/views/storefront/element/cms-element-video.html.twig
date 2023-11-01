@@ -4,10 +4,15 @@
     {% set videoCollection = searchMedia([config.video.value], context.context) %}
     {% set video = videoCollection.get(config.video.value) %}
 
-    {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
-    {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
+    {% if thumbnail.id %}
+        {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
+        {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
+    {% endif %}
     
-    <div class="cms-element-{{ element.type }}" data-custom-video="true">
+    <div class="cms-element-{{ element.type }}" 
+        style="height: {{ config.height.value }};"
+        data-custom-video="true"
+    >
         {% block element_video_video %}
             <video width="100%" 
                 data-src="{{ video.url }}" 

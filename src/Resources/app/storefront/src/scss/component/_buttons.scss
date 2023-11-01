@@ -13,3 +13,11 @@
 .btn-buy {
   font-size: $btn-font-size;
 }
+
+.btn {
+  .icon-x {
+    svg {
+      top: 3px;
+    }
+  }
+}

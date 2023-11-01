@@ -8,6 +8,10 @@ const cmsElTextDefaultConfig = cmsElText.defaultConfig;
 
 cmsElText.defaultConfig = {
     ...cmsElTextDefaultConfig,
+    horizontalAlign: {
+        source: 'static',
+        value: 'center',
+    },
     maxWidth: {
         source: 'static',
         value: '100%',

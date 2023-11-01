@@ -154,6 +154,9 @@
                 "audio": {
                     "label": "Audio"
                 },
+                "audio-two-col": {
+                    "label": "Audio two column"
+                },
                 "video": {
                     "label": "Custom video"
                 }

@@ -14,10 +14,6 @@ Component.register('sw-cms-el-collapses', {
         fields() {
             return this.element.config.fields.value;
         },
-
-        columnWidth() {
-            return `width: calc(${100 / this.element.config.columnsNumber.value}% - 15px)`;
-        }
     },
 
     created() {

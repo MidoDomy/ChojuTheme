@@ -1,3 +1,5 @@
+import './sw-cms.scss';
+
 import './component/sw-cms-section';
 import './component/sw-cms-sidebar';
 import './component/repeater';
@@ -15,8 +17,10 @@ import './elements/video';
 
 import './blocks/choju/devider';
 import './blocks/choju/collapses';
+import './blocks/choju/collapses-three-col';
 import './blocks/choju/image-text-cards';
 import './blocks/choju/text-slider';
 import './blocks/choju/timeline-slider';
 import './blocks/choju/audio';
+import './blocks/choju/audio-two-col';
 import './blocks/choju/video';

@@ -35,4 +35,8 @@
       color: $sw-color-brand-secondary;
     }
   }
+
+  video {
+    max-height: 100%;
+  }
 }

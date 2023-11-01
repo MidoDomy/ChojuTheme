@@ -15,7 +15,7 @@
                                 type="button" 
                                 data-bs-toggle="collapse" 
                                 data-bs-target="#collapseItemContent{{ element.id }}{{ loop.index }}" 
-                                aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}" 
+                                aria-expanded="false" 
                                 aria-controls="collapseItemContent{{ element.id }}{{ loop.index }}"
                             >
                                 {{ itemValues.title }}
@@ -23,7 +23,7 @@
                         </h2>
 
                         <div id="collapseItemContent{{ element.id }}{{ loop.index }}" 
-                            class="accordion-collapse collapse{% if loop.index == 1 %} show{% endif %}" 
+                            class="accordion-collapse collapse" 
                             aria-labelledby="collapseItemTitle{{ element.id }}{{ loop.index }}" 
                             data-bs-parent="#cmsElementCollapses{{ element.id }}"
                         >

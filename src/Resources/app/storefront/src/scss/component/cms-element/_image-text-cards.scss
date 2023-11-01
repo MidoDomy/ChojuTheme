@@ -24,12 +24,6 @@
     width: 12.5rem;
     max-width: 90%;
     aspect-ratio: 1;
-    padding: $spacer*0.625;
-    background-color: $sw-background-color;
-    border: $border-width solid rgba($sw-border-color, 0.1);
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
   }
 
   .image-text-card-content {

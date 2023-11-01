@@ -1,0 +1,22 @@
+.sw-cms-block-preview-collapses-three-col {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+
+    .sw-cms-block-preview-collapses-item {
+        flex: 1;
+    }
+
+    .sw-cms-block-preview-collapses-title {
+        padding: 5px 0;
+        border-top: 1px solid #CDD1CF;
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .sw-cms-block-preview-collapses-title-arrow {
+        width: 5px;
+        height: 10px;
+        margin-right: 8px;
+    }
+}

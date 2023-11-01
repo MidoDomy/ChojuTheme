@@ -19,7 +19,6 @@ Shopware.Service('cmsService').registerCmsElement({
         },
         thumbnail: {
             source: 'static',
-            required: true,
             value: null,
             entity: {
                 name: 'media'

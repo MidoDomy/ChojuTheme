@@ -1,0 +1,11 @@
+.cms-block-image-text-cover {
+  .cms-block-container-row {
+    @include media-breakpoint-up(md) {
+      --bs-gutter-x: 0;
+    }
+  }
+
+  .cms-element-text {
+    padding: 1.875rem;
+  }
+}

@@ -7,9 +7,8 @@
         </div>
         
         <div v-for="item in fields"
-            @click="toggleActiveItem"
             class="sw-cms-el-collapses-item"
-            :style="columnWidth"
+            @click="toggleActiveItem"
         >
             <div class="sw-cms-el-collapses-title">
                 {{ item.value.title }}

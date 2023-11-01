@@ -34,12 +34,17 @@
 @import 'component/cms-block/image-text-cards';
 @import 'component/cms-block/text-slider';
 @import 'component/cms-block/timeline-slider';
+@import 'component/cms-block/image-text-cover';
+@import 'component/cms-block/audio-two-col';
+@import 'component/cms-block/collapses';
+@import 'component/cms-block/collapses-three-col';
 // sections
 @import 'component/cms-section/section';
 
 // LAYOUTS
 @import 'layout/footer';
 @import 'layout/header';
+@import 'layout/header-minimal';
 @import 'layout/main-navigation';
 @import 'layout/navigation-flyout';
 @import 'layout/navigation-collapse';

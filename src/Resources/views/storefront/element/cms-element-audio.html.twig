@@ -4,8 +4,10 @@
     {% set audioCollection = searchMedia([config.audio.value], context.context) %}
     {% set audio = audioCollection.get(config.audio.value) %}
 
-    {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
-    {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
+    {% if thumbnail.id %}
+        {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
+        {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
+    {% endif %}
     
     <div class="cms-element-{{ element.type }}" data-audio="true">
         {% block element_audio_thumbnail %}
@@ -60,7 +62,7 @@
         {% endblock %}
 
         <img class="audio-bg" 
-            src="{{ asset('bundles/chojutheme/static/audio-bg.svg', 'asset') }}"
+            src="{{ asset('bundles/chojutheme/media/audio-bg.svg', 'asset') }}"
             alt="Audio bg"
         >
     </div>
