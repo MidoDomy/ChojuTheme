@@ -7,6 +7,9 @@ Because of the !default flags, theme variable overrides have to be declared befo
 https://getbootstrap.com/docs/4.0/getting-started/theming/#variable-defaults
 */
 
+// Options
+$enable-negative-margins: true !default;
+
 // Colors
 $black: #000 !default;
 $primary:    #00102D !default;
@@ -21,6 +24,16 @@ $link-hover-color: $secondary !default;
 
 // Spacers
 $spacer: 1rem !default; // 16px
+
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+) !default;
 
 // Grid
 $container-padding-x: 5rem !default;
