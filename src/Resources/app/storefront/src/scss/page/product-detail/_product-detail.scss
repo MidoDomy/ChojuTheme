@@ -38,7 +38,7 @@
   
     @include media-breakpoint-up(lg) {
       margin-top: -$spacer*5.75;
-      padding: $spacer*5.75 calc($container-padding-x / 2) $spacer*6.563;
+      padding: $spacer*5.75 $container-padding-x/2 $spacer*6.563;
       background-color: rgba(#CCCFD5, 0.25);
     }
   

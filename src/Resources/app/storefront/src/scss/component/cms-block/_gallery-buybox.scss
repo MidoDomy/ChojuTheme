@@ -3,7 +3,7 @@
 
   .cms-block-container {
     @include media-breakpoint-down(lg) {
-      padding: 0 calc($container-padding-x / 2);
+      padding: 0 $container-padding-x/2;
     }
   }
 
