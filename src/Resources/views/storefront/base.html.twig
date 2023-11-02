@@ -17,7 +17,7 @@
     {% set isHomepage = _self.getCategoryContent(page.header.navigation.tree, currentCategory.id) %}
     {% set hasTeaser = currentCategory.media ? true : false %}
 
-    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') %}
+    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') or controllerName|lower == 'product' %}
         {% set hasTeaser = false %}
     {% endif %}
     {# Check if category has teaser image - end #}
@@ -53,7 +53,7 @@
     {% set isHomepage = _self.getCategoryContent(page.header.navigation.tree, currentCategory.id) %}
     {% set hasTeaser = currentCategory.media ? true : false %}
 
-    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') %}
+    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') or controllerName|lower == 'product' %}
         {% set hasTeaser = false %}
     {% endif %}
     {# Check if it has teaser image - end #}
