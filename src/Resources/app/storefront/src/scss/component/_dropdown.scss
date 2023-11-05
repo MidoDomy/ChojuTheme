@@ -26,3 +26,20 @@
     }
   }
 }
+
+.change-language {
+  &.dropdown-menu {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: $spacer*0.5;
+      left:unset;
+      transform: translateY(-50%) rotate(45deg);
+      transform-origin: center;
+      width: 0.625rem;
+      height: 0.625rem;
+      background-color: $dropdown-bg;
+    }
+  }
+}

@@ -12,11 +12,9 @@
 			{% sw_include '@Storefront/storefront/component/custom/icons/email.html.twig' %}
 		</a>
 
-		<a class="btn btn-primary global-action-btn"
-			href="{{ "choju.globalActions.globeLink"|trans|sw_sanitize }}"
-		>
-			{% sw_include '@Storefront/storefront/component/custom/icons/globe.html.twig' %}
-		</a>
+		<div>
+			{% sw_include '@Storefront/storefront/component/custom/switch-language-action.html.twig' %}
+		</div>
 
 		<a class="btn btn-primary global-action-btn"
 			href="{{ "choju.globalActions.wirelessLink"|trans|sw_sanitize }}"
