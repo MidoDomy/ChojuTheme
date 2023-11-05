@@ -24,8 +24,8 @@
             "serviceHotlineMail": "info@choju-health.de"
         },
         "globalActions": {
-            "phoneLink": "#",
-            "emailLink": "#",
+            "phoneLink": "tel:+498531232975",
+            "emailLink": "mailto:info@choju-health.de",
             "globeLink": "#",
             "wirelessLink": "#",
             "plusLink": "#"
