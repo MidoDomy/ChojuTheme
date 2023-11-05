@@ -12,9 +12,9 @@
         },
         "navigationCollapse": {
             "service": {
-                "phoneLink": "#",
+                "phoneLink": "tel:+498531232975",
                 "phoneText": "Kundenservice",
-                "emailLink": "#",
+                "emailLink": "mailto:info@choju-health.de",
                 "emailText": "Newsletter"
             }
         },

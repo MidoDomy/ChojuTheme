@@ -61,17 +61,6 @@
   }
 }
 
-// COLLAPSE NAVIGATION
-.navigation-collapse {
-  position: absolute;
-  top: 100%;
-  left: calc(-1 * ($grid-gutter-width / 2));
-  right: calc(-1 * ($grid-gutter-width / 2));
-  background: $sw-color-brand-primary;
-  color: $text-light-color;
-  z-index: -1;
-}
-
 .navigation-collapse-content {
   padding: $spacer*1.5 $spacer*1.5 $spacer*3.125;
 }
