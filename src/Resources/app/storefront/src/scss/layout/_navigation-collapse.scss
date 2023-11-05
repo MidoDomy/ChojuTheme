@@ -61,6 +61,11 @@
   }
 }
 
+.navigation-collapse {
+  left: -20px;
+  right: -20px;
+}
+
 .navigation-collapse-content {
   padding: $spacer*1.5 $spacer*1.5 $spacer*3.125;
 }
