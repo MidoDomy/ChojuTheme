@@ -26,7 +26,6 @@
         "globalActions": {
             "phoneLink": "tel:+498531232975",
             "emailLink": "mailto:info@choju-health.de",
-            "globeLink": "#",
             "wirelessLink": "/Info-Hub/",
             "plusLink": "#"
         },
@@ -36,7 +35,8 @@
         }
     },
     "general": {
-        "privacyNoticeText": "Ich bin mit den <a data-ajax-modal=\"true\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"AGBs\">AGBs</a> und <a data-ajax-modal=\"true\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzerklärungen einverstanden\">Datenschutzerklärungen einverstanden</a>*"
+        "privacyNoticeText": "Ich bin mit den <a data-ajax-modal=\"true\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"AGBs\">AGBs</a> und <a data-ajax-modal=\"true\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzerklärungen einverstanden\">Datenschutzerklärungen einverstanden</a>*",
+        "grossTaxInformation": "Enthält 20% MwSt. <br/> zzgl. Versand"
     },
     "footer": {
         "serviceHotline": "Chōju </br> Sonnenbergstrasse 74 </br> 6052 Hergiswil",

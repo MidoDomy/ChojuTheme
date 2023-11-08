@@ -8,3 +8,31 @@
     height: 100%;
   }
 }
+
+.gallery-slider-item,
+.gallery-slider-single-image {
+  &.is-cover, 
+  &.is-contain {
+    .gallery-slider-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.gallery-slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 $spacer;
+  }
+}
+
+.gallery-slider-thumbnails-col {
+  display: none;
+}

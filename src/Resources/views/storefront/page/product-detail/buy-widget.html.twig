@@ -33,7 +33,7 @@
                 title="{{ taxText }}"
                 data-ajax-modal="true"
                 data-url="{{ path('frontend.cms.page', { id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
-                  {{ taxText }}
+                  {{ taxText|raw }}
               </a>
           {% endblock %}
       </p>
