@@ -1,3 +1,8 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "adobe-garamond-pro", serif;
+}
+
 h1, .h1 {
   line-height: $h1-line-height;
 
