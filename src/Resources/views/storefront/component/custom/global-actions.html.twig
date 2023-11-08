@@ -3,13 +3,13 @@
 		<a class="btn btn-primary global-action-btn"
 			href="{{ "choju.globalActions.phoneLink"|trans|sw_sanitize }}"
 		>
-			{% sw_include '@Storefront/storefront/component/custom/icons/phone.html.twig' %}
+			{% sw_icon 'phone' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
 		</a>
 
 		<a class="btn btn-primary global-action-btn"
 			href="{{ "choju.globalActions.emailLink"|trans|sw_sanitize }}"
 		>
-			{% sw_include '@Storefront/storefront/component/custom/icons/email.html.twig' %}
+			{% sw_icon 'email' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
 		</a>
 
 		<div>
@@ -19,13 +19,13 @@
 		<a class="btn btn-primary global-action-btn"
 			href="{{ "choju.globalActions.wirelessLink"|trans|sw_sanitize }}"
 		>
-			{% sw_include '@Storefront/storefront/component/custom/icons/wireless.html.twig' %}
+			{% sw_icon 'wireless' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
 		</a>
 
 		<a class="btn btn-primary global-action-btn"
 			href="{{ "choju.globalActions.plusLink"|trans|sw_sanitize }}"
 		>
-			{% sw_include '@Storefront/storefront/component/custom/icons/plus.html.twig' %}
+			{% sw_icon 'plus' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
 		</a>
 	</div>
 {% endblock %}

@@ -41,5 +41,9 @@
     "footer": {
         "serviceHotline": "Chōju </br> Sonnenbergstrasse 74 </br> 6052 Hergiswil",
         "copyrightInfo": "©%year% Chōju"
+    },
+    "newsletter": {
+        "placeholderFirstName": "Vorname",
+        "placeholderLastName": "Nachname"
     }
 }
