@@ -130,7 +130,8 @@
                 "label": "Custom video",
                 "config": {
                     "videoLabel": "Video file upload",
-                    "thumbnailImageLabel": "Preview/Thumbnail image"
+                    "thumbnailImageLabel": "Preview/Thumbnail image",
+                    "heightLabel": "Height"
                 }
             }
         },

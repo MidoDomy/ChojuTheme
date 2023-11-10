@@ -4,7 +4,7 @@
     {% set audioCollection = searchMedia([config.audio.value], context.context) %}
     {% set audio = audioCollection.get(config.audio.value) %}
 
-    {% if thumbnail.id %}
+    {% if config.thumbnail.value %}
         {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
         {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
     {% endif %}

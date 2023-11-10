@@ -14,6 +14,7 @@
 @import 'component/gallery-slider';
 @import 'component/accordion';
 @import 'component/base-slider';
+@import 'component/alert';
 
 // CMS
   // elements
@@ -30,6 +31,7 @@
 @import 'component/cms-element/video';
 @import 'component/cms-element/text';
 // blocks
+@import 'component/cms-block/text';
 @import 'component/cms-block/gallery-buybox';
 @import 'component/cms-block/image-text-cards';
 @import 'component/cms-block/text-slider';
@@ -52,6 +54,7 @@
 @import 'layout/category-teaser';
 @import 'layout/global-action-menu';
 @import 'layout/scroll-up';
+@import 'layout/container';
 
 // PAGES
   // PDP

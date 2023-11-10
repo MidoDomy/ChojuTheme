@@ -130,7 +130,8 @@
                 "label": "Custom video",
                 "config": {
                     "videoLabel": "Video file upload",
-                    "thumbnailImageLabel": "Preview/Thumbnail image"
+                    "thumbnailImageLabel": "Preview/Thumbnail image",
+                    "heightLabel": "Height"
                 }
             }
         },
@@ -141,6 +142,9 @@
                 },
                 "collapses": {
                     "label": "Collapses"
+                },
+                "collapses-three-col": {
+                    "label": "Collapses three columns"
                 },
                 "image-text-cards": {
                     "label": "Image-text cards"

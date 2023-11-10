@@ -1,4 +1,7 @@
 .breadcrumb {
+  position: absolute;
+  top: 24px;
+  left: 0;
   margin-bottom: $spacer*1.25;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
@@ -8,14 +11,20 @@
   }
 
   .breadcrumb-item {
-    color: $gray-bg;
+    font-weight: $font-weight-normal;
+
+    &:last-child {
+      color: $gray-bg;
+    }
   }
 
-  a {
+  .breadcrumb-link {
+    color: inherit;
+    font-weight: inherit;
     font-size: inherit;
 
     &.is-active {
-      font-weight: $font-weight-normal;
+      font-weight: inherit;
     }
   }
 }

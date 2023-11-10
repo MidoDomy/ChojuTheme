@@ -8,10 +8,10 @@
                 {% set id = item.id %}
                 {% set itemValues = item.value %}
 
-                <div class="col-12 col-md-{{ 12 / config.columnsNumber.value }}">
+                <div class="col-12">
                     <div class="accordion-item ">
                         <div class="accordion-header" id="collapseItemTitle{{ element.id }}{{ loop.index }}">
-                            <button class="accordion-button" 
+                            <button class="accordion-button collapsed" 
                                 type="button" 
                                 data-bs-toggle="collapse" 
                                 data-bs-target="#collapseItemContent{{ element.id }}{{ loop.index }}" 

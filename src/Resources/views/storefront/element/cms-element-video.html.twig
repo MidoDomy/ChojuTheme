@@ -4,7 +4,7 @@
     {% set videoCollection = searchMedia([config.video.value], context.context) %}
     {% set video = videoCollection.get(config.video.value) %}
 
-    {% if thumbnail.id %}
+    {% if config.thumbnail.value %}
         {% set thumbnailCollection = searchMedia([config.thumbnail.value], context.context) %}
         {% set thumbnail = thumbnailCollection.get(config.thumbnail.value) %}
     {% endif %}

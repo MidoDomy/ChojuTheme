@@ -8,4 +8,14 @@
   &.has-horizontal-alignment-right {
     margin-right: 0;
   }
+
+  ol {
+    li::marker {
+      color: $sw-color-brand-secondary;
+    }
+  }
+  
+  ul, ol {
+    font-weight: $font-weight-semibold;
+  }
 }

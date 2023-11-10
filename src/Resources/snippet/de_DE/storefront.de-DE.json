@@ -45,5 +45,8 @@
     "newsletter": {
         "placeholderFirstName": "Vorname",
         "placeholderLastName": "Nachname"
+    },
+    "listing": {
+        "boxProductDetails": "Mehr erfahren"
     }
 }
