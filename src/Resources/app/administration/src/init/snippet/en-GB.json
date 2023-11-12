@@ -9,6 +9,8 @@
             },
             "listing": {
                 "title": "Listing info",
+                "orderLabel": "Order in listing",
+                "orderHelpText": "If the field is empty, then the category will be displayed after the categories that have an order entered",
                 "titleLabel": "Listing title",
                 "contentLabel": "Listing content"
             }

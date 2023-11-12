@@ -34,19 +34,37 @@
                     {% endfor %}
                 {% endmacro %}
 
-                {% set categoryIds = [] %}
+                {# Get category order #}
+                {% macro getCategoryOrder(categories, id) %}
+                    {% for category in categories %}
+                        {% if category.id == id %}
+                            {{ category.category.translated.customFields.listingOrder|raw }}
+                        {% else %}
+                            {{ _self.getCategoryOrder(category.children, id) }}
+                        {% endif %}
+                    {% endfor %}
+                {% endmacro %}
                 
                 {# Get all different category ids from products #}
+                {% set listingCategories = [] %}
+
+                {# Loop through all products #}
                 {% for product in searchResult %}
+                    {# Loop through all categories that product is assign to #}
                     {% for categoryId in product.categoryIds  %}
-                        {% if not(categoryId in categoryIds) %}
-                            {% set categoryIds = categoryIds|merge([categoryId]) %}
+                        {# Check if category already added #}
+                        {% if not(categoryId in listingCategories|column('id')) %}
+                            {# Set category listing order #}
+                            {% set categoryOrder = _self.getCategoryOrder(page.header.navigation.tree, categoryId)|replace({' ': ''})|replace({'\n': ''}) - 1 %}
+
+                            {# Add to listingCategories #}
+                            {% set listingCategories = listingCategories|merge([{"order": categoryOrder, "id": categoryId}]) %}
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
 
-                {# Loop through categories #}
-                {% for categoryId in categoryIds %}
+                {# Loop through listingCategories #}
+                {% for categoryId in listingCategories|sort((a, b) => a.order <=> b.order)|column('id') %}
                     <div class="row cms-listing-category-products-row">
                         {# Category listing content #}
                         <div class="col-12 col-lg-3">

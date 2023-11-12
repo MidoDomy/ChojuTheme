@@ -102,6 +102,21 @@
             :title="$tc('sw-category.base.listing.title')"
             :is-loading="isLoading"
         >
+            {# Listing order #}
+            {% block sw_category_detail_listing_order %}
+                <sw-number-field
+                    {% if VUE3 %}
+                    v-model:value="category.customFields.listingOrder"
+                    {% else %}
+                    v-model="category.customFields.listingOrder"
+                    {% endif %}
+                    class="sw-field"
+                    :label="$tc('sw-category.base.listing.orderLabel')"
+                    :help-text="$tc('sw-category.base.listing.orderHelpText')"
+                    placeholder="0"
+                />
+            {% endblock %}
+
             {# Listing title #}
             {% block sw_category_detail_listing_title %}
                 <sw-text-field
