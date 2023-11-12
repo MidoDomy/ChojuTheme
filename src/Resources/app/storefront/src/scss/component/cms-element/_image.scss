@@ -1,0 +1,9 @@
+.cms-element-image {
+  .cms-element-alignment:has(.is-stretch) {
+    width: 100%;
+  }
+
+  .cms-image-container.is-stretch {
+    width: 100%;
+  }
+}

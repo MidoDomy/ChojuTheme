@@ -17,6 +17,10 @@ Shopware.Service('cmsService').registerCmsElement({
             source: 'static',
             value: '100%',
         },
+        verticalAlign: {
+            source: 'static',
+            value: 'center',
+        },
         horizontalAlign: {
             source: 'static',
             value: 'right',

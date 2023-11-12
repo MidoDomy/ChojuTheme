@@ -1,5 +1,9 @@
 .sw-cms-el-text-slider {
+    display: flex;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
+    align-items: center;
 
     &.has--horizontal-align-left {
         margin-left: 0;
@@ -7,6 +11,18 @@
 
     &.has--horizontal-align-right {
         margin-right: 0;
+    }
+
+    &.has--vertical-align-top {
+        align-items: flex-start;
+    }
+
+    &.has--vertical-align-bottom {
+        align-items: flex-end;
+    }
+
+    &> div {
+        width: 100%;
     }
     
     .sw-alert {

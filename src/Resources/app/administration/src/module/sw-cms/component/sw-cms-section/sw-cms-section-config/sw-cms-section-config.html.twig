@@ -1,4 +1,5 @@
 {% block sw_cms_section_config_background_image_position_field %}
+  {# Background mode #}
   <sw-select-field
     {% if VUE3 %}
     v-model:value="section.backgroundMediaMode"
@@ -22,6 +23,7 @@
     </option>
   </sw-select-field>
   
+  {# Background size #}
   <sw-text-field
     v-if="section.backgroundMediaMode == 'custom'"
     {% if VUE3 %}
@@ -30,9 +32,11 @@
     v-model="section.customFields.backgroundSize"
     {% endif %}
     :label="$tc('sw-cms.detail.label.backgroundSizeField')"
+    :help-text="$tc('sw-cms.detail.helpText.backgroundSizeField')"
     :disabled="!section.backgroundMediaId || section.backgroundMediaMode != 'custom'"
   />
   
+  {# Background position #}
   <sw-text-field
     {% if VUE3 %}
     v-model:value="section.customFields.backgroundPosition"
@@ -40,9 +44,11 @@
     v-model="section.customFields.backgroundPosition"
     {% endif %}
     :label="$tc('sw-cms.detail.label.backgroundPositionField')"
+    :help-text="$tc('sw-cms.detail.helpText.backgroundPositionField')"
     :disabled="!section.backgroundMediaId"
   />
 
+  {# Background repeat #}
   <sw-select-field
     {% if VUE3 %}
     v-model:value="section.customFields.backgroundRepeat"

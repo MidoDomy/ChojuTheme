@@ -1,6 +1,7 @@
 .sw-cms-el-collapses {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     column-gap: 20px;
 
     .sw-alert {

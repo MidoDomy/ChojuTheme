@@ -26,6 +26,10 @@
                 "backgroundRepeatRepeatX": "Repeat X",
                 "backgroundRepeatRepeatY": "Repeat Y",
                 "choju": "Choju blocks"
+            },
+            "helpText": {
+                "backgroundPositionField": "First value is horizontal align (x-position), and second one is vertical align (y-position)",
+                "backgroundSizeField": "First value is width, second one is height."
             }
         },
         "component": {
@@ -160,6 +164,9 @@
                 },
                 "video": {
                     "label": "Custom video"
+                },
+                "headline-jost": {
+                    "label": "Text block with Jost headline on left"
                 }
             }
         }

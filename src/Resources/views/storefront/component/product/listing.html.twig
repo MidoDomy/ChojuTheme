@@ -72,11 +72,9 @@
             {% endblock %}
         {% else %}
             {% block element_product_listing_col_empty %}
-                <div class="cms-listing-col">
-                    {% block element_product_listing_col_empty_alert %}
-                        {{ parent() }}
-                    {% endblock %}
-                </div>
+                {% block element_product_listing_col_empty_alert %}
+                    {{ parent() }}
+                {% endblock %}
             {% endblock %}
         {% endif %}
     </div>

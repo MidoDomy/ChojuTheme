@@ -1,0 +1,16 @@
+.sw-cms-block-headline-jost-list {
+    display: flex;
+    gap: 16px;
+
+    .is--mobile &{
+        flex-wrap: wrap;
+    }
+
+    .sw-cms-slot {
+        width: 100%;
+    }
+
+    p {
+        padding-left: 16px;
+    }
+}

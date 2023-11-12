@@ -24,3 +24,5 @@ import './blocks/choju/timeline-slider';
 import './blocks/choju/audio';
 import './blocks/choju/audio-two-col';
 import './blocks/choju/video';
+import './blocks/choju/headline-jost';
+import './blocks/choju/headline-jost-list';

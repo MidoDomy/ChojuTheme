@@ -3,3 +3,25 @@
     padding: 0 $container-padding-x/2;
   }
 }
+
+.cms-block-headline-jost-list {
+  .cms-block-container-row {
+    --bs-gutter-y: #{$spacer*0.375};
+
+    &> :first-child {
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+
+  p {
+    padding-left: $spacer;
+  }
+}
+
+.cms-block-headline-jost {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-normal;
+  }
+}

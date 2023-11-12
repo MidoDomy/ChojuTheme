@@ -47,5 +47,8 @@
     },
     "listing": {
         "boxProductDetails": "Learn more"
+    },
+    "detail": {
+        "tabsDescription": "Detailed description"
     }
 }

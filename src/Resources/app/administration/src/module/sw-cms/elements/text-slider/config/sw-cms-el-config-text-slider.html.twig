@@ -62,6 +62,29 @@
                                 />
                             {% endblock %}
 
+                            {# Vertical alignment #}
+                            {% block sw_cms_el_text_config_settings_vertical_align %}
+                                <sw-select-field
+                                    {% if VUE3 %}
+                                    v-model:value="element.config.verticalAlign.value"
+                                    {% else %}
+                                    v-model="element.config.verticalAlign.value"
+                                    {% endif %}
+                                    :label="$tc('sw-cms.elements.general.config.label.verticalAlign')"
+                                    :placeholder="$tc('sw-cms.elements.general.config.label.verticalAlign')"
+                                >
+                                    <option value="left">
+                                        {{ $tc('sw-cms.elements.general.config.label.verticalAlignTop') }}
+                                    </option>
+                                    <option value="center">
+                                        {{ $tc('sw-cms.elements.general.config.label.verticalAlignCenter') }}
+                                    </option>
+                                    <option value="right">
+                                        {{ $tc('sw-cms.elements.general.config.label.verticalAlignBottom') }}
+                                    </option>
+                                </sw-select-field>
+                            {% endblock %}
+
                             {# Horizontal alignment #}
                             {% block sw_cms_el_text_config_settings_horizontal_align %}
                                 <sw-select-field

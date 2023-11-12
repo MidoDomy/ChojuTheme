@@ -30,6 +30,7 @@
 @import 'component/cms-element/audio';
 @import 'component/cms-element/video';
 @import 'component/cms-element/text';
+@import 'component/cms-element/image';
 // blocks
 @import 'component/cms-block/text';
 @import 'component/cms-block/gallery-buybox';
@@ -57,6 +58,8 @@
 @import 'layout/container';
 
 // PAGES
+@import 'page/account/register';
+@import 'page/checkout/checkout';
   // PDP
 @import 'page/product-detail/product-detail';
 @import 'page/product-detail/buybox';

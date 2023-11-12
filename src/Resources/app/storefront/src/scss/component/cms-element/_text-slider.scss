@@ -1,4 +1,7 @@
 .cms-element-text-slider {
+  display: flex;
+  align-items: center;
+  height: 100%;
   margin: 0 auto;
 
   &.has-horizontal-alignment-left {
@@ -7,6 +10,18 @@
 
   &.has-horizontal-alignment-right {
     margin-right: 0;
+  }
+
+  &.has-vertical-alignment-left {
+    align-items: flex-start;
+  }
+
+  &.has-vertical-alignment-right {
+    align-items: flex-end;
+  }
+
+  &> div {
+    width: 100%;
   }
 
   .tns-item {

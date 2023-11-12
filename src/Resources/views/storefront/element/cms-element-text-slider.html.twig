@@ -2,7 +2,7 @@
     {% set config = element.translated.config %}
     {% set items = element.translated.config.fields.value %}
 
-    <div class="cms-element-{{ element.type }} has-horizontal-alignment-{{ config.horizontalAlign.value }}" 
+    <div class="cms-element-{{ element.type }} has-horizontal-alignment-{{ config.horizontalAlign.value }} has-vertical-alignment-{{ config.verticalAlign.value }}" 
         style="max-width: {{ config.maxWidth.value }}"
     >
         {% set sliderOptions = {
