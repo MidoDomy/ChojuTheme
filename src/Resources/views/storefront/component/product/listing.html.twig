@@ -55,7 +55,7 @@
                         {# Check if category already added #}
                         {% if not(categoryId in listingCategories|column('id')) %}
                             {# Set category listing order #}
-                            {% set categoryOrder = _self.getCategoryOrder(page.header.navigation.tree, categoryId)|replace({' ': ''})|replace({'\n': ''}) - 1 %}
+                            {% set categoryOrder = _self.getCategoryOrder(page.header.navigation.tree, categoryId)|replace({' ': ''})|replace({'\n': ''}) %}
 
                             {# Add to listingCategories #}
                             {% set listingCategories = listingCategories|merge([{"order": categoryOrder, "id": categoryId}]) %}
