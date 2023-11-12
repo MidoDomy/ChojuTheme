@@ -1,3 +1,171 @@
+{% block sw_cms_sidebar_section_config_sizing_field %}
+  {% parent %}
+
+  <div class="sw-cms-padding-config-note">
+    {{ $tc('sw-cms.detail.label.paddingNote') }}
+  </div>
+
+  {# Padding left #}
+  <div class="sw-cms-padding-config">
+    <div class="sw-cms-padding-config__checkbox-group-label">
+      {{ $tc('sw-cms.detail.label.paddingLeftLabelCheckboxGroup') }}
+    </div>
+
+    <div class="sw-cms-padding-config__checkbox-group">
+      {# Mobile #}
+      <label
+        class="sw-cms-padding-config__checkbox"
+        for="sw-cms-section-padding-left-config-mobile"
+      >
+        {{ $tc('sw-cms.detail.label.paddingMobile') }}
+
+        <input
+          id="sw-cms-section-padding-left-config-mobile"
+          class="sw-cms-padding-config__checkbox-input"
+          type="checkbox"
+          {% if VUE3 %}
+          v-model:value="section.customFields.paddingLeftMobile"
+          {% else %}
+          v-model="section.customFields.paddingLeftMobile"
+          {% endif %}
+        >
+
+        <sw-icon
+          :name="section.customFields.paddingLeftMobile ? 'regular-mobile' : 'regular-mobile-slash'"
+          size="24"
+        />
+      </label>
+
+      {# Tablet #}
+      <label
+        class="sw-cms-padding-config__checkbox"
+        for="sw-cms-section-padding-left-config-tablet"
+      >
+        {{ $tc('sw-cms.detail.label.paddingTablet') }}
+
+        <input
+          id="sw-cms-section-padding-left-config-tablet"
+          class="sw-cms-padding-config__checkbox-input"
+          type="checkbox"
+          {% if VUE3 %}
+          v-model:value="section.customFields.paddingLeftTablet"
+          {% else %}
+          v-model="section.customFields.paddingLeftTablet"
+          {% endif %}
+        >
+        <sw-icon
+          :name="section.customFields.paddingLeftTablet ? 'regular-tablet' : 'regular-tablet-slash'"
+          size="24"
+        />
+      </label>
+
+      {# Desktop #}
+      <label
+        class="sw-cms-padding-config__checkbox"
+        for="sw-cms-section-padding-left-config-desktop"
+      >
+        {{ $tc('sw-cms.detail.label.paddingDesktop') }}
+
+        <input
+          id="sw-cms-section-padding-left-config-desktop"
+          class="sw-cms-padding-config__checkbox-input"
+          type="checkbox"
+          {% if VUE3 %}
+          v-model:value="section.customFields.paddingLeftDesktop"
+          {% else %}
+          v-model="section.customFields.paddingLeftDesktop"
+          {% endif %}
+        >
+
+        <sw-icon
+          :name="section.customFields.paddingLeftDesktop ? 'regular-desktop' : 'regular-desktop-slash'"
+          size="24"
+        />
+      </label>
+    </div>
+  </div>
+
+  {# Padding right #}
+  <div class="sw-cms-padding-config">
+    <div class="sw-cms-padding-config__checkbox-group-label">
+      {{ $tc('sw-cms.detail.label.paddingRightLabelCheckboxGroup') }}
+    </div>
+
+    <div class="sw-cms-padding-config__checkbox-group">
+      {# Mobile #}
+      <label
+        class="sw-cms-padding-config__checkbox"
+        for="sw-cms-section-padding-right-config-mobile"
+      >
+        {{ $tc('sw-cms.detail.label.paddingMobile') }}
+
+        <input
+          id="sw-cms-section-padding-right-config-mobile"
+          class="sw-cms-padding-config__checkbox-input"
+          type="checkbox"
+          {% if VUE3 %}
+          v-model:value="section.customFields.paddingRightMobile"
+          {% else %}
+          v-model="section.customFields.paddingRightMobile"
+          {% endif %}
+        >
+
+        <sw-icon
+          :name="section.customFields.paddingRightMobile ? 'regular-mobile' : 'regular-mobile-slash'"
+          size="24"
+        />
+      </label>
+
+      {# Tablet #}
+      <label
+        class="sw-cms-padding-config__checkbox"
+        for="sw-cms-section-padding-right-config-tablet"
+      >
+        {{ $tc('sw-cms.detail.label.paddingTablet') }}
+
+        <input
+          id="sw-cms-section-padding-right-config-tablet"
+          class="sw-cms-padding-config__checkbox-input"
+          type="checkbox"
+          {% if VUE3 %}
+          v-model:value="section.customFields.paddingRightTablet"
+          {% else %}
+          v-model="section.customFields.paddingRightTablet"
+          {% endif %}
+        >
+        <sw-icon
+          :name="section.customFields.paddingRightTablet ? 'regular-tablet' : 'regular-tablet-slash'"
+          size="24"
+        />
+      </label>
+
+      {# Desktop #}
+      <label
+        class="sw-cms-padding-config__checkbox"
+        for="sw-cms-section-padding-right-config-desktop"
+      >
+        {{ $tc('sw-cms.detail.label.paddingDesktop') }}
+
+        <input
+          id="sw-cms-section-padding-right-config-desktop"
+          class="sw-cms-padding-config__checkbox-input"
+          type="checkbox"
+          {% if VUE3 %}
+          v-model:value="section.customFields.paddingRightDesktop"
+          {% else %}
+          v-model="section.customFields.paddingRightDesktop"
+          {% endif %}
+        >
+
+        <sw-icon
+          :name="section.customFields.paddingRightDesktop ? 'regular-desktop' : 'regular-desktop-slash'"
+          size="24"
+        />
+      </label>
+    </div>
+  </div>
+{% endblock %}
+
 {% block sw_cms_section_config_background_image_position_field %}
   {# Background mode #}
   <sw-select-field

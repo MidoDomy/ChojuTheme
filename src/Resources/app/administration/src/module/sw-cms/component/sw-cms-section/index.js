@@ -1,10 +1,21 @@
 import './sw-cms-section-config';
+
+import template from './sw-cms-section.html.twig';
 import './sw-cms-section.scss';
 
 const { Component } = Shopware;
 
 Component.override('sw-cms-section', {
+  template,
+
   computed: {
+    sectionOuterStyles() {
+      return {
+          'padding-left': this.section.customFields.paddingLeftDesktop ? '40px' : 0,
+          'padding-right': this.section.customFields.paddingRightDesktop ? '40px' : 0
+      };
+    },
+
     sectionStyles() {
       let backgroundMedia = null;
 

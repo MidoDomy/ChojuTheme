@@ -12,3 +12,15 @@
     }
   }
 } 
+
+.sw-cms-section__wrapper-outer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .is--mobile &,
+  .is--tablet-landscape &{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

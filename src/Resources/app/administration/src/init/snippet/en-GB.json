@@ -27,7 +27,13 @@
                 "backgroundRepeatRepeat": "Repeat",
                 "backgroundRepeatRepeatX": "Repeat X",
                 "backgroundRepeatRepeatY": "Repeat Y",
-                "choju": "Choju blocks"
+                "choju": "Choju blocks",
+                "paddingNote": "Note: In admin padding changes will only be visible on the desktop.",
+                "paddingLeftLabelCheckboxGroup": "Padding left",
+                "paddingRightLabelCheckboxGroup": "Padding right",
+                "paddingMobile": "Mobile",
+                "paddingTablet": "Tablet",
+                "paddingDesktop": "Descktop"
             },
             "helpText": {
                 "backgroundPositionField": "First value is horizontal align (x-position), and second one is vertical align (y-position)",

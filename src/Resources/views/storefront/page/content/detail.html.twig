@@ -1,7 +1,17 @@
 {% sw_extends '@Storefront/storefront/page/content/detail.html.twig' %}
 
 {% block page_content_section %}
-    <div class="cms-section {{ sectionClasses|join(' ') }}" style="{% if sectionBgColor %}background-color: {{ sectionBgColor }};{% endif %}{% if sectionBgImg %}background-image: url({{ sectionBgImg }}); background-size: {% if section.backgroundMediaMode == 'custom' %}{{ section.customFields.backgroundSize }}{% else %}{{ section.backgroundMediaMode }}{% endif %}; background-repeat: {{ section.customFields.backgroundRepeat }}; background-position: {{ section.customFields.backgroundPosition }};{% endif %}">
-        {% sw_include "@Storefront/storefront/section/cms-section-" ~ section.type ~ ".html.twig" %}
+    {% set paddingLeftMobile = section.customFields.paddingLeftMobile ? 'ps-5' : 'ps-0' %}
+    {% set paddingLeftTablet = section.customFields.paddingLeftTablet ? 'ps-md-5' : 'ps-md-0' %}
+    {% set paddingLeftDesktop = section.customFields.paddingLeftDesktop ? 'ps-lg-5' : 'ps-lg-0' %}
+
+    {% set paddingRightMobile = section.customFields.paddingRightMobile ? 'pe-5' : 'pe-0' %}
+    {% set paddingRightTablet = section.customFields.paddingRightTablet ? 'pe-md-5' : 'pe-md-0' %}
+    {% set paddingRightDesktop = section.customFields.paddingRightDesktop ? 'pe-lg-5' : 'pe-lg-0' %}
+
+    <div class="cms-section {{ sectionClasses|join(' ') }} {{ paddingLeftMobile }} {{ paddingLeftTablet }} {{ paddingLeftDesktop }} {{ paddingRightMobile }} {{ paddingRightTablet }} {{ paddingRightDesktop }}">
+        <div style="{% if sectionBgColor %}background-color: {{ sectionBgColor }};{% endif %}{% if sectionBgImg %}background-image: url({{ sectionBgImg }}); background-size: {% if section.backgroundMediaMode == 'custom' %}{{ section.customFields.backgroundSize }}{% else %}{{ section.backgroundMediaMode }}{% endif %}; background-repeat: {{ section.customFields.backgroundRepeat }}; background-position: {{ section.customFields.backgroundPosition }};{% endif %}">
+            {% sw_include "@Storefront/storefront/section/cms-section-" ~ section.type ~ ".html.twig" %}
+        </div>
     </div>
 {% endblock %}
