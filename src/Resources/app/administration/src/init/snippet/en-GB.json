@@ -177,6 +177,9 @@
                     "label": "Custom video"
                 },
                 "headline-jost": {
+                    "label": "Headline Jost"
+                },
+                "headline-jost-list": {
                     "label": "Text block with Jost headline on left"
                 }
             }
