@@ -43,6 +43,7 @@
 
 .product-detail-price-unit {
   order: 2;
+  font-family: $font-family-noto;
   font-size: $font-size-base-lead;
   line-height: $line-height-sm;
 
@@ -55,6 +56,7 @@
   margin-bottom: $spacer*0.813;
   order: 1;
   margin: 0;
+  font-family: $font-family-noto;
   font-size: $font-size-base-lead;
   line-height: $line-height-sm;
 
@@ -70,6 +72,7 @@
 }
 
 .product-detail-delivery-information {
+  font-family: $font-family-noto;
   font-size: $font-size-base-lead;
   line-height: $line-height-sm;
 
@@ -111,6 +114,7 @@
 .product-detail-quantity-label {
   display: block;
   margin-bottom: $spacer*0.25;
+  font-family: $font-family-noto;
   font-size: $font-size-base-lead;
   line-height: 1;
 

@@ -25,6 +25,9 @@ export default class StickyHeaderPlugin extends Plugin {
                     this.header.style.top = 0;
                 }
             }
+            else if (st <= 30){
+                this.header.classList.remove('sticky-active');
+            }
 
             lastScrollTop = st <= 0 ? 0 : st;
         });

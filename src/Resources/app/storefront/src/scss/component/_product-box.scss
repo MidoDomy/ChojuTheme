@@ -32,6 +32,7 @@
 .product-description {
   height: auto;
   margin: 0 0 $spacer*1.125;
+  font-family: $font-family-noto;
   font-size: $font-size-base;
   line-height: $line-height-base;
 
@@ -63,6 +64,7 @@
 
 .product-action {
   margin: 0;
+  font-family: $font-family-noto;
   font-size: $font-size-base-lead;
 
   @include media-breakpoint-up(lg) {

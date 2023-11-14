@@ -29,3 +29,32 @@
   font-style: normal;
   src: url("/bundles/chojutheme/font/jost/Jost-Bold.ttf") format("truetype");
 }
+
+// Noto
+@font-face {
+  font-family: 'NotoSans';
+  font-weight: 400;
+  font-style: normal;
+  src: url("/bundles/chojutheme/font/noto/NotoSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-weight: 500;
+  font-style: normal;
+  src: url("/bundles/chojutheme/font/noto/NotoSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-weight: 600;
+  font-style: normal;
+  src: url("/bundles/chojutheme/font/noto/NotoSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-weight: 700;
+  font-style: normal;
+  src: url("/bundles/chojutheme/font/noto/NotoSans-Bold.ttf") format("truetype");
+}

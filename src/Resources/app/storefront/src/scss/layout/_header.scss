@@ -28,7 +28,7 @@
     opacity: 0.2;
   }
 
-  &.header-dark {
+  &.header-dark:not(.sticky-active) {
     color: $navbar-dark-color;
 
     &::before {

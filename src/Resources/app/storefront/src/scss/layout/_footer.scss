@@ -67,6 +67,7 @@
 
 .footer-link {
   padding: $spacer*0.188 0;
+  font-family: $font-family-noto;
 
   &:hover {
     color: $link-hover-color;
@@ -104,6 +105,7 @@
 .footer-bottom {
   padding: $spacer*1.75 0 $spacer*1.125;
   background-color: $footer-bottom-bg-color;
+  font-family: $font-family-noto;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
 

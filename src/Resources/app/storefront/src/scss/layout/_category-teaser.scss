@@ -25,6 +25,7 @@
 .category-teaser-content {
   position: relative;
   padding-bottom: $spacer*2;
+  overflow: hidden;
 
   @include media-breakpoint-up(md) {
     max-width: 45.625rem;

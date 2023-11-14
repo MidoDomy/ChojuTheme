@@ -39,12 +39,15 @@
 }
 
 .cms-listing-category-info-content {
+  font-family: $font-family-noto;
+
   @include media-breakpoint-up(lg) {
     font-size: $font-size-sm;
   }
 
   .btn {
     margin-top: $spacer*1.25;
+    font-family: $sw-font-family-base;
 
     @include media-breakpoint-up(lg) {
       margin-top: $spacer*2.5;

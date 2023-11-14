@@ -65,6 +65,9 @@
       "sw-logo-mobile": {
         "value": "app/storefront/dist/assets/logo/choju-logo-white.svg"
       },
+      "sw-logo-favicon": {
+        "value": "app/storefront/dist/assets/favicon.png"
+      },
       "sw-footer-logo": {
         "label": {
           "en-GB": "Footer logo",

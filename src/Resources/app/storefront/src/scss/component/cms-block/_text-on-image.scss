@@ -1,0 +1,15 @@
+.cms-block-text-on-image {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .cms-element-text {
+    padding: 50px;
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+} 
