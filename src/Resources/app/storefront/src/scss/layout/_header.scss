@@ -1,9 +1,20 @@
+.sticky-header {
+  position: relative;
+  height: 95px;
+  z-index: $zindex-sticky;
+
+  &.remove-height {
+    height: auto;
+  }
+}
+
 .header-main {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   color: $navbar-light-color;
-  z-index: $zindex-sticky;
+  transition: $transition-base;
 
   // header background
   &::before {

@@ -22,13 +22,17 @@
     {% endif %}
     {# Check if category has teaser image - end #}
 
-    <header class="header-main{% if not(hasTeaser) %} header-dark{% endif %}{% if hasTeaser %} position-absolute{% endif %}">
-        {% block base_header_inner %}
-            <div class="container-fluid">
-                {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
-            </div>
-        {% endblock %}
-    </header>
+    <div class="sticky-header{% if hasTeaser %} remove-height{% endif %}">
+        <header class="header-main{% if not(hasTeaser) %} header-dark{% endif %}"
+            data-sticky-header="true"
+        >
+            {% block base_header_inner %}
+                <div class="container-fluid">
+                    {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+                </div>
+            {% endblock %}
+        </header>
+    </div>
 {% endblock %}
 
 {% block base_navigation %}{% endblock %}

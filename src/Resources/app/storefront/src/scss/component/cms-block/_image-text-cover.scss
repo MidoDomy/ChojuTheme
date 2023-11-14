@@ -1,8 +1,6 @@
 .cms-block-image-text-cover,
 .cms-block-image-text  {
   .cms-block-container-row {
-    --bs-gutter-x: 0;
-
     &> :first-child {
       margin-bottom: 0;
     }
