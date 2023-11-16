@@ -35,6 +35,8 @@ class CategoryExtension extends AbstractExtension
         }
 
         $criteria = new Criteria([$id]);
+        $criteria->addAssociation('media');
+        $criteria->setLimit(1);
 
         /** @var CategoryEntity $category */
         $category = $this->categoryRepository
