@@ -1,23 +1,11 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block base_header %}
-    {# Go through all categories #}
-    {% macro getCategoryContent(categories, id) %}
-        {% for category in categories %}
-            {% if category.id == id %}
-                {{ true }}
-            {% else %}
-                {{ _self.getCategoryContent(category.children, id) }}
-            {% endif %}
-        {% endfor %}
-    {% endmacro %}
-
     {# Check if category has teaser image - start #}
     {% set currentCategory = page.header.navigation.active %}
-    {% set isHomepage = _self.getCategoryContent(page.header.navigation.tree, currentCategory.id) %}
     {% set hasTeaser = currentCategory.media ? true : false %}
 
-    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') or controllerName|lower == 'product' %}
+    {% if currentCategory.level == 1 and not(controllerAction|lower == 'home') %}
         {% set hasTeaser = false %}
     {% endif %}
     {# Check if category has teaser image - end #}
@@ -33,9 +21,6 @@
             {% endblock %}
         </header>
     </div>
-
-    {% set category = getCategoryById('77b959cf66de4c1590c7f9b7da3982f3', context.context) %}
-    {{ dump(category) }}
 {% endblock %}
 
 {% block base_navigation %}{% endblock %}
@@ -43,24 +28,11 @@
 {% block base_offcanvas_navigation %}
     {# Removed offcanvas navigation - dropdown implemented in header #}
 
-    {# Category teaser #}
-        {# Go through all categories #}
-    {% macro getCategoryContent(categories, id) %}
-        {% for category in categories %}
-            {% if category.id == id %}
-                {{ true }}
-            {% else %}
-                {{ _self.getCategoryContent(category.children, id) }}
-            {% endif %}
-        {% endfor %}
-    {% endmacro %}
-
     {# Check if category has teaser image - start #}
     {% set currentCategory = page.header.navigation.active %}
-    {% set isHomepage = _self.getCategoryContent(page.header.navigation.tree, currentCategory.id) %}
     {% set hasTeaser = currentCategory.media ? true : false %}
 
-    {% if not('1' in isHomepage) and not(controllerAction|lower == 'home') or controllerName|lower == 'product' %}
+    {% if currentCategory.level == 1 and not(controllerAction|lower == 'home') %}
         {% set hasTeaser = false %}
     {% endif %}
     {# Check if it has teaser image - end #}
@@ -71,7 +43,7 @@
         } %}
     {% endif %}
 
-    {# Fixed global action buttons #}
+    {# Global action buttons #}
     {% sw_include '@Storefront/storefront/component/custom/global-actions.html.twig' %}
 {% endblock %}
 

@@ -15,37 +15,6 @@
     <div class="js-listing-wrapper">
         {% if searchResult.total > 0 %}
             {% block element_product_listing_col %}
-                {# Return category listing content by category id #}
-                {% macro getCategoryContent(categories, id) %}
-                    {% for category in categories %}
-                        {% if category.id == id %}
-                            <div class="cms-listing-category-info">
-                                <h2 class="cms-listing-category-info-title">
-                                    {{ category.category.translated.customFields.listingTitle }}
-                                </h2>
-
-                                <div class="cms-listing-category-info-content">
-                                    {{ category.category.translated.customFields.listingContent|raw }}
-                                </div>
-                            </div>
-                        {% else %}
-                            {{ _self.getCategoryContent(category.children, id) }}
-                        {% endif %}
-                    {% endfor %}
-                {% endmacro %}
-
-                {# Get category order #}
-                {% macro getCategoryOrder(categories, id) %}
-                    {% for category in categories %}
-                        {% if category.id == id %}
-                            {{ category.category.translated.customFields.listingOrder|raw }}
-                        {% else %}
-                            {{ _self.getCategoryOrder(category.children, id) }}
-                        {% endif %}
-                    {% endfor %}
-                {% endmacro %}
-                
-                {# Get all different category ids from products #}
                 {% set listingCategories = [] %}
 
                 {# Loop through all products #}
@@ -54,8 +23,8 @@
                     {% for categoryId in product.categoryIds  %}
                         {# Check if category already added #}
                         {% if not(categoryId in listingCategories|column('id')) %}
-                            {# Set category listing order #}
-                            {% set categoryOrder = _self.getCategoryOrder(page.header.navigation.tree, categoryId)|replace({' ': ''})|replace({'\n': ''}) %}
+                            {% set category = getCategoryById(categoryId, context.context) %}
+                            {% set categoryOrder = category.translated.customFields.listingOrder %}
 
                             {# Add to listingCategories #}
                             {% set listingCategories = listingCategories|merge([{"order": categoryOrder, "id": categoryId}]) %}
@@ -68,7 +37,17 @@
                     <div class="row cms-listing-category-products-row">
                         {# Category listing content #}
                         <div class="col-12 col-lg-3">
-                            {{ _self.getCategoryContent(page.header.navigation.tree, categoryId) }}
+                            {% set category = getCategoryById(categoryId, context.context) %}
+
+                            <div class="cms-listing-category-info">
+                                <h2 class="cms-listing-category-info-title">
+                                    {{ category.translated.customFields.listingTitle }}
+                                </h2>
+
+                                <div class="cms-listing-category-info-content">
+                                    {{ category.translated.customFields.listingContent|raw }}
+                                </div>
+                            </div>
                         </div>
 
                         {# Products with same category id #}
