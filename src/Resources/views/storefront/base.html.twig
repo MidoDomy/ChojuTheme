@@ -33,6 +33,9 @@
             {% endblock %}
         </header>
     </div>
+
+    {% set category = getCategoryById('77b959cf66de4c1590c7f9b7da3982f3', context.context) %}
+    {{ dump(category) }}
 {% endblock %}
 
 {% block base_navigation %}{% endblock %}
