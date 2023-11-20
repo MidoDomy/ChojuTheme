@@ -99,6 +99,7 @@
 
     p {
       margin-bottom: $spacer*1.25;
+      font-family: $font-family-noto;
 
       @include media-breakpoint-up(lg) {
         margin-bottom: $spacer*2.5;
