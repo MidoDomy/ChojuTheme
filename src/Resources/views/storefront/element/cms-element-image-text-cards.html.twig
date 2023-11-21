@@ -1,45 +1,99 @@
 {% block element_image_text_cards %}
     {% set cards = element.translated.config.fields.value %}
+    {% set typeCards = element.translated.config.typeCards.value %}
 
-    <div class="cms-element-{{ element.type }}">
-        {% set sliderOptions = {
-            slider: {
-                navPosition: 'bottom',
-                items: 3,
-                gutter: 16,
-                mouseDrag: true,
-                slideBy: 1,
-                loop: false,              
-                speed: 500,
-                nav: true,
-                controls: false,
-                autoHeight: false,
-                sliderItems: element.translated.config.fields.value,
-                responsive: {
-                    xs: {
-                        items: 1,
-                    },
-                    sm: {
-                        items: 2,
-                    },
-                    md: {
-                        items: 2,
+    {% if typeCards == 'slider' %}
+        <div class="cms-element-{{ element.type }}">
+            {% set sliderOptions = {
+                slider: {
+                    navPosition: 'bottom',
+                    items: 3,
+                    gutter: 16,
+                    mouseDrag: true,
+                    slideBy: 1,
+                    loop: false,
+                    speed: 500,
+                    nav: true,
+                    controls: false,
+                    autoHeight: false,
+                    sliderItems: element.translated.config.fields.value,
+                    responsive: {
+                        xs: {
+                            items: 1,
+                        },
+                        sm: {
+                            items: 2,
+                        },
+                        md: {
+                            items: 2,
+                        }
                     }
                 }
-            }
-        } %}
+            } %}
 
-        {% block element_image_text_cards_alignment %}
             <div class="base-slider has-nav image-text-cards-slider"
                 data-base-slider="true"
                 data-base-slider-options='{{ sliderOptions|json_encode }}'
             >
-                {% block element_image_text_cards_inner %}
-                    <div class="image-text-cards-container"
-                        data-base-slider-container="true"
-                    >
+                <div class="image-text-cards-container"
+                    data-base-slider-container="true"
+                >
+                    {% for card in cards %}
+                        <div>
+                            <div class="image-text-card">
+                                {# Image #}
+                                {% if card.value.imageId|length %}
+                                    {# fetch media as batch - optimized for performance #}
+                                    {% set mediaCollection = searchMedia([card.value.imageId], context.context) %}
+                                    {# extract single media object #}
+                                    {% set image = mediaCollection.get(card.value.imageId) %}
+
+                                    {% sw_thumbnails 'cms-image-text-cards-thumbnails' with {
+                                        media: image,
+                                        attributes: {
+                                            'class': 'image-text-card-img',
+                                        }
+                                    } %}
+                                {% endif %}
+
+                                <div class="image-text-card-content">
+                                    {# Headline #}
+                                    {% if card.value.title %}
+                                        <h1 class="image-text-card-headline">
+                                            {{ card.value.title }}
+                                        </h1>
+                                    {% endif %}
+
+                                    {# Description #}
+                                    <div class="image-text-card-description">
+                                        {{ card.value.description|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% elseif typeCards == 'rows-columns' %}
+            {% set rows = element.translated.config.rows.value %}
+            {% set col = 'col-lg-4' %}
+
+            {% if rows == '1' %}
+                {% set col = 'col-lg-12' %}
+            {% elseif rows == '2' %}
+                {% set col = 'col-lg-6' %}
+            {% elseif rows == '3' %}
+                {% set col = 'col-lg-4' %}
+            {% elseif rows == '4' %}
+                {% set col = 'col-lg-3' %}
+            {% endif %}
+
+            <div class="cms-element-{{ element.type }}">
+                <div class="has-nav image-text-cards-slider">
+                    <div class="image-text-cards-container row">
                         {% for card in cards %}
-                            <div>
+                            <div class="col {{ col }} image-text-card-rows-columns">
                                 <div class="image-text-card">
                                     {# Image #}
                                     {% if card.value.imageId|length %}
@@ -55,7 +109,7 @@
                                             }
                                         } %}
                                     {% endif %}
-                    
+
                                     <div class="image-text-card-content">
                                         {# Headline #}
                                         {% if card.value.title %}
@@ -73,8 +127,7 @@
                             </div>
                         {% endfor %}
                     </div>
-                {% endblock %}
+                </div>
             </div>
-        {% endblock %}
-    </div>
+        {% endif %}
 {% endblock %}

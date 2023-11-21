@@ -1,12 +1,98 @@
 {% block sw_cms_element_image_text_cards_config %}
-    <div class="sw-cms-el-config-image-text-cards">
-        {# Items #}
-        <repeater 
-            v-model="element.config.fields.value" 
-            formName="image-text-card-form"
-            :defaultValue="defaultValue" 
-            :blockName="$tc('sw-cms.elements.image-text-cards.config.blockName')"
-            :addButtonText="$tc('sw-cms.elements.image-text-cards.config.addButton')">
-        </repeater>
-    </div>
+    <sw-tabs
+            position-identifier="sw-cms-element-config-image-text-cards"
+            class="sw-cms-el-config-image-text-cards__tabs"
+            default-item="content"
+    >
+        <template #default="{ active }">
+            {% block sw_cms_element_image_text_cards_config_text_tab_content %}
+                <sw-tabs-item
+                        :title="$tc('sw-cms.elements.general.config.tab.content')"
+                        name="content"
+                        :active-tab="active"
+                >
+                    {{ $tc('sw-cms.elements.general.config.tab.content') }}
+                </sw-tabs-item>
+            {% endblock %}
+
+            {% block sw_cms_element_image_text_cards_config_tab_options %}
+                <sw-tabs-item
+                        :title="$tc('sw-cms.elements.general.config.tab.settings')"
+                        name="settings"
+                        :active-tab="active"
+                >
+                    {{ $tc('sw-cms.elements.general.config.tab.settings') }}
+                </sw-tabs-item>
+            {% endblock %}
+        </template>
+
+        <template
+                #content="{ active }"
+        >
+            {% block sw_cms_element_image_text_cards_config_content %}
+                <sw-container
+                        v-if="active === 'content'"
+                        class="sw-cms-el-config-image-text-cards__tab-content"
+                >
+                    <div class="sw-cms-el-config-image-text-cards">
+                        {# Items #}
+                        <repeater
+                            v-model="element.config.fields.value"
+                            formName="image-text-card-form"
+                            :defaultValue="defaultValue"
+                            :blockName="$tc('sw-cms.elements.image-text-cards.config.blockName')"
+                            :addButtonText="$tc('sw-cms.elements.image-text-cards.config.addButton')">
+                        </repeater>
+                    </div>
+                </sw-container>
+            {% endblock %}
+
+            {% block sw_cms_element_image_text_cards_config_content %}
+                <sw-container
+                        v-if="active === 'settings'"
+                        class="sw-cms-el-config-image-text-cards__tab-settings"
+                >
+                    <sw-select-field
+                            {% if VUE3 %}
+                                v-model:value="element.config.typeCards.value"
+                            {% else %}
+                                v-model="element.config.typeCards.value"
+                            {% endif %}
+                            :label="$tc('sw-cms.elements.image-text-cards.config.textCardType')"
+                    >
+                        <option value="slider">
+                            {{ $tc('sw-cms.elements.image-text-cards.config.textCardsTypeSlider') }}
+                        </option>
+                        <option value="rows-columns">
+                            {{ $tc('sw-cms.elements.image-text-cards.config.textCardsTypeRowsColumns') }}
+                        </option>
+                    </sw-select-field>
+
+                    <sw-select-field
+                            v-if="element.config.typeCards.value == 'rows-columns'"
+                            {% if VUE3 %}
+                                v-model:value="element.config.rows.value"
+                            {% else %}
+                                v-model="element.config.rows.value"
+                            {% endif %}
+                            :label="$tc('sw-cms.elements.image-text-cards.config.numberRows')"
+                    >
+                        <option value="1">
+                            1
+                        </option>
+                        <option value="2">
+                            2
+                        </option>
+                        <option value="3">
+                            3
+                        </option>
+                        <option value="4">
+                            4
+                        </option>
+                    </sw-select-field>
+                </sw-container>
+            {% endblock %}
+
+        </template>
+    </sw-tabs>
 {% endblock %}

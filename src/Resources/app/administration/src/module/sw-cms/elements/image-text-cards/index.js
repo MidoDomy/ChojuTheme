@@ -19,7 +19,16 @@ Shopware.Service('cmsService').registerCmsElement({
             entity: {
                 name: 'media'
             }
-        }
+        },
+        typeCards: {
+            source: 'static',
+            value: 'slider',
+            required: true,
+        },
+        rows: {
+            source: 'static',
+            value: '3',
+        },
     },
     enrich: function enrich(elem, data) {
         if (Object.keys(data).length < 1) {

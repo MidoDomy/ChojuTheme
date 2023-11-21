@@ -99,7 +99,11 @@
                 },
                 "config": {
                     "blockName": "Card",
-                    "addButton": "Add new card"
+                    "addButton": "Add new card",
+                    "textCardType": "Text card type",
+                    "textCardsTypeSlider": "Slider",
+                    "textCardsTypeRowsColumns": "Rows & Columns",
+                    "numberRows": "Number rows"
                 }
             },
             "text": {

@@ -12,8 +12,11 @@ Component.register('sw-cms-el-image-text-cards', {
 
     computed: {
         fields() {
-            // Get only three items
-            return this.element.config.fields.value.slice(0, 3);
+            let rows = 3;
+            if (this.element.config.typeCards.value === 'rows-columns') {
+                rows = this.element.config.rows.value;
+            }
+            return this.element.config.fields.value.slice(0, rows);
         },
     },
 
