@@ -22,10 +22,6 @@
   border-radius: $border-radius;
   color: $navbar-light-color;
 
-  .header-dark &{
-    color: $navbar-dark-color;
-  }
-
   &:hover,
   .main-navigation-item:hover &,
   &:active, 
