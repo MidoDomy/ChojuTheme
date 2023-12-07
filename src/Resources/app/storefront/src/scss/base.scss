@@ -59,8 +59,10 @@
 @import 'layout/container';
 
 // PAGES
+@import 'page/account/account';
 @import 'page/account/register';
 @import 'page/checkout/checkout';
+@import 'page/search/search';
   // PDP
 @import 'page/product-detail/product-detail';
 @import 'page/product-detail/buybox';
