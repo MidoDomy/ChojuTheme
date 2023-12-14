@@ -1,0 +1,23 @@
+{% sw_extends '@Storefront/storefront/component/address/address-form.html.twig' %}
+
+{% block component_address_form_zipcode_label %}
+    <label class="form-label"
+           for="{{ idPrefix ~ prefix }}AddressZipcode">
+        {{ "address.zipcodeLabel"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+    </label>
+{% endblock %}
+
+{% block component_address_form_zipcode_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}AddressZipcode"
+           placeholder="{{ "address.zipcodePlaceholder"|trans|striptags }}"
+           name="{{ prefix }}[zipcode]"
+           value="{{ zipcodeValue }}"
+           data-input-name="zipcodeInput"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required"
+    >
+{% endblock %}
+
