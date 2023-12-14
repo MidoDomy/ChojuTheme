@@ -8,7 +8,7 @@
     </div>
 
     {% block layout_header_main_navigation %}
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-none d-lg-block-header">
             <div class="nav-main">
                 {% block layout_header_main_navigation_inner %}
                     {% sw_include '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
@@ -59,7 +59,7 @@
             {% endblock %}
 
             {% block layout_header_navigation_toggle %}
-                <div class="col-auto d-lg-none">
+                <div class="col-auto d-lg-none-header">
                     <div class="menu-button">
                         {% block layout_header_navigation_toggle_button %}
                             <button class="btn nav-main-toggle-btn header-actions-btn collapsed" 
@@ -84,7 +84,7 @@
     </div>
 
     {% block layout_header_main_navigation_collapse %}
-        <div class="col-12 order-4 d-lg-none">
+        <div class="col-12 order-4 d-lg-none-header">
             {% sw_include '@Storefront/storefront/layout/navigation/collapse.html.twig' %}
         </div>   
     {% endblock %}

@@ -25,13 +25,13 @@
                             <div class="footer-column-content footer-contact">
                                 <div class="footer-column-content-inner">
 									{{ 'footer.serviceHotline'|trans|raw }}
-									</br>
-									</br>
+									<br>
+									<br>
 
 									<a href="tel:{{ 'choju.footer.serviceHotlinePhone'|trans }}">
 										{{ 'choju.footer.serviceHotlinePhone'|trans }}
 									</a>
-									</br>
+									<br>
 									<a href="mailto:{{ 'choju.footer.serviceHotlineMail'|trans }}">
 										{{ 'choju.footer.serviceHotlineMail'|trans }}
 									</a>
@@ -44,7 +44,7 @@
                 {% block layout_footer_navigation_columns %}
                     {% for root in page.footer.navigation.tree %}
                         {% block layout_footer_navigation_column %}
-                            <div class="col-md-4 col-lg-3 footer-column d-none d-md-block">
+                            <div class="col-md-4 col-lg-3 footer-column {% if loop.last == false %} d-none {% endif %} d-md-block">
                                 {% block layout_footer_navigation_information_content %}
                                     <div class="footer-column-content">
                                         <div class="footer-column-content-inner">

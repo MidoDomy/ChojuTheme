@@ -38,7 +38,7 @@
         "privacyNoticeText": "I agree with the <a data-ajax-modal=\"true\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"Terms and Conditions\">Terms and Conditions</a> and <a data-ajax-modal=\"true\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Agree with data protection declarations\">Agree with data protection declarations</a>*"
     },
     "footer": {
-        "serviceHotline": "Chōju </br> Sonnenbergstrasse 74 </br> 6052 Hergiswil",
+        "serviceHotline": "Chōju <br> Sonnenbergstrasse 74 <br> 6052 Hergiswil",
         "copyrightInfo": "©%year% Chōju"
     },
     "newsletter": {

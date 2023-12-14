@@ -12,19 +12,21 @@
         {% if level > 0 %}id="navigationCollapseCategory{{parentId}}"{% endif %}
     >
         {% if level > 0 %}
-            <a class="navigation-collapse-category-link{% if parentId == activeId %} active{% endif %}"
-                title="{{ parentName }}"                        
-                href="{{ parentLink }}"
-                itemprop="url"
-                {% if category_linknewtab(parentCategory) %}
-                    target="_blank"
-                    {% if parentCategory.linkType == "external" %}rel="noopener noreferrer"{% endif %}
-                {% endif %}
-            >
-                <span itemprop="name">
-                    {{ "general.showCategory"|trans({"%category%": parentName})|sw_sanitize }}
-                </span>
-            </a>
+            <li class="navigation-collapse-category-item">
+                <a class="navigation-collapse-category-link{% if parentId == activeId %} active{% endif %}"
+                    title="{{ parentName }}"
+                    href="{{ parentLink }}"
+                    itemprop="url"
+                    {% if category_linknewtab(parentCategory) %}
+                        target="_blank"
+                        {% if parentCategory.linkType == "external" %}rel="noopener noreferrer"{% endif %}
+                    {% endif %}
+                >
+                    <span itemprop="name">
+                        {{ "general.showCategory"|trans({"%category%": parentName})|sw_sanitize }}
+                    </span>
+                </a>
+            </li>
         {% endif %}
 
         {% for treeItem in navigationTree %}
@@ -53,28 +55,30 @@
                                 {% endif %}
                             </button>
                         {% else %}
-                            <a class="navigation-collapse-category-link{% if id == activeId or id in activePath %} active{% endif %}{% if hasChildren %} collapsed{% endif %}"
-                                title="{{ name }}"
-                                {% if hasChildren %}
-                                    data-bs-toggle="collapse" 
-                                    href="#navigationCollapseCategory{{id}}" 
-                                    role="button" 
-                                    aria-expanded="false" 
-                                    aria-controls="navigationCollapseCategory{{id}}"
-                                {% else %}                               
-                                    href="{{ link }}"
-                                    itemprop="url"
-                                    {% if category_linknewtab(treeItem.category) %}
-                                        target="_blank"
-                                        {% if treeItem.category.linkType == "external" %}rel="noopener noreferrer"{% endif %}
+                            <li class="navigation-collapse-category-item">
+                                <a class="navigation-collapse-category-link{% if id == activeId or id in activePath %} active{% endif %}{% if hasChildren %} collapsed{% endif %}"
+                                    title="{{ name }}"
+                                    {% if hasChildren %}
+                                        data-bs-toggle="collapse"
+                                        href="#navigationCollapseCategory{{id}}"
+                                        role="button"
+                                        aria-expanded="false"
+                                        aria-controls="navigationCollapseCategory{{id}}"
+                                    {% else %}
+                                        href="{{ link }}"
+                                        itemprop="url"
+                                        {% if category_linknewtab(treeItem.category) %}
+                                            target="_blank"
+                                            {% if treeItem.category.linkType == "external" %}rel="noopener noreferrer"{% endif %}
+                                        {% endif %}
                                     {% endif %}
-                                {% endif %}
-                            >
-                                <span itemprop="name">{{ name }}</span>
-                                {% if hasChildren %}
-                                    {% sw_icon 'chevron-down' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
-                                {% endif %}
-                            </a>
+                                >
+                                    <span itemprop="name">{{ name }}</span>
+                                    {% if hasChildren %}
+                                        {% sw_icon 'chevron-down' style { 'pack': 'choju', 'namespace': 'ChojuTheme' } %}
+                                    {% endif %}
+                                </a>
+                            </li>
                         {% endif %}
                     {% endblock %}
 
