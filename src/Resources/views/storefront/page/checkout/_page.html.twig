@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block page_checkout_summary_list_container %}
+    {{ parent() }}
+    <p class="offcanvas-cart-tax">
+        <small>
+            {{ "general.star"|trans|sw_sanitize }}
+            {% if page.cart.price.taxStatus == "gross" %}
+                {{ "general.grossTaxInformation"|trans|sw_sanitize }}
+            {% else %}
+                {{ "general.netTaxInformation"|trans|sw_sanitize }}
+            {% endif %}
+        </small>
+    </p>
+{% endblock %}

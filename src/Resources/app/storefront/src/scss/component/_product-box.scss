@@ -39,6 +39,7 @@
   @include media-breakpoint-up(lg) {
     font-size: $font-size-sm;
     line-height: $line-height-sm;
+    min-height: 50px;
   }
 }
 

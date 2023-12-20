@@ -10,7 +10,7 @@
     {% endif %}
     {# Check if category has teaser image - end #}
 
-    <div class="sticky-header{% if hasTeaser %} remove-height{% endif %}">
+    <div class="sticky-header{% if hasTeaser and (activeRoute|lower != 'frontend.detail.page') %} remove-height{% endif %}">
         <header class="header-main{% if not(hasTeaser) %} header-dark{% endif %}"
             data-sticky-header="true"
         >
@@ -37,7 +37,7 @@
     {% endif %}
     {# Check if it has teaser image - end #}
     
-    {% if hasTeaser %}
+    {% if hasTeaser and (activeRoute|lower != 'frontend.detail.page')%}
         {% sw_include '@Storefront/storefront/component/custom/category-teaser.html.twig' with {
             category: currentCategory
         } %}
